@@ -27,7 +27,7 @@ const Hero = () => {
           <Button asChild size="lg" className="bg-white text-steis hover:bg-gray-100">
             <Link to="/contact">Demander un devis gratuit</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 hover:text-white">
+          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
             <Link to="/realisations">Voir nos réalisations</Link>
           </Button>
         </div>
