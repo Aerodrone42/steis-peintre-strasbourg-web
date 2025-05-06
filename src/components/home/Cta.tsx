@@ -19,7 +19,7 @@ const Cta = () => {
             <Button asChild size="lg" className="bg-white text-steis hover:bg-gray-100">
               <Link to="/contact">Demander un devis</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 bg-transparent">
               <a href="tel:0780233098">Nous appeler</a>
             </Button>
           </div>
