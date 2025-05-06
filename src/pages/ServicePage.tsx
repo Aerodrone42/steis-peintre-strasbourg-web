@@ -141,6 +141,114 @@ const services: ServiceData = {
       "Intervention rapide et professionnelle"
     ],
     image: "/lovable-uploads/b06aa698-1d6b-4c4c-abba-50e6fba342b6.png"
+  },
+  "nettoyage-dallage": {
+    title: "Nettoyage dallage",
+    metaTitle: "Nettoyage professionnel de dallages à Strasbourg | STEIS Ismaël",
+    description: "Redonnez l'éclat du neuf à vos terrasses et allées avec notre service de nettoyage haute pression à Strasbourg.",
+    longDescription: [
+      "Notre service de nettoyage de dallage redonne vie à vos terrasses, allées et surfaces extérieures en éliminant toutes les salissures incrustées.",
+      "Nous intervenons sur tous types de revêtements (pavés, dalles, béton, pierre naturelle) avec des techniques adaptées pour préserver l'intégrité de vos surfaces.",
+      "Notre équipe utilise des équipements de nettoyage haute pression professionnels et des produits spécifiques pour un résultat impeccable sans endommager vos revêtements."
+    ],
+    benefits: [
+      "Élimination des mousses, lichens et mauvaises herbes",
+      "Suppression des taches tenaces (graisse, huile, rouille)",
+      "Restauration de l'aspect originel de vos dalles",
+      "Traitement préventif anti-mousse en option",
+      "Intervention rapide et résultat immédiat"
+    ],
+    image: "/lovable-uploads/40cc1329-cc7c-4293-b455-5eb318530b6c.png"
+  },
+  "nettoyage-gouttiere": {
+    title: "Nettoyage gouttière",
+    metaTitle: "Nettoyage de gouttières à Strasbourg | STEIS Ismaël",
+    description: "Prévenez les dégâts d'eau avec un entretien régulier de vos gouttières dans la région de Strasbourg.",
+    longDescription: [
+      "Notre service de nettoyage de gouttières permet d'éviter les problèmes d'infiltration et de débordement qui peuvent endommager votre toiture et vos façades.",
+      "Nous procédons à l'élimination complète des feuilles, débris et dépôts qui obstruent le bon écoulement des eaux pluviales dans votre système d'évacuation.",
+      "En plus du nettoyage, nous vérifions l'état général de vos gouttières, des fixations et des descentes pour identifier d'éventuels problèmes nécessitant une réparation."
+    ],
+    benefits: [
+      "Prévention des débordements et des infiltrations d'eau",
+      "Protection de vos murs et fondations contre l'humidité",
+      "Prolongation de la durée de vie de vos gouttières",
+      "Amélioration de l'efficacité d'évacuation des eaux pluviales",
+      "Intervention sécurisée en hauteur par des professionnels"
+    ],
+    image: "/lovable-uploads/0fdbff75-2089-458e-bc84-4ba5e49f6e74.png"
+  },
+  "nettoyage-muret": {
+    title: "Nettoyage muret",
+    metaTitle: "Nettoyage professionnel de murets à Strasbourg | STEIS Ismaël",
+    description: "Éliminez mousses et salissures de vos murets pour un aspect impeccable dans la région strasbourgeoise.",
+    longDescription: [
+      "Notre service de nettoyage de murets redonne un aspect propre et soigné à vos délimitations extérieures en éliminant verdissures et salissures.",
+      "Nous intervenons sur tous types de murets (pierre, béton, brique) avec des techniques adaptées à chaque matériau pour un nettoyage en profondeur.",
+      "Après le nettoyage, nous proposons un traitement hydrofuge et anti-mousse pour prolonger la propreté de vos murets et les protéger des intempéries."
+    ],
+    benefits: [
+      "Élimination des mousses, lichens et algues incrustés",
+      "Nettoyage respectueux du matériau d'origine",
+      "Amélioration immédiate de l'aspect esthétique de votre propriété",
+      "Protection préventive contre la réapparition des salissures",
+      "Préservation de la structure de vos murets"
+    ],
+    image: "/lovable-uploads/52e63c25-14dc-490f-b703-f24f6de0536f.png"
+  },
+  "peinture-boiseries": {
+    title: "Peinture boiseries",
+    metaTitle: "Peinture de boiseries extérieures à Strasbourg | STEIS Ismaël",
+    description: "Protégez et embellissez vos boiseries extérieures avec nos traitements spécifiques dans la région de Strasbourg.",
+    longDescription: [
+      "Notre service de peinture de boiseries extérieures protège volon, volets, portes et autres éléments en bois contre les agressions climatiques et le vieillissement.",
+      "Nous préparons minutieusement les surfaces (ponçage, décapage si nécessaire) avant d'appliquer des peintures et lasures de qualité professionnelle conçues pour l'extérieur.",
+      "Notre expertise permet de valoriser vos éléments en bois tout en leur assurant une protection durable contre les intempéries, les UV et les variations de température."
+    ],
+    benefits: [
+      "Protection efficace contre l'humidité et les UV",
+      "Prévention des attaques de parasites du bois",
+      "Large choix de teintes et de finitions",
+      "Valorisation esthétique de votre propriété",
+      "Allongement de la durée de vie de vos boiseries"
+    ],
+    image: "/lovable-uploads/1a785ffe-2c5c-4a97-94b6-1d020990e2fa.png"
+  },
+  "peinture-ferronneries": {
+    title: "Peinture ferronneries",
+    metaTitle: "Peinture de ferronneries à Strasbourg | STEIS Ismaël",
+    description: "Préservez vos éléments métalliques de la rouille avec nos peintures spéciales dans la région strasbourgeoise.",
+    longDescription: [
+      "Notre service de peinture de ferronneries permet de protéger et d'embellir vos éléments métalliques extérieurs comme les portails, grilles, balcons et garde-corps.",
+      "Nous effectuons une préparation complète des surfaces (brossage, ponçage, traitement anti-rouille) avant d'appliquer des peintures spéciales métal de haute qualité.",
+      "Notre savoir-faire garantit une finition impeccable et une protection optimale contre la corrosion, les intempéries et les variations de température."
+    ],
+    benefits: [
+      "Protection efficace contre la rouille et la corrosion",
+      "Préparation méticuleuse des surfaces métalliques",
+      "Large choix de couleurs et de finitions",
+      "Résistance accrue aux conditions extérieures",
+      "Revalorisation esthétique de vos ferronneries"
+    ],
+    image: "/lovable-uploads/f69e56ea-83d1-48ce-ba83-bb0353834d74.png"
+  },
+  "peinture-gouttieres": {
+    title: "Peinture gouttières",
+    metaTitle: "Peinture de gouttières à Strasbourg | STEIS Ismaël",
+    description: "Harmonisez vos gouttières avec votre façade tout en les protégeant durablement à Strasbourg et environs.",
+    longDescription: [
+      "Notre service de peinture de gouttières permet d'harmoniser vos systèmes d'évacuation d'eau pluviale avec l'esthétique générale de votre façade.",
+      "Nous préparons soigneusement les surfaces (nettoyage, dégraissage, traitement anti-corrosion) avant d'appliquer des peintures spécifiques pour gouttières.",
+      "Notre intervention apporte non seulement une amélioration esthétique mais aussi une protection supplémentaire contre la rouille et les agressions extérieures."
+    ],
+    benefits: [
+      "Harmonie visuelle avec le reste de votre façade",
+      "Protection renforcée contre la corrosion",
+      "Allongement de la durée de vie de vos gouttières",
+      "Large choix de couleurs pour une personnalisation optimale",
+      "Application par des professionnels expérimentés"
+    ],
+    image: "/lovable-uploads/13552a73-39cc-49c2-ae6a-eaac0d810170.png"
   }
 };
 
