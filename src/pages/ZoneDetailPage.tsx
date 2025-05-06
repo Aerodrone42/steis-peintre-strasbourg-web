@@ -42,7 +42,11 @@ const ZoneDetailPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <ZoneCertifications />
-            <ZoneContent city={zone.city} content={zone.content} />
+            <ZoneContent 
+              city={zone.city} 
+              content={zone.content}
+              surroundingCities={zone.surroundingCities} 
+            />
             <ZoneGallery city={zone.city} images={zone.images} />
           </div>
           
