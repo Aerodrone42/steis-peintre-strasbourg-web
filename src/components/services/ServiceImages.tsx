@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Gallery } from 'lucide-react';
 
 interface ServiceImagesProps {
   title: string;
@@ -19,20 +20,23 @@ const ServiceImages: React.FC<ServiceImagesProps> = ({ title, additionalImages }
   if (!additionalImages || additionalImages.length === 0) return null;
   
   return (
-    <Card className="mt-6 shadow-md border-steis-100">
+    <Card className="mt-6 shadow-md border-steis-100 bg-white overflow-hidden">
       <CardContent className="p-6">
-        <h3 className="text-xl font-semibold text-steis mb-4">Nos réalisations</h3>
+        <div className="flex items-center mb-4">
+          <Gallery className="h-5 w-5 text-steis-500 mr-2" />
+          <h3 className="text-xl font-semibold text-steis">Nos réalisations</h3>
+        </div>
         
         <Carousel className="w-full">
           <CarouselContent>
             {additionalImages.map((image, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
-                  <AspectRatio ratio={4/3} className="bg-steis-100 overflow-hidden rounded-lg">
+                  <AspectRatio ratio={16/9} className="bg-steis-100 overflow-hidden rounded-lg">
                     <img 
                       src={image} 
                       alt={`${title} - réalisation ${index + 1}`}
-                      className="w-full h-full object-cover" 
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
                     />
                   </AspectRatio>
                 </div>

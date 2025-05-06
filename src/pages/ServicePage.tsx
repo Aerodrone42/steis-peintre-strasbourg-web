@@ -37,17 +37,28 @@ const ServicePage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="bg-steis-50 py-12">
+      {/* Hero section with gradient background */}
+      <div className="bg-gradient-to-b from-steis-500 to-steis-700 text-white py-16">
         <div className="container">
-          <h1 className="text-3xl md:text-4xl font-bold text-steis mb-4">{service.title}</h1>
-          <p className="text-lg text-gray-700 mb-8 max-w-3xl">{service.description}</p>
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">{service.title}</h1>
+            <p className="text-lg md:text-xl opacity-90 mb-6">{service.description}</p>
+            <div className="flex justify-center space-x-4">
+              <Button asChild className="bg-white hover:bg-white/90 text-steis-700 border-0">
+                <Link to="/contact">Demander un devis</Link>
+              </Button>
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+                <a href="tel:0780233098">Nous appeler</a>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="container py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main content - 7 columns */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-8">
             {/* Hero Image */}
             <Card className="overflow-hidden border-steis-100 shadow-md">
               <AspectRatio ratio={16/9}>
@@ -64,7 +75,7 @@ const ServicePage: React.FC = () => {
           </div>
           
           {/* Sidebar - 5 columns */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-8">
             <ServiceImages title={service.title} additionalImages={service.additionalImages} />
             <BeforeAfterGallery beforeAfterImages={[]} title={service.title} />
             <ServiceAreas areas={[]} />
@@ -77,5 +88,8 @@ const ServicePage: React.FC = () => {
     </Layout>
   );
 };
+
+// Adding Button import
+import { Button } from '@/components/ui/button';
 
 export default ServicePage;
