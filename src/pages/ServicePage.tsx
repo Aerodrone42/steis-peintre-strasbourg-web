@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import NotFound from './NotFound';
-import { Construction, Hammer, Wrench } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -38,16 +37,16 @@ const ServicePage: React.FC = () => {
   return (
     <Layout>
       {/* Hero section with gradient background */}
-      <div className="bg-gradient-to-b from-steis-500 to-steis-700 text-white py-16">
-        <div className="container">
+      <div className="bg-gradient-to-b from-steis-500 to-steis-700 text-white py-20">
+        <div className="container max-w-6xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">{service.title}</h1>
-            <p className="text-lg md:text-xl opacity-90 mb-6">{service.description}</p>
-            <div className="flex justify-center space-x-4">
-              <Button asChild className="bg-white hover:bg-white/90 text-steis-700 border-0">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{service.title}</h1>
+            <p className="text-lg md:text-xl opacity-95 mb-8 leading-relaxed">{service.description}</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button asChild size="lg" className="bg-white hover:bg-white/90 text-steis-700 border-0">
                 <Link to="/contact">Demander un devis</Link>
               </Button>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
                 <a href="tel:0780233098">Nous appeler</a>
               </Button>
             </div>
@@ -55,12 +54,12 @@ const ServicePage: React.FC = () => {
         </div>
       </div>
 
-      <div className="container py-12">
+      <div className="container max-w-6xl mx-auto py-16 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main content - 7 columns */}
           <div className="lg:col-span-7 space-y-8">
             {/* Hero Image */}
-            <Card className="overflow-hidden border-steis-100 shadow-md">
+            <Card className="overflow-hidden border-steis-100 shadow-lg">
               <AspectRatio ratio={16/9}>
                 <img 
                   src={service.image} 

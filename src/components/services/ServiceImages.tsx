@@ -20,7 +20,7 @@ const ServiceImages: React.FC<ServiceImagesProps> = ({ title, additionalImages }
   if (!additionalImages || additionalImages.length === 0) return null;
   
   return (
-    <Card className="mt-6 shadow-md border-steis-100 bg-white overflow-hidden">
+    <Card className="shadow-md border-steis-100 bg-white overflow-hidden">
       <CardContent className="p-6">
         <div className="flex items-center mb-4">
           <GalleryHorizontal className="h-5 w-5 text-steis-500 mr-2" />
