@@ -54,7 +54,7 @@ const ServicePage: React.FC = () => {
                 <Button asChild size="lg" className="bg-steis-500 hover:bg-steis-600 text-white border-0">
                   <Link to="/contact">Demander un devis gratuit</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                <Button asChild variant="outline" size="lg" className="bg-white text-steis-700 hover:bg-white/90 border-white">
                   <a href="tel:0780233098">07 80 23 30 98</a>
                 </Button>
               </div>
