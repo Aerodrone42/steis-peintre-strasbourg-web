@@ -31,6 +31,14 @@ const Hero = () => {
             <Link to="/realisations">Voir nos réalisations</Link>
           </Button>
         </div>
+        
+        <div className="mt-6 bg-white/90 p-3 rounded-lg">
+          <img 
+            src="/lovable-uploads/24c1361f-b3c3-4c80-86aa-9f0f47b3ef6b.png" 
+            alt="Certifications: Urgence 24h/24 & 7j/7, Garantie Décennale, RGE Qualibat, Artisan" 
+            className="h-14 md:h-16 w-auto"
+          />
+        </div>
       </div>
     </div>
   );

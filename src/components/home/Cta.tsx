@@ -10,10 +10,17 @@ const Cta = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Prêt à transformer votre espace ?</h2>
-            <p className="text-lg opacity-90">
+            <p className="text-lg opacity-90 mb-4">
               Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé. 
               Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions.
             </p>
+            <div className="p-2 bg-white rounded-lg inline-block">
+              <img 
+                src="/lovable-uploads/24c1361f-b3c3-4c80-86aa-9f0f47b3ef6b.png" 
+                alt="Certifications: Urgence 24h/24 & 7j/7, Garantie Décennale, RGE Qualibat, Artisan" 
+                className="h-10 w-auto"
+              />
+            </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="bg-white text-steis hover:bg-gray-100">

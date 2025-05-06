@@ -26,13 +26,20 @@ const Footer = () => {
               Entreprise de peinture et ravalement professionnelle intervenant à Strasbourg 
               et dans un rayon de 30km. Qualité et service garantis.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mb-4">
               <a href="https://facebook.com" className="hover:text-steis-200" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook />
               </a>
               <a href="https://instagram.com" className="hover:text-steis-200" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram />
               </a>
+            </div>
+            <div className="p-2 bg-white rounded-lg inline-block">
+              <img 
+                src="/lovable-uploads/24c1361f-b3c3-4c80-86aa-9f0f47b3ef6b.png" 
+                alt="Certifications: Urgence 24h/24 & 7j/7, Garantie Décennale, RGE Qualibat, Artisan" 
+                className="h-10 w-auto"
+              />
             </div>
           </div>
           
