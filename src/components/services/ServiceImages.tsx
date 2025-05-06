@@ -9,7 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Gallery } from 'lucide-react';
+import { GalleryHorizontal } from 'lucide-react';
 
 interface ServiceImagesProps {
   title: string;
@@ -23,7 +23,7 @@ const ServiceImages: React.FC<ServiceImagesProps> = ({ title, additionalImages }
     <Card className="mt-6 shadow-md border-steis-100 bg-white overflow-hidden">
       <CardContent className="p-6">
         <div className="flex items-center mb-4">
-          <Gallery className="h-5 w-5 text-steis-500 mr-2" />
+          <GalleryHorizontal className="h-5 w-5 text-steis-500 mr-2" />
           <h3 className="text-xl font-semibold text-steis">Nos réalisations</h3>
         </div>
         
