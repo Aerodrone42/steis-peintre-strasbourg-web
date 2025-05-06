@@ -96,9 +96,9 @@ const Header = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link to="/realisations">
+                  <Link to="/zones">
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Réalisations
+                      Zones d'intervention
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -161,11 +161,11 @@ const Header = () => {
               </li>
               <li>
                 <Link 
-                  to="/realisations" 
+                  to="/zones" 
                   className="block px-4 py-2 text-steis hover:bg-steis-50 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Réalisations
+                  Zones d'intervention
                 </Link>
               </li>
               <li>
