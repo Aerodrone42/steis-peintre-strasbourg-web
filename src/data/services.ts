@@ -70,6 +70,37 @@ export const services: ServiceData = {
       "Pose de descentes d'eau pluviale",
       "Habillage de lucarnes et de cheminées",
       "Solutions adaptées à tous types de toitures"
+    ],
+    additionalImages: [
+      "/lovable-uploads/0cf178bf-fac3-49ba-91cd-446fada4bb64.png",
+      "/lovable-uploads/ed1b0f3e-dd2d-479a-b97b-66b854d29fb3.png",
+      "/lovable-uploads/ca6734e9-8f52-4998-bd58-e6d76a0468f0.png",
+      "/lovable-uploads/381868a4-120a-4f94-b9e3-bac0398de61a.png"
+    ],
+    longDescription: "La zinguerie est un élément essentiel de votre toiture, assurant l'évacuation des eaux pluviales et protégeant votre bâtiment contre les infiltrations. Chez STEIS Ismaël, nous proposons des solutions de zinguerie sur mesure, fabriquées et installées par des professionnels qualifiés. Notre expertise couvre l'installation de gouttières, descentes d'eau, habillages de cheminée, noues, et autres éléments en zinc, cuivre ou aluminium.",
+    additionalContent: [
+      {
+        title: "Notre savoir-faire en zinguerie",
+        description: "Avec plus de 15 ans d'expérience, notre équipe maîtrise toutes les techniques de zinguerie traditionnelle et moderne pour vous offrir des solutions durables et esthétiques.",
+        content: [
+          "Fabrication sur mesure d'éléments de zinguerie adaptés à votre toiture",
+          "Installation professionnelle respectant les normes en vigueur",
+          "Utilisation de matériaux de haute qualité (zinc, cuivre, aluminium)",
+          "Finitions soignées pour une intégration parfaite à votre bâtiment",
+          "Solutions personnalisées pour tous types d'architecture"
+        ]
+      },
+      {
+        title: "Pourquoi choisir nos services de zinguerie ?",
+        description: "Une zinguerie de qualité est essentielle pour préserver l'intégrité de votre toiture et de vos murs. Elle assure une évacuation efficace des eaux pluviales et protège votre bâtiment contre les dégâts d'eau.",
+        content: [
+          "Protection efficace contre les infiltrations d'eau et l'humidité",
+          "Prévention des dommages structurels liés aux écoulements d'eau mal maîtrisés",
+          "Amélioration de l'esthétique de votre toiture avec des finitions soignées",
+          "Durabilité exceptionnelle grâce à des matériaux de qualité",
+          "Valorisation de votre patrimoine immobilier"
+        ]
+      }
     ]
   },
   "charpente": {
