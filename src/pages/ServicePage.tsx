@@ -4,6 +4,8 @@ import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import NotFound from './NotFound';
 import { Construction, Hammer, Wrench } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 // Import service data
 import { services } from '@/data/services';
@@ -43,19 +45,26 @@ const ServicePage: React.FC = () => {
       </div>
 
       <div className="container py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+          {/* Main content - 7 columns */}
+          <div className="lg:col-span-7 space-y-6">
+            {/* Hero Image */}
+            <Card className="overflow-hidden border-steis-100 shadow-md">
+              <AspectRatio ratio={16/9}>
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+              </AspectRatio>
+            </Card>
+            
             <ServiceDetail details={service.details} />
             <ServiceBenefits additionalContent={service.additionalContent} />
           </div>
-          <div>
-            <div className="mb-8">
-              <img 
-                src={service.image} 
-                alt={service.title}
-                className="w-full h-auto rounded-lg shadow-md" 
-              />
-            </div>
+          
+          {/* Sidebar - 5 columns */}
+          <div className="lg:col-span-5 space-y-6">
             <ServiceImages title={service.title} additionalImages={service.additionalImages} />
             <BeforeAfterGallery beforeAfterImages={[]} title={service.title} />
             <ServiceAreas areas={[]} />
