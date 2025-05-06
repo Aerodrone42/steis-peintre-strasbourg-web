@@ -21,7 +21,7 @@ const ServiceCallToAction: React.FC<ServiceCallToActionProps> = ({ serviceTitle 
             Notre équipe intervient rapidement dans toute la région <span className="font-semibold">Alsacienne</span>.
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Button asChild size="lg" className="bg-white hover:bg-white/90 text-steis-700 font-medium text-base border-0">
+            <Button asChild size="lg" className="bg-steis-500 hover:bg-steis-600 text-white font-medium text-base border-0">
               <Link to="/contact">Demander un devis gratuit</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-medium text-base">
