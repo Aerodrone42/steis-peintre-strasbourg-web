@@ -113,6 +113,38 @@ export const services: ServiceData = {
       "Traitement préventif et curatif du bois",
       "Remplacement de pièces de bois endommagées",
       "Solutions sur mesure pour tous types de projets"
+    ],
+    additionalImages: [
+      "/lovable-uploads/43f25ef3-c947-45a0-962b-d2e8aa800cb7.png",
+      "/lovable-uploads/6f335dd9-9268-4c2d-8f3b-89fe894625b2.png",
+      "/lovable-uploads/31549a2f-4c87-4ab1-9522-a4fd4a1836c6.png"
+    ],
+    longDescription: "La charpente est l'élément structurel fondamental de votre toiture, assurant à la fois sa solidité et sa durabilité. Chez STEIS Ismaël, nous mettons notre savoir-faire au service de vos projets de construction ou de rénovation de charpente. Notre équipe de charpentiers qualifiés intervient pour la réalisation, la réparation ou le renforcement de tous types de charpentes, en respectant les techniques traditionnelles et en utilisant des matériaux de qualité.",
+    additionalContent: [
+      {
+        title: "Notre expertise en charpente",
+        description: "Fort de notre expérience dans le domaine, nous maîtrisons toutes les techniques de charpente pour vous offrir des solutions sur mesure, adaptées à vos besoins spécifiques.",
+        content: [
+          "Conception et réalisation de charpentes traditionnelles en bois massif",
+          "Installation de fermettes industrielles pour une solution économique et rapide",
+          "Diagnostic précis de l'état de votre charpente existante",
+          "Traitement du bois contre les insectes xylophages et les champignons",
+          "Renforcement structurel de charpentes anciennes ou endommagées",
+          "Adaptation de solutions techniques respectant l'architecture de votre bâtiment"
+        ]
+      },
+      {
+        title: "Pourquoi choisir notre service de charpente ?",
+        description: "Une charpente bien conçue et solidement réalisée est la garantie d'une toiture durable et d'une habitation sécurisée. Notre approche rigoureuse et notre souci du détail vous assurent un résultat à la hauteur de vos attentes.",
+        content: [
+          "Utilisation exclusive de bois sélectionnés pour leur qualité et leur durabilité",
+          "Respect scrupuleux des normes de construction en vigueur",
+          "Équipe de charpentiers expérimentés et qualifiés",
+          "Garantie décennale sur tous nos travaux de charpente",
+          "Solutions adaptées à tous types de toitures et à tous styles architecturaux",
+          "Devis détaillé et transparent pour une maîtrise totale de votre budget"
+        ]
+      }
     ]
   },
   "peinture-interieure": {
