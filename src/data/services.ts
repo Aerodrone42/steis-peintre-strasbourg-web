@@ -5,13 +5,14 @@ export const services: ServiceData = {
   "renovation-toiture": {
     title: "Rénovation de toiture",
     description: "Restaurez et protégez votre maison avec notre service complet de rénovation de toiture. Nous utilisons des matériaux de qualité pour garantir l'étanchéité et la longévité de votre toit.",
+    longDescription: "La rénovation de toiture est une étape cruciale dans l'entretien de votre patrimoine immobilier. Chez STEIS Ismaël, nous comprenons l'importance d'une toiture saine et durable. Notre approche combine expertise technique, matériaux de qualité et savoir-faire artisanal pour vous offrir des solutions de rénovation adaptées à vos besoins spécifiques. Que votre toit nécessite une réfection complète ou des réparations ciblées, notre équipe d'experts vous accompagne à chaque étape du projet, de l'évaluation initiale à la finition parfaite.",
     image: "/lovable-uploads/d3f82aee-89ee-4ecb-81fc-b5c30b8be216.png",
     details: [
-      "Diagnostic complet de l'état de votre toiture",
-      "Remplacement des tuiles ou ardoises endommagées",
-      "Traitement anti-mousse et imperméabilisant",
-      "Installation de systèmes d'isolation thermique",
-      "Garantie décennale sur tous nos travaux de rénovation"
+      "Diagnostic complet de l'état de votre toiture avec identification précise des problèmes structurels et des zones de faiblesse",
+      "Remplacement des tuiles ou ardoises endommagées par des matériaux de qualité supérieure sélectionnés pour leur durabilité et leur résistance",
+      "Traitement anti-mousse et imperméabilisant pour prolonger la durée de vie de votre toiture et prévenir les infiltrations",
+      "Installation de systèmes d'isolation thermique performants pour réduire vos dépenses énergétiques et améliorer le confort de votre habitation",
+      "Garantie décennale sur tous nos travaux de rénovation pour vous assurer une tranquillité d'esprit à long terme"
     ],
     additionalImages: [
       "/lovable-uploads/80414969-52f6-46e7-8d02-aeb66332648a.png",
@@ -21,35 +22,40 @@ export const services: ServiceData = {
     additionalContent: [
       {
         title: "Notre expertise en rénovation de toiture",
+        description: "STEIS Ismaël possède une expertise reconnue dans le secteur de la couverture et de la rénovation de toitures. Notre maîtrise technique et notre connaissance approfondie des matériaux nous permettent de vous proposer des solutions sur mesure, adaptées à votre toiture et à vos contraintes spécifiques.",
         content: [
-          "Chez STEIS Ismaël, nous sommes spécialisés dans la rénovation complète de toitures pour les maisons résidentielles et les bâtiments commerciaux dans toute la région Alsacienne.",
-          "Notre équipe d'experts qualifiés utilise les meilleures techniques et matériaux pour assurer une finition parfaite et durable à votre toiture.",
-          "Nous intervenons sur tous types de toitures : tuiles, ardoises, zinc, et plus encore, avec une attention particulière aux détails."
+          "Spécialisation dans la rénovation complète de toitures pour les maisons résidentielles et les bâtiments commerciaux dans toute la région Alsacienne, avec une connaissance approfondie des styles architecturaux locaux",
+          "Équipe d'experts certifiés et régulièrement formés aux dernières techniques et innovations du secteur pour garantir des prestations de haute qualité",
+          "Utilisation exclusive de matériaux premium sélectionnés pour leur durabilité, leur résistance aux intempéries et leur qualité esthétique",
+          "Intervention sur tous types de toitures : tuiles mécaniques, tuiles plates, ardoises naturelles ou synthétiques, zinc, cuivre et autres revêtements métalliques",
+          "Respect scrupuleux des normes de construction et des réglementations thermiques en vigueur pour des rénovations conformes et performantes"
         ]
       },
       {
         title: "Notre processus de rénovation",
+        description: "Chez STEIS Ismaël, nous suivons une méthodologie rigoureuse pour chaque projet de rénovation de toiture. Notre approche structurée garantit un travail soigné, des délais respectés et un résultat final qui répond parfaitement à vos attentes.",
         content: [
-          "Évaluation initiale et diagnostic complet de l'état actuel de votre toiture",
-          "Proposition détaillée avec différentes options et matériaux adaptés à votre budget",
-          "Mise en place d'un échafaudage sécurisé et protection des abords de votre propriété",
-          "Retrait des matériaux endommagés et préparation de la structure",
-          "Installation de l'isolation thermique de haute performance si nécessaire",
-          "Pose des nouveaux matériaux de couverture avec soin et précision",
-          "Installation ou rénovation du système d'évacuation des eaux pluviales",
-          "Nettoyage complet du chantier après les travaux"
+          "Évaluation initiale gratuite et diagnostic complet de l'état actuel de votre toiture, avec identification précise des problèmes et de leurs causes",
+          "Proposition détaillée avec différentes options et matériaux adaptés à votre budget, au style architectural de votre bâtiment et à vos préférences esthétiques",
+          "Mise en place d'un échafaudage sécurisé répondant aux normes de sécurité et protection méticuleuse des abords de votre propriété avant le démarrage des travaux",
+          "Retrait soigneux des matériaux endommagés et préparation minutieuse de la structure pour assurer une base solide et durable",
+          "Installation de solutions d'isolation thermique de haute performance pour améliorer l'efficacité énergétique de votre habitation",
+          "Pose des nouveaux matériaux de couverture avec précision et attention aux détails, en particulier pour les jonctions et points sensibles",
+          "Installation ou rénovation du système d'évacuation des eaux pluviales pour une gestion optimale des écoulements",
+          "Nettoyage complet du chantier après les travaux et élimination responsable des déchets dans le respect des normes environnementales"
         ]
       },
       {
         title: "Pourquoi rénover votre toiture ?",
+        description: "La rénovation de votre toiture n'est pas uniquement une question d'esthétique, mais représente un investissement judicieux dans la préservation et la valorisation de votre bien immobilier. Une toiture en bon état est le premier rempart contre les intempéries et contribue significativement à l'efficacité énergétique de votre habitation.",
         content: [
-          "Amélioration de l'isolation thermique et acoustique de votre maison",
-          "Économies significatives sur vos factures d'énergie",
-          "Protection efficace contre les intempéries et prévention des infiltrations d'eau",
-          "Augmentation de la valeur de votre bien immobilier",
-          "Embellissement de l'aspect extérieur de votre propriété",
-          "Respect des normes énergétiques actuelles",
-          "Contribution à la durabilité environnementale avec des matériaux écologiques"
+          "Amélioration significative de l'isolation thermique et acoustique de votre maison pour un confort intérieur optimal en toutes saisons",
+          "Réduction importante des déperditions de chaleur en hiver et protection contre la chaleur excessive en été, générant des économies substantielles sur vos factures d'énergie",
+          "Protection efficace et durable contre les intempéries avec élimination des risques d'infiltrations d'eau qui peuvent causer des dommages structurels coûteux",
+          "Augmentation notable de la valeur marchande de votre bien immobilier, un atout considérable en cas de vente ou de location",
+          "Embellissement spectaculaire de l'aspect extérieur de votre propriété grâce à une toiture neuve qui transforme complètement l'apparence générale du bâtiment",
+          "Mise aux normes énergétiques actuelles de votre habitation, potentiellement éligible à des aides financières ou crédits d'impôts selon la réglementation en vigueur",
+          "Contribution à la durabilité environnementale avec l'utilisation possible de matériaux écologiques et recyclables pour une empreinte carbone réduite"
         ]
       }
     ]

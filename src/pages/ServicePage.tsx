@@ -65,16 +65,65 @@ const ServicePage: React.FC = () => {
 
       <div className="bg-gray-50 py-16">
         <div className="container max-w-6xl mx-auto px-4">
+          <div className="mb-12 max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-steis-700 mb-4">Expertise en {service.title.toLowerCase()}</h2>
+            <p className="text-lg text-gray-700">
+              STEIS Ismaël est votre artisan de confiance en Alsace pour tous vos travaux de {service.title.toLowerCase()}. 
+              Notre équipe qualifiée assure des prestations de qualité pour protéger et valoriser votre patrimoine.
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Main content - 7 columns */}
             <div className="lg:col-span-7 space-y-8">              
-              <ServiceDetail details={service.details} />
+              <ServiceDetail 
+                details={service.details} 
+                longDescription={service.longDescription}
+              />
               <ServiceBenefits additionalContent={service.additionalContent} />
             </div>
             
             {/* Sidebar - 5 columns */}
             <div className="lg:col-span-5 space-y-8">
               <ServiceImages title={service.title} additionalImages={service.additionalImages} />
+              <Card className="shadow-lg border-0 overflow-hidden bg-white rounded-xl">
+                <div className="bg-steis-600 py-4 px-6">
+                  <h3 className="text-2xl font-bold text-white">Pourquoi nous choisir</h3>
+                </div>
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>STEIS Ismaël</strong> est reconnu pour la qualité et la fiabilité de ses services en {service.title.toLowerCase()}. Notre entreprise artisanale offre:
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-steis-600 mr-2">✓</span>
+                        <span>Plus de 15 ans d'expérience dans le domaine</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-steis-600 mr-2">✓</span>
+                        <span>Des matériaux de première qualité</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-steis-600 mr-2">✓</span>
+                        <span>Des artisans qualifiés et minutieux</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-steis-600 mr-2">✓</span>
+                        <span>Garantie décennale sur nos travaux</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-steis-600 mr-2">✓</span>
+                        <span>Devis détaillé gratuit et sans engagement</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-steis-600 mr-2">✓</span>
+                        <span>Service client réactif et à l'écoute</span>
+                      </li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
               <BeforeAfterGallery beforeAfterImages={[]} title={service.title} />
               <ServiceAreas areas={[]} />
               <ServiceFaq faqItems={[]} />

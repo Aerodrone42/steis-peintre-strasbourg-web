@@ -6,6 +6,7 @@ import { CheckCircle } from 'lucide-react';
 interface AdditionalContent {
   title: string;
   content: string[];
+  description?: string;
 }
 
 interface ServiceBenefitsProps {
@@ -23,6 +24,11 @@ const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({ additionalContent }) 
             <h3 className="text-2xl font-bold text-white">{section.title}</h3>
           </div>
           <CardContent className="p-6">
+            {section.description && (
+              <div className="mb-6">
+                <p className="text-gray-700 leading-relaxed">{section.description}</p>
+              </div>
+            )}
             <div className="space-y-6">
               {section.content.map((item, itemIndex) => (
                 <div key={itemIndex} className="flex items-start">

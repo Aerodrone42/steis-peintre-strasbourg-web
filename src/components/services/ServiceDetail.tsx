@@ -5,15 +5,21 @@ import { Check } from 'lucide-react';
 
 interface ServiceDetailProps {
   details: string[];
+  longDescription?: string;
 }
 
-const ServiceDetail: React.FC<ServiceDetailProps> = ({ details }) => {
+const ServiceDetail: React.FC<ServiceDetailProps> = ({ details, longDescription }) => {
   return (
     <Card className="shadow-lg border-0 overflow-hidden bg-white rounded-xl">
       <div className="bg-steis-600 py-4 px-6">
         <h3 className="text-2xl font-bold text-white">Détails du service</h3>
       </div>
       <CardContent className="p-6">
+        {longDescription && (
+          <div className="mb-8">
+            <p className="text-gray-700 leading-relaxed mb-4">{longDescription}</p>
+          </div>
+        )}
         <div className="space-y-6">
           {details.map((paragraph, index) => (
             <div
