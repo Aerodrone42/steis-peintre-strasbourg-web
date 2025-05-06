@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import NotFound from './NotFound';
+import { Helmet } from 'react-helmet';
 
 interface ServiceData {
   [key: string]: {
@@ -13,25 +14,28 @@ interface ServiceData {
     benefits: string[];
     image: string;
     beforeAfterImages?: { before: string; after: string }[];
+    serviceAreas?: string[];
+    faqItems?: { question: string; answer: string }[];
   };
 }
 
 const services: ServiceData = {
   "peinture-interieure": {
     title: "Peinture intérieure",
-    metaTitle: "Services de peinture intérieure à Strasbourg et alentours | STEIS Ismaël",
-    description: "Transformez votre intérieur avec nos services professionnels de peinture intérieure à Strasbourg et ses environs.",
+    metaTitle: "Services professionnels de peinture intérieure à Strasbourg et alentours | STEIS Ismaël",
+    description: "Transformez votre intérieur avec nos services professionnels de peinture intérieure à Strasbourg et ses environs. Devis gratuit et intervention rapide.",
     longDescription: [
-      "Notre service de peinture intérieure transforme vos espaces de vie avec des finitions impeccables et un savoir-faire professionnel.",
-      "Que vous souhaitiez rafraîchir une pièce ou rénover entièrement votre intérieur, nous vous accompagnons dans toutes les étapes de votre projet, du conseil en couleurs jusqu'à la réalisation finale.",
-      "Nous utilisons des peintures de qualité professionnelle, respectueuses de l'environnement et adaptées à chaque type de surface pour garantir un résultat durable et esthétique."
+      "Notre <strong>service de peinture intérieure</strong> transforme vos espaces de vie avec des <strong>finitions impeccables</strong> et un <strong>savoir-faire professionnel</strong> reconnu à <strong>Strasbourg</strong> et dans toute l'<strong>Alsace</strong>.",
+      "Que vous souhaitiez <strong>rafraîchir une pièce</strong> ou <strong>rénover entièrement votre intérieur</strong>, nous vous accompagnons dans toutes les étapes de votre projet, du <strong>conseil en couleurs</strong> jusqu'à la <strong>réalisation finale</strong>. Notre expertise en <strong>peinture décorative</strong> nous permet de répondre à toutes vos attentes.",
+      "Nous utilisons exclusivement des <strong>peintures de qualité professionnelle</strong>, <strong>respectueuses de l'environnement</strong> et adaptées à chaque type de surface pour garantir un <strong>résultat durable</strong> et <strong>esthétique</strong>. Nos <strong>peintres qualifiés</strong> interviennent dans les <strong>appartements</strong>, <strong>maisons individuelles</strong>, <strong>bureaux</strong> et <strong>locaux commerciaux</strong> à <strong>Strasbourg</strong> et dans un rayon de <strong>30 km</strong>.",
+      "Notre entreprise <strong>STEIS Ismaël</strong> s'engage à respecter les délais annoncés et à livrer des travaux de <strong>peinture intérieure</strong> soignés qui valorisent votre patrimoine immobilier. Nos références et la satisfaction de nos clients dans toute la région <strong>Alsacienne</strong> témoignent de notre professionnalisme."
     ],
     benefits: [
-      "Finition impeccable et uniforme",
-      "Conseil personnalisé pour le choix des couleurs et des finitions",
-      "Préparation soignée des surfaces pour une meilleure adhérence",
-      "Protection complète de votre mobilier et de vos sols",
-      "Nettoyage complet du chantier après travaux"
+      "<strong>Finition impeccable et uniforme</strong> grâce à nos techniques professionnelles",
+      "<strong>Conseil personnalisé</strong> pour le choix des couleurs et des finitions adaptées à votre intérieur",
+      "<strong>Préparation soignée des surfaces</strong> pour une meilleure adhérence et durabilité de la peinture",
+      "<strong>Protection complète</strong> de votre mobilier et de vos sols pendant toute la durée des travaux",
+      "<strong>Nettoyage complet du chantier</strong> après travaux pour vous livrer un espace prêt à vivre"
     ],
     image: "/lovable-uploads/a93c114d-cbb4-424b-b11e-7c6afdc0e49c.png",
     beforeAfterImages: [
@@ -43,32 +47,67 @@ const services: ServiceData = {
         before: "/lovable-uploads/01afa244-8bb1-42c3-9ef5-aee37b740513.png",
         after: "/lovable-uploads/b812cbec-f3a8-4e7a-9a72-80d3b0018088.png"
       }
+    ],
+    serviceAreas: [
+      "Strasbourg", "Schiltigheim", "Illkirch-Graffenstaden", "Lingolsheim", "Bischheim", 
+      "Hoenheim", "Ostwald", "Eckbolsheim", "Wolfisheim", "Oberhausbergen", 
+      "Souffelweyersheim", "Reichstett", "Mundolsheim", "La Wantzenau", "Vendenheim"
+    ],
+    faqItems: [
+      {
+        question: "Quel est le délai moyen pour réaliser des travaux de peinture intérieure ?",
+        answer: "Le délai dépend de la surface à peindre et de la complexité du projet. Pour un appartement standard, comptez entre 3 et 5 jours. Nous établissons un planning précis lors du devis pour vous garantir des délais respectés."
+      },
+      {
+        question: "Utilisez-vous des peintures écologiques ?",
+        answer: "Oui, nous proposons une large gamme de peintures écologiques labellisées, faibles en COV, adaptées aux personnes sensibles et respectueuses de l'environnement, tout en garantissant une excellente tenue dans le temps."
+      },
+      {
+        question: "Est-il nécessaire de quitter mon logement pendant les travaux de peinture ?",
+        answer: "Pas nécessairement. Nous organisons notre intervention pour minimiser les désagréments et pouvons travailler pièce par pièce. Nos peintures modernes sont peu odorantes et sèchent rapidement."
+      }
     ]
   },
   "peinture-exterieure": {
     title: "Peinture extérieure",
-    metaTitle: "Services de peinture extérieure à Strasbourg | STEIS Ismaël",
-    description: "Protection et esthétique pour vos façades avec nos services de peinture extérieure dans la région de Strasbourg.",
+    metaTitle: "Services professionnels de peinture extérieure à Strasbourg et environs | STEIS Ismaël",
+    description: "Protection et esthétique pour vos façades avec nos services de peinture extérieure dans la région de Strasbourg. Expertise et qualité garanties.",
     longDescription: [
-      "Notre service de peinture extérieure protège et embellit votre maison contre les intempéries et le vieillissement prématuré.",
-      "Nous réalisons une préparation minutieuse des surfaces (nettoyage, décapage, rebouchage) avant d'appliquer des peintures spécifiquement formulées pour résister aux conditions extérieures.",
-      "Nos artisans expérimentés maîtrisent toutes les techniques et tous les supports extérieurs : façades, boiseries, ferronneries et bien plus encore."
+      "Notre <strong>service de peinture extérieure</strong> protège et embellit votre maison contre les <strong>intempéries</strong> et le <strong>vieillissement prématuré</strong>. Avec plus de 15 ans d'expérience à <strong>Strasbourg</strong> et dans toute l'<strong>Alsace</strong>, nous garantissons un résultat durable et esthétique.",
+      "Nous réalisons une <strong>préparation minutieuse des surfaces</strong> (nettoyage, décapage, rebouchage) avant d'appliquer des <strong>peintures spécifiquement formulées</strong> pour résister aux <strong>conditions extérieures</strong> rigoureuses de la région. Cette étape est cruciale pour assurer l'adhérence et la longévité de la peinture sur vos façades.",
+      "Nos <strong>artisans expérimentés</strong> maîtrisent toutes les techniques et tous les <strong>supports extérieurs</strong> : façades, boiseries, ferronneries et bien plus encore. Chaque projet de <strong>peinture extérieure</strong> à <strong>Strasbourg</strong> et ses environs est traité avec le plus grand soin pour valoriser durablement votre patrimoine immobilier.",
+      "Entreprise <strong>STEIS Ismaël</strong>, nous intervenons dans un rayon de <strong>30 km autour de Strasbourg</strong> pour tous vos projets de <strong>rénovation extérieure</strong> et <strong>ravalement de façade</strong>. Notre garantie décennale vous assure un travail de qualité professionnelle."
     ],
     benefits: [
-      "Protection durable contre les intempéries et les UV",
-      "Amélioration significative de l'aspect esthétique de votre maison",
-      "Valorisation de votre patrimoine immobilier",
-      "Prévention des infiltrations et des dégradations",
-      "Traitement anti-mousse et anti-algues inclus"
+      "<strong>Protection durable</strong> contre les intempéries et les UV, adaptée au climat alsacien",
+      "<strong>Amélioration significative</strong> de l'aspect esthétique de votre maison à Strasbourg",
+      "<strong>Valorisation de votre patrimoine immobilier</strong> dans toute la région strasbourgeoise",
+      "<strong>Prévention des infiltrations</strong> et des dégradations sur le long terme",
+      "<strong>Traitement anti-mousse et anti-algues</strong> inclus pour une durabilité optimale"
     ],
-    image: "/lovable-uploads/2ca76d8e-8e91-4420-ba50-1d828e9d5f54.png"
+    image: "/lovable-uploads/2ca76d8e-8e91-4420-ba50-1d828e9d5f54.png",
+    serviceAreas: [
+      "Strasbourg", "Schiltigheim", "Illkirch-Graffenstaden", "Lingolsheim", "Bischheim", 
+      "Hoenheim", "Ostwald", "Eckbolsheim", "Wolfisheim", "Oberhausbergen", 
+      "Souffelweyersheim", "Reichstett", "Mundolsheim", "La Wantzenau", "Vendenheim"
+    ],
+    faqItems: [
+      {
+        question: "Quelle est la durée de vie d'une peinture extérieure à Strasbourg ?",
+        answer: "Dans la région strasbourgeoise, une peinture extérieure de qualité appliquée par nos soins dure généralement entre 8 et 12 ans selon l'exposition et les conditions climatiques. Nos garanties vous assurent une tranquillité d'esprit."
+      },
+      {
+        question: "Peut-on peindre la façade extérieure en hiver à Strasbourg ?",
+        answer: "Les travaux de peinture extérieure nécessitent des températures supérieures à 5°C et un taux d'humidité contrôlé. En Alsace, nous recommandons d'éviter la période de novembre à mars pour garantir un résultat optimal."
+      }
+    ]
   },
   "crepi-facade-et-muret": {
     title: "Crépi façade et muret",
     metaTitle: "Application de crépi pour façades et murets à Strasbourg | STEIS Ismaël",
     description: "Des finitions esthétiques et durables pour vos façades et murets avec notre service de crépi professionnel à Strasbourg.",
     longDescription: [
-      "Notre service de crépi pour façade et muret offre une solution durable et esthétique pour protéger et embellir vos surfaces extérieures.",
+      "Notre <strong>service de crépi pour façade et muret</strong> offre une solution durable et esthétique pour protéger et embellir vos surfaces extérieures.",
       "Nous maîtrisons différentes techniques d'application et proposons une large gamme de textures et de couleurs pour s'adapter parfaitement à votre style architectural.",
       "Chaque projet débute par une préparation méticuleuse du support, garantissant ainsi une adhérence optimale et une finition impeccable pour des années."
     ],
@@ -86,7 +125,7 @@ const services: ServiceData = {
     metaTitle: "Ravalement de façade professionnel à Strasbourg | STEIS Ismaël",
     description: "Restaurez et protégez l'aspect extérieur de votre bâtiment avec notre service de ravalement de façade à Strasbourg et environs.",
     longDescription: [
-      "Notre service de ravalement de façade comprend le nettoyage, la réparation et la remise en état complète de vos façades pour leur redonner leur éclat d'origine.",
+      "Notre <strong>service de ravalement de façade</strong> comprend le nettoyage, la réparation et la remise en état complète de vos façades pour leur redonner leur éclat d'origine.",
       "Nous traitons tous types de façades (pierre, brique, enduit, béton) avec des techniques adaptées à chaque matériau et à l'état de dégradation.",
       "Au-delà de l'aspect esthétique, nos travaux de ravalement garantissent la pérennité de votre bâtiment en le protégeant efficacement contre les agressions extérieures."
     ],
@@ -110,7 +149,7 @@ const services: ServiceData = {
     metaTitle: "Nettoyage professionnel de toiture à Strasbourg | STEIS Ismaël",
     description: "Prolongez la durée de vie de votre toiture avec notre service de nettoyage professionnel à Strasbourg et dans un rayon de 30 km.",
     longDescription: [
-      "Notre service de nettoyage de toiture élimine efficacement mousses, lichens et débris qui s'accumulent au fil du temps et peuvent endommager votre couverture.",
+      "Notre <strong>service de nettoyage de toiture</strong> élimine efficacement mousses, lichens et débris qui s'accumulent au fil du temps et peuvent endommager votre couverture.",
       "Nous utilisons des techniques adaptées à chaque type de toiture (tuiles, ardoises, zinc) et des produits respectueux de l'environnement pour un résultat optimal.",
       "Après le nettoyage, nous appliquons un traitement hydrofuge et anti-mousse qui protégera durablement votre toiture contre les nouvelles formations végétales."
     ],
@@ -128,7 +167,7 @@ const services: ServiceData = {
     metaTitle: "Nettoyage professionnel de façades à Strasbourg | STEIS Ismaël",
     description: "Redonnez l'éclat d'origine à vos façades avec notre service de nettoyage haute pression à Strasbourg et dans les environs.",
     longDescription: [
-      "Notre service de nettoyage de façade élimine efficacement les salissures, pollutions urbaines, mousses et lichens qui ternissent l'aspect de votre bâtiment.",
+      "Notre <strong>service de nettoyage de façade</strong> élimine efficacement les salissures, pollutions urbaines, mousses et lichens qui ternissent l'aspect de votre bâtiment.",
       "Nous adaptons nos techniques (nettoyage haute pression, hydrogommage, nettoyage vapeur) en fonction du type de façade et de son état pour garantir un nettoyage efficace sans endommager le support.",
       "En complément du nettoyage, nous proposons un traitement préventif qui retarde l'apparition des mousses et des salissures pour une façade propre plus longtemps."
     ],
@@ -146,7 +185,7 @@ const services: ServiceData = {
     metaTitle: "Nettoyage professionnel de dallages à Strasbourg | STEIS Ismaël",
     description: "Redonnez l'éclat du neuf à vos terrasses et allées avec notre service de nettoyage haute pression à Strasbourg.",
     longDescription: [
-      "Notre service de nettoyage de dallage redonne vie à vos terrasses, allées et surfaces extérieures en éliminant toutes les salissures incrustées.",
+      "Notre <strong>service de nettoyage de dallage</strong> redonne vie à vos terrasses, allées et surfaces extérieures en éliminant toutes les salissures incrustées.",
       "Nous intervenons sur tous types de revêtements (pavés, dalles, béton, pierre naturelle) avec des techniques adaptées pour préserver l'intégrité de vos surfaces.",
       "Notre équipe utilise des équipements de nettoyage haute pression professionnels et des produits spécifiques pour un résultat impeccable sans endommager vos revêtements."
     ],
@@ -164,7 +203,7 @@ const services: ServiceData = {
     metaTitle: "Nettoyage de gouttières à Strasbourg | STEIS Ismaël",
     description: "Prévenez les dégâts d'eau avec un entretien régulier de vos gouttières dans la région de Strasbourg.",
     longDescription: [
-      "Notre service de nettoyage de gouttières permet d'éviter les problèmes d'infiltration et de débordement qui peuvent endommager votre toiture et vos façades.",
+      "Notre <strong>service de nettoyage de gouttières</strong> permet d'éviter les problèmes d'infiltration et de débordement qui peuvent endommager votre toiture et vos façades.",
       "Nous procédons à l'élimination complète des feuilles, débris et dépôts qui obstruent le bon écoulement des eaux pluviales dans votre système d'évacuation.",
       "En plus du nettoyage, nous vérifions l'état général de vos gouttières, des fixations et des descentes pour identifier d'éventuels problèmes nécessitant une réparation."
     ],
@@ -182,7 +221,7 @@ const services: ServiceData = {
     metaTitle: "Nettoyage professionnel de murets à Strasbourg | STEIS Ismaël",
     description: "Éliminez mousses et salissures de vos murets pour un aspect impeccable dans la région strasbourgeoise.",
     longDescription: [
-      "Notre service de nettoyage de murets redonne un aspect propre et soigné à vos délimitations extérieures en éliminant verdissures et salissures.",
+      "Notre <strong>service de nettoyage de murets</strong> redonne un aspect propre et soigné à vos délimitations extérieures en éliminant verdissures et salissures.",
       "Nous intervenons sur tous types de murets (pierre, béton, brique) avec des techniques adaptées à chaque matériau pour un nettoyage en profondeur.",
       "Après le nettoyage, nous proposons un traitement hydrofuge et anti-mousse pour prolonger la propreté de vos murets et les protéger des intempéries."
     ],
@@ -200,7 +239,7 @@ const services: ServiceData = {
     metaTitle: "Peinture de boiseries extérieures à Strasbourg | STEIS Ismaël",
     description: "Protégez et embellissez vos boiseries extérieures avec nos traitements spécifiques dans la région de Strasbourg.",
     longDescription: [
-      "Notre service de peinture de boiseries extérieures protège volon, volets, portes et autres éléments en bois contre les agressions climatiques et le vieillissement.",
+      "Notre <strong>service de peinture de boiseries extérieures</strong> protège volon, volets, portes et autres éléments en bois contre les agressions climatiques et le vieillissement.",
       "Nous préparons minutieusement les surfaces (ponçage, décapage si nécessaire) avant d'appliquer des peintures et lasures de qualité professionnelle conçues pour l'extérieur.",
       "Notre expertise permet de valoriser vos éléments en bois tout en leur assurant une protection durable contre les intempéries, les UV et les variations de température."
     ],
@@ -218,7 +257,7 @@ const services: ServiceData = {
     metaTitle: "Peinture de ferronneries à Strasbourg | STEIS Ismaël",
     description: "Préservez vos éléments métalliques de la rouille avec nos peintures spéciales dans la région strasbourgeoise.",
     longDescription: [
-      "Notre service de peinture de ferronneries permet de protéger et d'embellir vos éléments métalliques extérieurs comme les portails, grilles, balcons et garde-corps.",
+      "Notre <strong>service de peinture de ferronneries</strong> permet de protéger et d'embellir vos éléments métalliques extérieurs comme les portails, grilles, balcons et garde-corps.",
       "Nous effectuons une préparation complète des surfaces (brossage, ponçage, traitement anti-rouille) avant d'appliquer des peintures spéciales métal de haute qualité.",
       "Notre savoir-faire garantit une finition impeccable et une protection optimale contre la corrosion, les intempéries et les variations de température."
     ],
@@ -236,7 +275,7 @@ const services: ServiceData = {
     metaTitle: "Peinture de gouttières à Strasbourg | STEIS Ismaël",
     description: "Harmonisez vos gouttières avec votre façade tout en les protégeant durablement à Strasbourg et environs.",
     longDescription: [
-      "Notre service de peinture de gouttières permet d'harmoniser vos systèmes d'évacuation d'eau pluviale avec l'esthétique générale de votre façade.",
+      "Notre <strong>service de peinture de gouttières</strong> permet d'harmoniser vos systèmes d'évacuation d'eau pluviale avec l'esthétique générale de votre façade.",
       "Nous préparons soigneusement les surfaces (nettoyage, dégraissage, traitement anti-corrosion) avant d'appliquer des peintures spécifiques pour gouttières.",
       "Notre intervention apporte non seulement une amélioration esthétique mais aussi une protection supplémentaire contre la rouille et les agressions extérieures."
     ],
@@ -259,7 +298,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
   return (
     <div>
       {service.longDescription.map((paragraph, index) => (
-        <p key={index} className="mb-4 text-gray-700">{paragraph}</p>
+        <p key={index} className="mb-4 text-gray-700" dangerouslySetInnerHTML={{ __html: paragraph }}></p>
       ))}
     </div>
   );
@@ -279,7 +318,7 @@ const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({ service }) => {
             <svg className="h-6 w-6 text-steis flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span>{benefit}</span>
+            <span dangerouslySetInnerHTML={{ __html: benefit }}></span>
           </li>
         ))}
       </ul>
@@ -350,6 +389,54 @@ const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({ beforeAfterImag
   );
 };
 
+interface ServiceAreasProps {
+  areas?: string[];
+}
+
+const ServiceAreas: React.FC<ServiceAreasProps> = ({ areas }) => {
+  if (!areas || areas.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="mt-8 p-6 bg-steis-50 rounded-lg">
+      <h3 className="text-xl font-bold text-steis mb-4">Zones d'intervention</h3>
+      <p className="mb-3">Nous intervenons à <strong>Strasbourg</strong> et dans un rayon de <strong>30 km</strong> incluant :</p>
+      <div className="flex flex-wrap gap-2">
+        {areas.map((area, index) => (
+          <span key={index} className="inline-block bg-white px-3 py-1 text-sm rounded-full shadow-sm">
+            <strong>{area}</strong>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+interface ServiceFaqProps {
+  faqItems?: { question: string; answer: string }[];
+}
+
+const ServiceFaq: React.FC<ServiceFaqProps> = ({ faqItems }) => {
+  if (!faqItems || faqItems.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="mt-8">
+      <h3 className="text-xl font-bold text-steis mb-4">Questions fréquentes</h3>
+      <div className="space-y-4">
+        {faqItems.map((item, index) => (
+          <div key={index} className="border-b border-gray-200 pb-4">
+            <h4 className="font-bold mb-2">{item.question}</h4>
+            <p className="text-gray-700">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const ServicePage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const service = serviceId ? services[serviceId] : null;
@@ -357,6 +444,8 @@ const ServicePage = () => {
   useEffect(() => {
     if (service) {
       document.title = service.metaTitle;
+      // Scroll to top when service page changes
+      window.scrollTo(0, 0);
     }
   }, [service]);
 
@@ -366,6 +455,13 @@ const ServicePage = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{service.metaTitle}</title>
+        <meta name="description" content={service.description} />
+        <meta name="keywords" content={`${service.title}, STEIS Ismaël, Strasbourg, Alsace, peinture professionnelle, artisan peintre`} />
+        <link rel="canonical" href={`https://steisismael.com/services/${serviceId}`} />
+      </Helmet>
+      
       <div className="bg-steis-50 py-12">
         <div className="container">
           <h1 className="text-3xl md:text-4xl font-bold text-steis mb-4">{service.title}</h1>
@@ -383,6 +479,23 @@ const ServicePage = () => {
           <div>
             <ServiceImages service={service} />
             <BeforeAfterGallery beforeAfterImages={service.beforeAfterImages} title={service.title} />
+            <ServiceAreas areas={service.serviceAreas} />
+            <ServiceFaq faqItems={service.faqItems} />
+          </div>
+        </div>
+        
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-steis mb-4">Vous avez un projet de {service.title.toLowerCase()} à <strong>Strasbourg</strong> ou dans les environs ?</h2>
+            <p className="mb-6 max-w-3xl mx-auto">Contactez <strong>STEIS Ismaël</strong>, votre <strong>artisan peintre professionnel</strong> pour obtenir un <strong>devis gratuit</strong> et personnalisé. Notre équipe intervient rapidement dans toute la région <strong>Alsacienne</strong>.</p>
+            <div className="flex justify-center">
+              <Button asChild className="bg-steis hover:bg-steis-600 mr-4">
+                <Link to="/contact">Demander un devis</Link>
+              </Button>
+              <Button asChild variant="outline" className="border-steis text-steis hover:bg-steis hover:text-white">
+                <a href="tel:0780233098">Nous appeler</a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
