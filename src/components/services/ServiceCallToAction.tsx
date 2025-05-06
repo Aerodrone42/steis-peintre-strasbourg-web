@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Phone } from 'lucide-react';
+import { PhoneCall } from 'lucide-react';
 
 interface ServiceCallToActionProps {
   serviceTitle: string;
@@ -24,9 +24,9 @@ const ServiceCallToAction: React.FC<ServiceCallToActionProps> = ({ serviceTitle 
             <Button asChild size="lg" className="bg-steis-500 hover:bg-steis-600 text-white font-medium text-base border-0">
               <Link to="/contact">Demander un devis gratuit</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-medium text-base">
+            <Button asChild size="lg" className="bg-white hover:bg-white/90 text-steis-700 font-medium text-base">
               <a href="tel:0780233098" className="flex items-center justify-center">
-                <Phone className="mr-2 h-5 w-5" />
+                <PhoneCall className="mr-2 h-5 w-5" />
                 07 80 23 30 98
               </a>
             </Button>
