@@ -98,7 +98,7 @@ const services: ServiceData = {
       "Valorisation immédiate de votre bien immobilier",
       "Amélioration de l'isolation thermique de votre habitation"
     ],
-    image: "/lovable-uploads/28bc4eb4-17fc-4b41-871a-19502babb076.png",
+    image: "/lovable-uploads/ffeec714-7554-4b88-b00a-7457b9de52a7.png",
     beforeAfterImages: [
       {
         before: "/lovable-uploads/5b5784ac-182c-4513-9fff-3a5bb5b051ec.png",
