@@ -3,9 +3,21 @@ import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import NotFound from './NotFound';
-import { Helmet } from 'react-helmet';
+// Using document.title directly instead of react-helmet for now
+// to avoid build issues
 
-const services = {
+interface ServiceDetail {
+  title: string;
+  description: string;
+  image: string;
+  details: string[];
+}
+
+interface ServiceData {
+  [key: string]: ServiceDetail;
+}
+
+const services: ServiceData = {
   "peinture-interieure": {
     title: "Peinture intérieure",
     description: "Transformez votre intérieur avec nos services de peinture de qualité. Nous offrons une large gamme de couleurs et de finitions pour personnaliser chaque pièce selon vos goûts.",
@@ -140,7 +152,11 @@ const services = {
   },
 };
 
-const ServiceDetail = ({ service }) => {
+interface ServiceDetailProps {
+  service: ServiceDetail;
+}
+
+const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
   return (
     <div>
       {service.details.map((paragraph, index) => (
@@ -155,7 +171,7 @@ const ServiceDetail = ({ service }) => {
   );
 };
 
-const ServiceBenefits = ({ service }) => {
+const ServiceBenefits: React.FC<ServiceDetailProps> = ({ service }) => {
   return (
     <div>
       {/* Add your service benefits component here */}
@@ -163,7 +179,7 @@ const ServiceBenefits = ({ service }) => {
   );
 };
 
-const ServiceImages = ({ service }) => {
+const ServiceImages: React.FC<ServiceDetailProps> = ({ service }) => {
   return (
     <div>
       {/* Add your service images component here */}
@@ -171,7 +187,12 @@ const ServiceImages = ({ service }) => {
   );
 };
 
-const BeforeAfterGallery = ({ beforeAfterImages, title }) => {
+interface BeforeAfterGalleryProps {
+  beforeAfterImages: any[];
+  title: string;
+}
+
+const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({ beforeAfterImages, title }) => {
   return (
     <div>
       {/* Add your before/after gallery component here */}
@@ -179,7 +200,11 @@ const BeforeAfterGallery = ({ beforeAfterImages, title }) => {
   );
 };
 
-const ServiceAreas = ({ areas }) => {
+interface ServiceAreasProps {
+  areas: string[];
+}
+
+const ServiceAreas: React.FC<ServiceAreasProps> = ({ areas }) => {
   return (
     <div>
       {/* Add your service areas component here */}
@@ -187,7 +212,11 @@ const ServiceAreas = ({ areas }) => {
   );
 };
 
-const ServiceFaq = ({ faqItems }) => {
+interface ServiceFaqProps {
+  faqItems: any[];
+}
+
+const ServiceFaq: React.FC<ServiceFaqProps> = ({ faqItems }) => {
   return (
     <div>
       {/* Add your service FAQ component here */}
@@ -195,7 +224,7 @@ const ServiceFaq = ({ faqItems }) => {
   );
 };
 
-const ServicePage = () => {
+const ServicePage: React.FC = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const service = serviceId ? services[serviceId as keyof typeof services] : null;
 
@@ -213,12 +242,7 @@ const ServicePage = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{`STEIS Ismaël - ${service.title}`}</title>
-        <meta name="description" content={service.description} />
-        <meta name="keywords" content={`${service.title}, STEIS Ismaël, Strasbourg, Alsace, peinture professionnelle, artisan peintre`} />
-        <link rel="canonical" href={`https://steisismael.com/services/${serviceId}`} />
-      </Helmet>
+      {/* SEO metadata is being set in the useEffect above */}
       
       <div className="bg-steis-50 py-12">
         <div className="container">
