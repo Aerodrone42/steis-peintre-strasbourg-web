@@ -51,7 +51,7 @@ const ServicePage: React.FC = () => {
               <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">{service.title}</h1>
               <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">{service.description}</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button asChild size="lg" className="bg-white hover:bg-white/90 text-steis-700 border-0">
+                <Button asChild size="lg" className="bg-steis-500 hover:bg-steis-600 text-white border-0">
                   <Link to="/contact">Demander un devis gratuit</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
