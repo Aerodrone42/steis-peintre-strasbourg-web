@@ -140,13 +140,70 @@ const services = {
   },
 };
 
+const ServiceDetail = ({ service }) => {
+  return (
+    <div>
+      {service.details.map((paragraph, index) => (
+        <p
+          key={index}
+          className="mb-4 text-gray-700"
+        >
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  );
+};
+
+const ServiceBenefits = ({ service }) => {
+  return (
+    <div>
+      {/* Add your service benefits component here */}
+    </div>
+  );
+};
+
+const ServiceImages = ({ service }) => {
+  return (
+    <div>
+      {/* Add your service images component here */}
+    </div>
+  );
+};
+
+const BeforeAfterGallery = ({ beforeAfterImages, title }) => {
+  return (
+    <div>
+      {/* Add your before/after gallery component here */}
+    </div>
+  );
+};
+
+const ServiceAreas = ({ areas }) => {
+  return (
+    <div>
+      {/* Add your service areas component here */}
+    </div>
+  );
+};
+
+const ServiceFaq = ({ faqItems }) => {
+  return (
+    <div>
+      {/* Add your service FAQ component here */}
+    </div>
+  );
+};
+
 const ServicePage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
-  const service = serviceId ? services[serviceId] : null;
+  const service = serviceId ? services[serviceId as keyof typeof services] : null;
 
   useEffect(() => {
     if (service) {
       document.title = `STEIS Ismaël - ${service.title}`;
+      // Scroll to top when service page changes
+      window.scrollTo(0, 0);
     }
   }, [service]);
 
@@ -159,32 +216,46 @@ const ServicePage = () => {
       <Helmet>
         <title>{`STEIS Ismaël - ${service.title}`}</title>
         <meta name="description" content={service.description} />
-        <meta property="og:title" content={`STEIS Ismaël - ${service.title}`} />
-        <meta property="og:description" content={service.description} />
-        <meta property="og:image" content={service.image} />
+        <meta name="keywords" content={`${service.title}, STEIS Ismaël, Strasbourg, Alsace, peinture professionnelle, artisan peintre`} />
+        <link rel="canonical" href={`https://steisismael.com/services/${serviceId}`} />
       </Helmet>
-      <div className="container py-12">
-        <div className="mb-8">
-          <Link to="/services" className="text-steis hover:text-steis-600 inline-flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-left mr-2"><path d="M12 19V5M5 12l7-7M5 12l7 7"/></svg>
-            Retour aux services
-          </Link>
+      
+      <div className="bg-steis-50 py-12">
+        <div className="container">
+          <h1 className="text-3xl md:text-4xl font-bold text-steis mb-4">{service.title}</h1>
+          <p className="text-lg text-gray-700 mb-8 max-w-3xl">{service.description}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      </div>
+
+      <div className="container py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h1 className="text-3xl font-bold text-steis mb-4">{service.title}</h1>
-            <p className="text-gray-700 mb-6">{service.description}</p>
-            <ul className="list-disc list-inside text-gray-700 mb-6">
-              {service.details.map((detail, index) => (
-                <li key={index}>{detail}</li>
-              ))}
-            </ul>
-            <Button asChild className="bg-steis hover:bg-steis-600">
-              <Link to="/contact">Demander un devis</Link>
-            </Button>
+            <ServiceDetail service={service} />
+            <ServiceBenefits service={service} />
           </div>
           <div>
-            <img src={service.image} alt={service.title} className="w-full rounded-lg shadow-md" />
+            <ServiceImages service={service} />
+            <BeforeAfterGallery beforeAfterImages={[]} title={service.title} />
+            <ServiceAreas areas={[]} />
+            <ServiceFaq faqItems={[]} />
+          </div>
+        </div>
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-steis mb-4">
+              Vous avez un projet de {service.title.toLowerCase()} à <strong>Strasbourg</strong> ou dans les environs ?
+            </h2>
+            <p className="mb-6 max-w-3xl mx-auto">
+              Contactez <strong>STEIS Ismaël</strong>, votre <strong>artisan peintre professionnel</strong> pour obtenir un <strong>devis gratuit</strong> et personnalisé. Notre équipe intervient rapidement dans toute la région <strong>Alsacienne</strong>.
+            </p>
+            <div className="flex justify-center">
+              <Button asChild className="bg-steis hover:bg-steis-600 mr-4">
+                <Link to="/contact">Demander un devis</Link>
+              </Button>
+              <Button asChild variant="outline" className="border-steis text-steis hover:bg-steis hover:text-white">
+                <a href="tel:0780233098">Nous appeler</a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
