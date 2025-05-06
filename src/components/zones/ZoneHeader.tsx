@@ -10,16 +10,53 @@ interface ZoneHeaderProps {
 }
 
 const ZoneHeader: React.FC<ZoneHeaderProps> = ({ city, surroundingCities, metaDescription, metaKeywords }) => {
+  // Créer un titre plus descriptif et accrocheur pour le SEO
+  const pageTitle = `Artisan Peintre & Couvreur STEIS Ismaël à ${city} | Services professionnels`;
+  
   return (
     <>
       <Helmet>
-        <title>STEIS Ismaël | Artisan à {city} et ses environs</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={metaKeywords} />
-        <meta property="og:title" content={`STEIS Ismaël | Services à ${city} et alentours`} />
+        <meta property="og:title" content={`STEIS Ismaël | Services professionnels à ${city} et alentours`} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="fr_FR" />
+        <link rel="canonical" href={`https://www.steis-artisan.fr/zones/${city.toLowerCase().replace(/\s+/g, '-')}`} />
+        
+        {/* Schema.org JSON-LD structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": `STEIS Ismaël - Artisan à ${city}`,
+            "description": metaDescription,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": city,
+              "addressRegion": "Alsace",
+              "addressCountry": "FR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates"
+            },
+            "url": `https://www.steis-artisan.fr/zones/${city.toLowerCase().replace(/\s+/g, '-')}`,
+            "telephone": "+33XXXXXXXXXX",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "18:00"
+            },
+            "sameAs": [
+              "https://www.facebook.com/steisismaelartisan/",
+              "https://www.instagram.com/steisismaelartisan/"
+            ],
+            "priceRange": "€€",
+            "servesCuisine": "Services d'artisanat - Peinture, Couverture, Façades"
+          })}
+        </script>
       </Helmet>
       
       <div className="bg-steis-600 py-16 md:py-24">

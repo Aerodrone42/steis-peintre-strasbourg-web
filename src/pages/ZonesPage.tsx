@@ -9,9 +9,30 @@ const ZonesPage: React.FC = () => {
   return (
     <Layout>
       <Helmet>
-        <title>STEIS Ismaël | Zones d'intervention en Alsace</title>
-        <meta name="description" content="Découvrez les zones d'intervention de STEIS Ismaël, artisan peintre et couvreur, dans toute l'Alsace. Services de qualité à Strasbourg et sa région." />
-        <meta name="keywords" content="zones intervention, artisan peintre alsace, couvreur strasbourg, peintre bas-rhin, ravalement façade alsace" />
+        <title>STEIS Ismaël | Zones d'intervention en Alsace - Artisan Peintre & Couvreur</title>
+        <meta name="description" content="Découvrez les zones d'intervention de STEIS Ismaël, artisan peintre et couvreur qualifié dans toute l'Alsace. Services de qualité pour peinture, toiture et façade à Strasbourg et sa région." />
+        <meta name="keywords" content="zones intervention, artisan peintre alsace, couvreur strasbourg, peintre bas-rhin, ravalement façade alsace, toiture alsace, rénovation façade" />
+        <link rel="canonical" href="https://www.steis-artisan.fr/zones" />
+        
+        {/* Schema.org JSON-LD structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Zones d'intervention - STEIS Ismaël",
+            "description": "Découvrez les zones d'intervention de STEIS Ismaël, artisan peintre et couvreur dans toute l'Alsace.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "STEIS Ismaël",
+              "description": "Artisan peintre et couvreur en Alsace",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Alsace",
+                "addressCountry": "FR"
+              }
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="bg-steis-600 py-16 md:py-24">
@@ -37,7 +58,7 @@ const ZonesPage: React.FC = () => {
               <div className="h-48 overflow-hidden">
                 <img 
                   src={zone.images[0]} 
-                  alt={`STEIS Ismaël intervient à ${zone.city}`}
+                  alt={`STEIS Ismaël intervient à ${zone.city} - Travaux de peinture et toiture`}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>

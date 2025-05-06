@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Layout from '@/components/layout/Layout';
 import ZoneHeader from '@/components/zones/ZoneHeader';
 import ZoneCertifications from '@/components/zones/ZoneCertifications';
@@ -19,8 +20,17 @@ const ZoneDetailPage: React.FC = () => {
     return <Navigate to="/zones" />;
   }
 
+  // Pour une meilleure indexation, créer un titre et une description plus précis
+  const pageTitle = `STEIS Ismaël | Artisan Peintre & Couvreur à ${zone.city} (${zone.surroundingCities[0]}, ${zone.surroundingCities[1]}...)`;
+  const canonicalUrl = `https://www.steis-artisan.fr/zones/${zoneId}`;
+
   return (
     <Layout>
+      {/* Ajout d'un Helmet spécifique pour cette page en plus de celui du ZoneHeader */}
+      <Helmet>
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
+      
       <ZoneHeader 
         city={zone.city}
         surroundingCities={zone.surroundingCities}
