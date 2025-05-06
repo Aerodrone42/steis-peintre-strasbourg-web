@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Couleurs de l'entreprise
+				steis: {
+					DEFAULT: '#002b4c',
+					50: '#e6eef4',
+					100: '#ccdde9',
+					200: '#99bbd3',
+					300: '#6699bd',
+					400: '#3377a7', 
+					500: '#002b4c',
+					600: '#002243',
+					700: '#001a3a',
+					800: '#001331',
+					900: '#000c28',
+					950: '#000514',
 				}
 			},
 			borderRadius: {
