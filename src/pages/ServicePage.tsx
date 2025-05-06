@@ -1,8 +1,10 @@
+
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import NotFound from './NotFound';
+import { Roof, Tool, Hammer } from 'lucide-react';
 // Using document.title directly instead of react-helmet for now
 // to avoid build issues
 
@@ -18,6 +20,42 @@ interface ServiceData {
 }
 
 const services: ServiceData = {
+  "renovation-toiture": {
+    title: "Rénovation de toiture",
+    description: "Restaurez et protégez votre maison avec notre service complet de rénovation de toiture. Nous utilisons des matériaux de qualité pour garantir l'étanchéité et la longévité de votre toit.",
+    image: "/lovable-uploads/d3f82aee-89ee-4ecb-81fc-b5c30b8be216.png",
+    details: [
+      "Diagnostic complet de l'état de votre toiture",
+      "Remplacement des tuiles ou ardoises endommagées",
+      "Traitement anti-mousse et imperméabilisant",
+      "Installation de systèmes d'isolation thermique",
+      "Garantie décennale sur tous nos travaux de rénovation"
+    ]
+  },
+  "zinguerie": {
+    title: "Zinguerie",
+    description: "Nos services de zinguerie professionnels assurent l'évacuation efficace des eaux pluviales et protègent votre maison contre les infiltrations. Gouttières, descentes et habillages en zinc de qualité.",
+    image: "/lovable-uploads/208d4b56-1a0a-4fd8-b504-6f612e7fdaa4.png",
+    details: [
+      "Installation et réparation de gouttières en zinc, cuivre ou aluminium",
+      "Fabrication sur mesure d'éléments de zinguerie",
+      "Pose de descentes d'eau pluviale",
+      "Habillage de lucarnes et de cheminées",
+      "Solutions adaptées à tous types de toitures"
+    ]
+  },
+  "charpente": {
+    title: "Charpente",
+    description: "Confiez la structure de votre toit à nos experts en charpente. Que ce soit pour une réparation, un renforcement ou une nouvelle construction, nous garantissons un travail de qualité et durable.",
+    image: "/lovable-uploads/867342b0-a34c-487f-956b-48f712d6fa8c.png",
+    details: [
+      "Réparation et renforcement de charpentes existantes",
+      "Construction de charpentes traditionnelles ou industrielles",
+      "Traitement préventif et curatif du bois",
+      "Remplacement de pièces de bois endommagées",
+      "Solutions sur mesure pour tous types de projets"
+    ]
+  },
   "peinture-interieure": {
     title: "Peinture intérieure",
     description: "Transformez votre intérieur avec nos services de peinture de qualité. Nous offrons une large gamme de couleurs et de finitions pour personnaliser chaque pièce selon vos goûts.",
@@ -258,6 +296,13 @@ const ServicePage: React.FC = () => {
             <ServiceBenefits service={service} />
           </div>
           <div>
+            <div className="mb-8">
+              <img 
+                src={service.image} 
+                alt={service.title}
+                className="w-full h-auto rounded-lg shadow-md" 
+              />
+            </div>
             <ServiceImages service={service} />
             <BeforeAfterGallery beforeAfterImages={[]} title={service.title} />
             <ServiceAreas areas={[]} />
@@ -270,7 +315,7 @@ const ServicePage: React.FC = () => {
               Vous avez un projet de {service.title.toLowerCase()} à <strong>Strasbourg</strong> ou dans les environs ?
             </h2>
             <p className="mb-6 max-w-3xl mx-auto">
-              Contactez <strong>STEIS Ismaël</strong>, votre <strong>artisan peintre professionnel</strong> pour obtenir un <strong>devis gratuit</strong> et personnalisé. Notre équipe intervient rapidement dans toute la région <strong>Alsacienne</strong>.
+              Contactez <strong>STEIS Ismaël</strong>, votre <strong>artisan professionnel</strong> pour obtenir un <strong>devis gratuit</strong> et personnalisé. Notre équipe intervient rapidement dans toute la région <strong>Alsacienne</strong>.
             </p>
             <div className="flex justify-center">
               <Button asChild className="bg-steis hover:bg-steis-600 mr-4">

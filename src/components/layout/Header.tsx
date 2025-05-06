@@ -6,15 +6,22 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 
 const services = [
+  // Services de couverture
+  { name: "Rénovation de toiture", path: "/services/renovation-toiture" },
+  { name: "Zinguerie", path: "/services/zinguerie" },
+  { name: "Charpente", path: "/services/charpente" },
+  // Services de peinture
   { name: "Peinture intérieure", path: "/services/peinture-interieure" },
   { name: "Peinture extérieure", path: "/services/peinture-exterieure" },
   { name: "Crépi façade et muret", path: "/services/crepi-facade-et-muret" },
   { name: "Ravalement de façade", path: "/services/ravalement-de-facade" },
+  // Services de nettoyage
   { name: "Nettoyage toiture", path: "/services/nettoyage-toiture" },
   { name: "Nettoyage dallage", path: "/services/nettoyage-dallage" },
   { name: "Nettoyage façade", path: "/services/nettoyage-facade" },
   { name: "Nettoyage gouttière", path: "/services/nettoyage-gouttiere" },
   { name: "Nettoyage muret", path: "/services/nettoyage-muret" },
+  // Autres services
   { name: "Peinture boiseries", path: "/services/peinture-boiseries" },
   { name: "Peinture ferronneries", path: "/services/peinture-ferronneries" },
   { name: "Peinture gouttières", path: "/services/peinture-gouttieres" },

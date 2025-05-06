@@ -7,6 +7,26 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const services = [
+  // Services de couverture
+  {
+    title: "Rénovation de toiture",
+    description: "Restaurez et protégez votre maison avec notre service complet de rénovation de toiture.",
+    image: "/lovable-uploads/d3f82aee-89ee-4ecb-81fc-b5c30b8be216.png",
+    link: "/services/renovation-toiture"
+  },
+  {
+    title: "Zinguerie",
+    description: "Services professionnels de gouttières, descentes et habillages en zinc pour une évacuation efficace des eaux.",
+    image: "/lovable-uploads/208d4b56-1a0a-4fd8-b504-6f612e7fdaa4.png",
+    link: "/services/zinguerie"
+  },
+  {
+    title: "Charpente",
+    description: "Réparation, renforcement ou construction de charpentes avec des matériaux de qualité pour une durabilité maximale.",
+    image: "/lovable-uploads/867342b0-a34c-487f-956b-48f712d6fa8c.png",
+    link: "/services/charpente"
+  },
+  // Services de peinture
   {
     title: "Peinture intérieure",
     description: "Donnez une nouvelle vie à vos espaces intérieurs avec nos services de peinture personnalisés.",
@@ -31,6 +51,7 @@ const services = [
     image: "/lovable-uploads/33b8c9f6-2dbf-40c1-9e00-e319bb238351.png",
     link: "/services/ravalement-de-facade"
   },
+  // Services de nettoyage
   {
     title: "Nettoyage toiture",
     description: "Prolongez la durée de vie de votre toiture avec nos services de nettoyage professionnel.",
@@ -61,6 +82,7 @@ const services = [
     image: "/lovable-uploads/52e63c25-14dc-490f-b703-f24f6de0536f.png",
     link: "/services/nettoyage-muret"
   },
+  // Autres services
   {
     title: "Peinture boiseries",
     description: "Protégez et embellissez vos boiseries extérieures avec nos traitements spécifiques.",

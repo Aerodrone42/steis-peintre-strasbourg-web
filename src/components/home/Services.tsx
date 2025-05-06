@@ -7,6 +7,18 @@ import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
+    title: "Rénovation de toiture",
+    description: "Restaurez et protégez votre maison avec notre service complet de rénovation de toiture.",
+    image: "/lovable-uploads/d3f82aee-89ee-4ecb-81fc-b5c30b8be216.png",
+    link: "/services/renovation-toiture"
+  },
+  {
+    title: "Zinguerie",
+    description: "Services professionnels de gouttières, descentes et habillages en zinc pour une évacuation efficace des eaux.",
+    image: "/lovable-uploads/208d4b56-1a0a-4fd8-b504-6f612e7fdaa4.png",
+    link: "/services/zinguerie"
+  },
+  {
     title: "Peinture intérieure",
     description: "Donnez une nouvelle vie à vos espaces intérieurs avec nos services de peinture personnalisés.",
     image: "/lovable-uploads/a93c114d-cbb4-424b-b11e-7c6afdc0e49c.png",
@@ -25,22 +37,10 @@ const services = [
     link: "/services/ravalement-de-facade"
   },
   {
-    title: "Nettoyage toiture",
-    description: "Prolongez la durée de vie de votre toiture avec nos services de nettoyage professionnel.",
-    image: "/lovable-uploads/b06aa698-1d6b-4c4c-abba-50e6fba342b6.png",
-    link: "/services/nettoyage-toiture"
-  },
-  {
-    title: "Nettoyage façade",
-    description: "Redonnez l'éclat d'origine à vos façades avec notre nettoyage haute pression.",
-    image: "/lovable-uploads/13552a73-39cc-49c2-ae6a-eaac0d810170.png",
-    link: "/services/nettoyage-facade"
-  },
-  {
-    title: "Crépi façade et muret",
-    description: "Finition esthétique et durable pour vos façades et murets, adaptée à votre style.",
-    image: "/lovable-uploads/01afa244-8bb1-42c3-9ef5-aee37b740513.png",
-    link: "/services/crepi-facade-et-muret"
+    title: "Charpente",
+    description: "Réparation, renforcement ou construction de charpentes avec des matériaux de qualité.",
+    image: "/lovable-uploads/867342b0-a34c-487f-956b-48f712d6fa8c.png",
+    link: "/services/charpente"
   },
 ];
 
