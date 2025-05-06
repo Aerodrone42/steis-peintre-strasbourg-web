@@ -76,6 +76,36 @@ const Footer = () => {
                   Nettoyage dallage
                 </Link>
               </li>
+              <li>
+                <Link to="/services/nettoyage-facade" className="text-sm hover:text-steis-200">
+                  Nettoyage façade
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/nettoyage-gouttiere" className="text-sm hover:text-steis-200">
+                  Nettoyage gouttière
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/nettoyage-muret" className="text-sm hover:text-steis-200">
+                  Nettoyage muret
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/peinture-boiseries" className="text-sm hover:text-steis-200">
+                  Peinture boiseries
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/peinture-ferronneries" className="text-sm hover:text-steis-200">
+                  Peinture ferronneries
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/peinture-gouttieres" className="text-sm hover:text-steis-200">
+                  Peinture gouttières
+                </Link>
+              </li>
             </ul>
           </div>
           
