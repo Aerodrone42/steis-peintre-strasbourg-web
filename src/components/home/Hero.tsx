@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <div className="relative bg-steis-900 text-white">
-      <div className="absolute inset-0 bg-gradient-to-r from-steis-900/95 to-steis-900/70 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-steis-900/80 to-steis-900/50 z-10"></div>
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/lovable-uploads/d9908023-7f21-4e97-aa40-24aa5d561993.png')",
-          filter: "brightness(0.4)"
+          filter: "brightness(0.7)"
         }}
       ></div>
       
