@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -12,6 +13,11 @@ interface ServiceDetail {
   description: string;
   image: string;
   details: string[];
+  additionalImages?: string[];
+  additionalContent?: {
+    title: string;
+    content: string[];
+  }[];
 }
 
 interface ServiceData {
@@ -29,6 +35,46 @@ const services: ServiceData = {
       "Traitement anti-mousse et imperméabilisant",
       "Installation de systèmes d'isolation thermique",
       "Garantie décennale sur tous nos travaux de rénovation"
+    ],
+    additionalImages: [
+      "/lovable-uploads/80414969-52f6-46e7-8d02-aeb66332648a.png",
+      "/lovable-uploads/ad1c2838-ed00-4de0-b4ac-de6f6c469c26.png",
+      "/lovable-uploads/78b74ae9-0a67-4901-b165-68f4570aaa52.png"
+    ],
+    additionalContent: [
+      {
+        title: "Notre expertise en rénovation de toiture",
+        content: [
+          "Chez STEIS Ismaël, nous sommes spécialisés dans la rénovation complète de toitures pour les maisons résidentielles et les bâtiments commerciaux dans toute la région Alsacienne.",
+          "Notre équipe d'experts qualifiés utilise les meilleures techniques et matériaux pour assurer une finition parfaite et durable à votre toiture.",
+          "Nous intervenons sur tous types de toitures : tuiles, ardoises, zinc, et plus encore, avec une attention particulière aux détails."
+        ]
+      },
+      {
+        title: "Notre processus de rénovation",
+        content: [
+          "Évaluation initiale et diagnostic complet de l'état actuel de votre toiture",
+          "Proposition détaillée avec différentes options et matériaux adaptés à votre budget",
+          "Mise en place d'un échafaudage sécurisé et protection des abords de votre propriété",
+          "Retrait des matériaux endommagés et préparation de la structure",
+          "Installation de l'isolation thermique de haute performance si nécessaire",
+          "Pose des nouveaux matériaux de couverture avec soin et précision",
+          "Installation ou rénovation du système d'évacuation des eaux pluviales",
+          "Nettoyage complet du chantier après les travaux"
+        ]
+      },
+      {
+        title: "Pourquoi rénover votre toiture ?",
+        content: [
+          "Amélioration de l'isolation thermique et acoustique de votre maison",
+          "Économies significatives sur vos factures d'énergie",
+          "Protection efficace contre les intempéries et prévention des infiltrations d'eau",
+          "Augmentation de la valeur de votre bien immobilier",
+          "Embellissement de l'aspect extérieur de votre propriété",
+          "Respect des normes énergétiques actuelles",
+          "Contribution à la durabilité environnementale avec des matériaux écologiques"
+        ]
+      }
     ]
   },
   "zinguerie": {
@@ -209,27 +255,48 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
 };
 
 const ServiceBenefits: React.FC<ServiceDetailProps> = ({ service }) => {
+  if (!service.additionalContent) return null;
+  
   return (
-    <div>
-      {/* Add your service benefits component here */}
+    <div className="mt-8">
+      {service.additionalContent.map((section, index) => (
+        <div key={index} className="mb-8">
+          <h3 className="text-xl font-semibold text-steis mb-4">{section.title}</h3>
+          <ul className="space-y-2">
+            {section.content.map((item, itemIndex) => (
+              <li key={itemIndex} className="text-gray-700">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 };
 
 const ServiceImages: React.FC<ServiceDetailProps> = ({ service }) => {
+  if (!service.additionalImages || service.additionalImages.length === 0) return null;
+  
   return (
-    <div>
-      {/* Add your service images component here */}
+    <div className="mt-8">
+      <h3 className="text-xl font-semibold text-steis mb-4">Nos réalisations</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {service.additionalImages.map((image, index) => (
+          <div key={index} className="rounded-lg overflow-hidden shadow-md">
+            <img 
+              src={image} 
+              alt={`${service.title} - réalisation ${index + 1}`}
+              className="w-full h-auto object-cover" 
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-interface BeforeAfterGalleryProps {
-  beforeAfterImages: any[];
-  title: string;
-}
-
-const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({ beforeAfterImages, title }) => {
+const BeforeAfterGallery: React.FC<{ beforeAfterImages: any[]; title: string }> = ({ beforeAfterImages, title }) => {
   return (
     <div>
       {/* Add your before/after gallery component here */}
@@ -237,11 +304,7 @@ const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({ beforeAfterImag
   );
 };
 
-interface ServiceAreasProps {
-  areas: string[];
-}
-
-const ServiceAreas: React.FC<ServiceAreasProps> = ({ areas }) => {
+const ServiceAreas: React.FC<{ areas: string[] }> = ({ areas }) => {
   return (
     <div>
       {/* Add your service areas component here */}
@@ -249,11 +312,7 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ areas }) => {
   );
 };
 
-interface ServiceFaqProps {
-  faqItems: any[];
-}
-
-const ServiceFaq: React.FC<ServiceFaqProps> = ({ faqItems }) => {
+const ServiceFaq: React.FC<{ faqItems: any[] }> = ({ faqItems }) => {
   return (
     <div>
       {/* Add your service FAQ component here */}
