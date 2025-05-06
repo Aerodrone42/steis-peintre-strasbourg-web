@@ -1,10 +1,9 @@
-
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import NotFound from './NotFound';
-import { Roof, Tool, Hammer } from 'lucide-react';
+import { Construction, Hammer, Wrench } from 'lucide-react';
 // Using document.title directly instead of react-helmet for now
 // to avoid build issues
 
