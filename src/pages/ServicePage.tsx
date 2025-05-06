@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -62,7 +61,7 @@ const services: ServiceData = {
       "Prévention des infiltrations et des dégradations",
       "Traitement anti-mousse et anti-algues inclus"
     ],
-    image: "/lovable-uploads/169bf13c-4417-4be4-8b6e-223a071ee74a.png"
+    image: "/lovable-uploads/2ca76d8e-8e91-4420-ba50-1d828e9d5f54.png"
   },
   "crepi-facade-et-muret": {
     title: "Crépi façade et muret",
@@ -80,7 +79,7 @@ const services: ServiceData = {
       "Masque les imperfections des murs",
       "Durabilité exceptionnelle (15 à 20 ans)"
     ],
-    image: "/lovable-uploads/5b5fab09-1852-418b-bc54-bfd2c38d51a6.png"
+    image: "/lovable-uploads/b4ff52f7-d545-4080-8339-c423e68448a4.png"
   },
   "ravalement-de-facade": {
     title: "Ravalement de façade",
@@ -98,7 +97,7 @@ const services: ServiceData = {
       "Valorisation immédiate de votre bien immobilier",
       "Amélioration de l'isolation thermique de votre habitation"
     ],
-    image: "/lovable-uploads/ffeec714-7554-4b88-b00a-7457b9de52a7.png",
+    image: "/lovable-uploads/33b8c9f6-2dbf-40c1-9e00-e319bb238351.png",
     beforeAfterImages: [
       {
         before: "/lovable-uploads/5b5784ac-182c-4513-9fff-3a5bb5b051ec.png",
@@ -122,7 +121,7 @@ const services: ServiceData = {
       "Amélioration de l'aspect esthétique de votre maison",
       "Protection durable grâce au traitement hydrofuge"
     ],
-    image: "/lovable-uploads/4fd63f45-4671-41df-b9d0-d4af63d597b6.png"
+    image: "/lovable-uploads/173d0acc-fb3c-4932-af8a-5f07e2739202.png"
   },
   "nettoyage-facade": {
     title: "Nettoyage façade",
@@ -140,7 +139,7 @@ const services: ServiceData = {
       "Valorisation immédiate de votre bien immobilier",
       "Intervention rapide et professionnelle"
     ],
-    image: "/lovable-uploads/b06aa698-1d6b-4c4c-abba-50e6fba342b6.png"
+    image: "/lovable-uploads/7f25c02b-0b4a-4cb4-8e56-a4d55a1712a8.png"
   },
   "nettoyage-dallage": {
     title: "Nettoyage dallage",
@@ -252,16 +251,115 @@ const services: ServiceData = {
   }
 };
 
+interface ServiceDetailProps {
+  service: ServiceData[keyof ServiceData];
+}
+
+const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
+  return (
+    <div>
+      {service.longDescription.map((paragraph, index) => (
+        <p key={index} className="mb-4 text-gray-700">{paragraph}</p>
+      ))}
+    </div>
+  );
+};
+
+interface ServiceBenefitsProps {
+  service: ServiceData[keyof ServiceData];
+}
+
+const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({ service }) => {
+  return (
+    <div>
+      <h2 className="text-2xl font-bold text-steis mt-8 mb-4">Les avantages de notre service</h2>
+      <ul className="space-y-2 mb-8">
+        {service.benefits.map((benefit, index) => (
+          <li key={index} className="flex items-start gap-2">
+            <svg className="h-6 w-6 text-steis flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>{benefit}</span>
+          </li>
+        ))}
+      </ul>
+
+      <Button asChild className="mt-4 bg-steis hover:bg-steis-600">
+        <Link to="/contact">Demander un devis gratuit</Link>
+      </Button>
+    </div>
+  );
+};
+
+interface ServiceImagesProps {
+  service: ServiceData[keyof ServiceData];
+}
+
+const ServiceImages: React.FC<ServiceImagesProps> = ({ service }) => {
+  return (
+    <div className="rounded-lg overflow-hidden shadow-lg mb-8">
+      <img
+        src={service.image}
+        alt={service.title}
+        className="w-full h-auto"
+      />
+    </div>
+  );
+};
+
+interface BeforeAfterGalleryProps {
+  beforeAfterImages?: { before: string; after: string }[];
+  title: string;
+}
+
+const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({ beforeAfterImages, title }) => {
+  if (!beforeAfterImages) {
+    return null;
+  }
+
+  return (
+    <div className="mt-8">
+      <h2 className="text-2xl font-bold text-steis mb-6">Avant / Après</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {beforeAfterImages.map((item, index) => (
+          <div key={index} className="space-y-4">
+            <div className="relative rounded-lg overflow-hidden shadow-md">
+              <img
+                src={item.before}
+                alt={`Avant - ${title}`}
+                className="w-full h-auto"
+              />
+              <div className="absolute top-2 left-2 bg-black bg-opacity-70 text-white px-2 py-1 text-sm rounded">
+                Avant
+              </div>
+            </div>
+            <div className="relative rounded-lg overflow-hidden shadow-md">
+              <img
+                src={item.after}
+                alt={`Après - ${title}`}
+                className="w-full h-auto"
+              />
+              <div className="absolute top-2 left-2 bg-steis text-white px-2 py-1 text-sm rounded">
+                Après
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const ServicePage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const service = serviceId ? services[serviceId] : null;
-  
+
   useEffect(() => {
     if (service) {
       document.title = service.metaTitle;
     }
   }, [service]);
-  
+
   if (!service) {
     return <NotFound />;
   }
@@ -278,67 +376,13 @@ const ServicePage = () => {
       <div className="container py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            {service.longDescription.map((paragraph, index) => (
-              <p key={index} className="mb-4 text-gray-700">{paragraph}</p>
-            ))}
-
-            <h2 className="text-2xl font-bold text-steis mt-8 mb-4">Les avantages de notre service</h2>
-            <ul className="space-y-2 mb-8">
-              {service.benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <svg className="h-6 w-6 text-steis flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Button asChild className="mt-4 bg-steis hover:bg-steis-600">
-              <Link to="/contact">Demander un devis gratuit</Link>
-            </Button>
+            <ServiceDetail service={service} />
+            <ServiceBenefits service={service} />
           </div>
 
           <div>
-            <div className="rounded-lg overflow-hidden shadow-lg mb-8">
-              <img 
-                src={service.image} 
-                alt={service.title} 
-                className="w-full h-auto"
-              />
-            </div>
-
-            {service.beforeAfterImages && (
-              <div className="mt-8">
-                <h2 className="text-2xl font-bold text-steis mb-6">Avant / Après</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {service.beforeAfterImages.map((item, index) => (
-                    <div key={index} className="space-y-4">
-                      <div className="relative rounded-lg overflow-hidden shadow-md">
-                        <img 
-                          src={item.before} 
-                          alt={`Avant - ${service.title}`} 
-                          className="w-full h-auto"
-                        />
-                        <div className="absolute top-2 left-2 bg-black bg-opacity-70 text-white px-2 py-1 text-sm rounded">
-                          Avant
-                        </div>
-                      </div>
-                      <div className="relative rounded-lg overflow-hidden shadow-md">
-                        <img 
-                          src={item.after} 
-                          alt={`Après - ${service.title}`} 
-                          className="w-full h-auto"
-                        />
-                        <div className="absolute top-2 left-2 bg-steis text-white px-2 py-1 text-sm rounded">
-                          Après
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            <ServiceImages service={service} />
+            <BeforeAfterGallery beforeAfterImages={service.beforeAfterImages} title={service.title} />
           </div>
         </div>
       </div>
