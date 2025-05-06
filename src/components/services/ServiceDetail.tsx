@@ -9,18 +9,24 @@ interface ServiceDetailProps {
 
 const ServiceDetail: React.FC<ServiceDetailProps> = ({ details }) => {
   return (
-    <Card className="shadow-md border-steis-100 bg-white">
+    <Card className="shadow-lg border-0 overflow-hidden bg-white rounded-xl">
+      <div className="bg-steis-600 py-4 px-6">
+        <h3 className="text-2xl font-bold text-white">Détails du service</h3>
+      </div>
       <CardContent className="p-6">
-        <h3 className="text-xl font-semibold text-steis mb-6">Détails du service</h3>
-        <div className="space-y-5">
+        <div className="space-y-6">
           {details.map((paragraph, index) => (
-            <p
+            <div
               key={index}
-              className="text-gray-700 flex items-start"
+              className="flex items-start"
             >
-              <Check className="text-steis-500 mr-3 h-5 w-5 mt-0.5 flex-shrink-0" />
-              <span className="leading-relaxed">{paragraph}</span>
-            </p>
+              <div className="flex-shrink-0 mt-1.5">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-steis-500 text-white">
+                  <Check className="h-4 w-4" />
+                </span>
+              </div>
+              <p className="ml-4 text-gray-700 leading-relaxed">{paragraph}</p>
+            </div>
           ))}
         </div>
       </CardContent>

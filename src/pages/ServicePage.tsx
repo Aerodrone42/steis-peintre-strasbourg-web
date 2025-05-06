@@ -36,53 +36,53 @@ const ServicePage: React.FC = () => {
 
   return (
     <Layout>
-      {/* Hero section with gradient background */}
-      <div className="bg-gradient-to-b from-steis-500 to-steis-700 text-white py-20">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{service.title}</h1>
-            <p className="text-lg md:text-xl opacity-95 mb-8 leading-relaxed">{service.description}</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button asChild size="lg" className="bg-white hover:bg-white/90 text-steis-700 border-0">
-                <Link to="/contact">Demander un devis</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                <a href="tel:0780233098">Nous appeler</a>
-              </Button>
+      {/* Hero section with service image as background */}
+      <div className="relative bg-steis-800">
+        <div className="absolute inset-0 opacity-30">
+          <img 
+            src={service.image} 
+            alt={service.title}
+            className="w-full h-full object-cover" 
+          />
+        </div>
+        <div className="relative bg-gradient-to-b from-steis-900/70 to-steis-900/95 py-20">
+          <div className="container max-w-6xl mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">{service.title}</h1>
+              <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">{service.description}</p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button asChild size="lg" className="bg-white hover:bg-white/90 text-steis-700 border-0">
+                  <Link to="/contact">Demander un devis gratuit</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  <a href="tel:0780233098">07 80 23 30 98</a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container max-w-6xl mx-auto py-16 px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Main content - 7 columns */}
-          <div className="lg:col-span-7 space-y-8">
-            {/* Hero Image */}
-            <Card className="overflow-hidden border-steis-100 shadow-lg">
-              <AspectRatio ratio={16/9}>
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
-              </AspectRatio>
-            </Card>
+      <div className="bg-gray-50 py-16">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Main content - 7 columns */}
+            <div className="lg:col-span-7 space-y-8">              
+              <ServiceDetail details={service.details} />
+              <ServiceBenefits additionalContent={service.additionalContent} />
+            </div>
             
-            <ServiceDetail details={service.details} />
-            <ServiceBenefits additionalContent={service.additionalContent} />
+            {/* Sidebar - 5 columns */}
+            <div className="lg:col-span-5 space-y-8">
+              <ServiceImages title={service.title} additionalImages={service.additionalImages} />
+              <BeforeAfterGallery beforeAfterImages={[]} title={service.title} />
+              <ServiceAreas areas={[]} />
+              <ServiceFaq faqItems={[]} />
+            </div>
           </div>
           
-          {/* Sidebar - 5 columns */}
-          <div className="lg:col-span-5 space-y-8">
-            <ServiceImages title={service.title} additionalImages={service.additionalImages} />
-            <BeforeAfterGallery beforeAfterImages={[]} title={service.title} />
-            <ServiceAreas areas={[]} />
-            <ServiceFaq faqItems={[]} />
-          </div>
+          <ServiceCallToAction serviceTitle={service.title} />
         </div>
-        
-        <ServiceCallToAction serviceTitle={service.title} />
       </div>
     </Layout>
   );

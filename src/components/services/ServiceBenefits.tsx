@@ -18,17 +18,23 @@ const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({ additionalContent }) 
   return (
     <div className="space-y-8">
       {additionalContent.map((section, index) => (
-        <Card key={index} className="border-steis-100 shadow-md">
+        <Card key={index} className="shadow-lg border-0 overflow-hidden bg-white rounded-xl">
+          <div className="bg-steis-600 py-4 px-6">
+            <h3 className="text-2xl font-bold text-white">{section.title}</h3>
+          </div>
           <CardContent className="p-6">
-            <h3 className="text-xl font-semibold text-steis mb-6">{section.title}</h3>
-            <ul className="space-y-4">
+            <div className="space-y-6">
               {section.content.map((item, itemIndex) => (
-                <li key={itemIndex} className="text-gray-700 flex items-start">
-                  <CheckCircle className="text-steis-500 mr-3 h-5 w-5 mt-0.5 flex-shrink-0" />
-                  <span className="leading-relaxed">{item}</span>
-                </li>
+                <div key={itemIndex} className="flex items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-steis-500 text-white">
+                      <CheckCircle className="h-4 w-4" />
+                    </span>
+                  </div>
+                  <p className="ml-4 text-gray-700 leading-relaxed">{item}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </CardContent>
         </Card>
       ))}
