@@ -15,31 +15,31 @@ const services = [
   {
     title: "Peinture extérieure",
     description: "Protection et esthétique pour vos façades avec des peintures de qualité professionnelle.",
-    image: "/lovable-uploads/2ca76d8e-8e91-4420-ba50-1d828e9d5f54.png",
+    image: "/lovable-uploads/d807bfda-5149-43bf-b3d1-e0c3db742e85.png",
     link: "/services/peinture-exterieure"
   },
   {
     title: "Ravalement de façade",
     description: "Restaurez et embellissez l'aspect extérieur de votre bâtiment avec notre expertise.",
-    image: "/lovable-uploads/33b8c9f6-2dbf-40c1-9e00-e319bb238351.png",
+    image: "/lovable-uploads/f69e56ea-83d1-48ce-ba83-bb0353834d74.png",
     link: "/services/ravalement-de-facade"
   },
   {
     title: "Nettoyage toiture",
     description: "Prolongez la durée de vie de votre toiture avec nos services de nettoyage professionnel.",
-    image: "/lovable-uploads/173d0acc-fb3c-4932-af8a-5f07e2739202.png",
+    image: "/lovable-uploads/b06aa698-1d6b-4c4c-abba-50e6fba342b6.png",
     link: "/services/nettoyage-toiture"
   },
   {
     title: "Nettoyage façade",
     description: "Redonnez l'éclat d'origine à vos façades avec notre nettoyage haute pression.",
-    image: "/lovable-uploads/7f25c02b-0b4a-4cb4-8e56-a4d55a1712a8.png",
+    image: "/lovable-uploads/13552a73-39cc-49c2-ae6a-eaac0d810170.png",
     link: "/services/nettoyage-facade"
   },
   {
     title: "Crépi façade et muret",
     description: "Finition esthétique et durable pour vos façades et murets, adaptée à votre style.",
-    image: "/lovable-uploads/b4ff52f7-d545-4080-8339-c423e68448a4.png",
+    image: "/lovable-uploads/01afa244-8bb1-42c3-9ef5-aee37b740513.png",
     link: "/services/crepi-facade-et-muret"
   },
 ];
