@@ -1,4 +1,3 @@
-
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -461,25 +460,3 @@ export const services: ServiceData = {
       {
         title: "Notre expertise en peinture de boiseries",
         description: "La peinture sur bois nécessite une expertise particulière pour assurer un résultat durable et esthétique. Chez STEIS Ismaël, nous possédons ce savoir-faire spécifique.",
-        content: [
-          "Préparation minutieuse des surfaces (ponçage, décapage, traitement des imperfections)",
-          "Utilisation de produits spécifiques adaptés aux différents types de bois",
-          "Application de primaires d'accrochage pour une adhérence optimale",
-          "Choix de peintures et vernis de haute qualité résistants aux UV et aux intempéries",
-          "Techniques d'application professionnelles pour un résultat durable et esthétique"
-        ]
-      },
-      {
-        title: "Avantages de la peinture professionnelle des boiseries",
-        description: "Une peinture de qualité pour vos boiseries offre de nombreux bénéfices au-delà de l'aspect décoratif.",
-        content: [
-          "Protection efficace contre l'humidité, les rayons UV et les insectes",
-          "Prévention des fissures, déformations et pourriture du bois",
-          "Embellissement et mise en valeur des éléments architecturaux de votre habitation",
-          "Entretien facilité et durabilité accrue de vos boiseries",
-          "Amélioration significative de l'esthétique générale de votre propriété"
-        ]
-      }
-    ]
-  }
-};
