@@ -9,7 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { Gallery } from 'lucide-react';
+import { GalleryHorizontal } from 'lucide-react';
 
 interface PortfolioImage {
   src: string;
@@ -29,7 +29,7 @@ const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ title, images }) =>
     <Card className="shadow-lg border-0 overflow-hidden bg-white rounded-xl">
       <div className="bg-steis-600 py-4 px-6">
         <div className="flex items-center">
-          <Gallery className="h-5 w-5 text-white mr-2" />
+          <GalleryHorizontal className="h-5 w-5 text-white mr-2" />
           <h3 className="text-2xl font-bold text-white">Portfolio {title}</h3>
         </div>
       </div>
