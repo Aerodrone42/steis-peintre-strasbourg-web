@@ -33,6 +33,7 @@ jobs:
           echo "www.is-peinture.fr" > docs/CNAME
           cp public/404.html docs/
           cp public/sitemap.xml docs/
+          cp public/robots.txt docs/
           touch docs/.nojekyll
           # Debug output
           echo "Content of docs folder:"
