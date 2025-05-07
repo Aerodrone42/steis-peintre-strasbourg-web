@@ -1,3 +1,4 @@
+
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -460,3 +461,78 @@ export const services: ServiceData = {
       {
         title: "Notre expertise en peinture de boiseries",
         description: "La peinture sur bois nécessite une expertise particulière pour assurer un résultat durable et esthétique. Chez STEIS Ismaël, nous possédons ce savoir-faire spécifique.",
+        content: [
+          "Préparation minutieuse des surfaces (ponçage, décapage, traitement des imperfections)",
+          "Utilisation de produits spécifiques adaptés aux différents types de bois",
+          "Application de primaires d'accrochage pour une adhérence optimale",
+          "Choix de peintures et vernis de haute qualité résistants aux UV et aux intempéries",
+          "Techniques d'application professionnelles pour un résultat durable et esthétique"
+        ]
+      },
+      {
+        title: "Avantages de la peinture professionnelle des boiseries",
+        description: "Une peinture de qualité pour vos boiseries offre de nombreux bénéfices au-delà de l'aspect décoratif.",
+        content: [
+          "Protection efficace contre l'humidité, les rayons UV et les insectes",
+          "Prévention des fissures, déformations et pourriture du bois",
+          "Embellissement et mise en valeur des éléments architecturaux de votre habitation",
+          "Entretien facilité et durabilité accrue de vos boiseries",
+          "Amélioration significative de l'esthétique générale de votre propriété"
+        ]
+      }
+    ]
+  },
+  "peinture-gouttieres": {
+    title: "Peinture gouttières",
+    description: "Donnez une nouvelle vie à vos gouttières avec notre service de peinture spécialisé. Protection durable et esthétique pour tous types de gouttières.",
+    image: "/lovable-uploads/92b26911-ea4b-426d-b8d6-86143b2ef2c5.png",
+    details: [
+      "Inspection et préparation des surfaces",
+      "Application de primaires anticorrosion",
+      "Peinture résistante aux intempéries",
+      "Finitions soignées pour un rendu esthétique"
+    ],
+    longDescription: "La peinture de gouttières est un traitement essentiel pour maintenir l'efficacité et prolonger la durée de vie de votre système d'évacuation des eaux pluviales. Chez STEIS Ismaël, nous proposons un service complet de préparation et de mise en peinture de vos gouttières, qu'elles soient en zinc, aluminium ou PVC. Notre expertise garantit une finition impeccable et une protection durable contre les éléments.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/0de72792-1ee7-4ec7-b383-33c749a72405.png",
+        alt: "Gouttière fraîchement peinte",
+        description: "Gouttière avec nouvelle peinture de protection"
+      },
+      {
+        src: "/lovable-uploads/e5f5e954-9c2c-49e7-929b-ed383a62ed27.png",
+        alt: "Installation de gouttière noire",
+        description: "Finition élégante de gouttière en noir mat"
+      },
+      {
+        src: "/lovable-uploads/fa65ec75-4306-4346-ad7b-4e61a0b09499.png",
+        alt: "Système de gouttière complet",
+        description: "Système complet de gouttière après traitement et peinture"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre processus de peinture de gouttières",
+        description: "STEIS Ismaël suit une méthode rigoureuse pour assurer une peinture de qualité et durable sur vos gouttières.",
+        content: [
+          "Nettoyage approfondi pour éliminer toutes traces de saletés, de mousse et de rouille",
+          "Préparation des surfaces avec ponçage léger pour maximiser l'adhérence de la peinture",
+          "Application d'un primaire anticorrosion spécifique au type de matériau de votre gouttière",
+          "Application de deux couches de peinture haute qualité résistante aux UV et aux intempéries",
+          "Inspection finale pour garantir une couverture uniforme et un résultat esthétique"
+        ]
+      },
+      {
+        title: "Avantages de la peinture de gouttières",
+        description: "La mise en peinture de vos gouttières offre de nombreux bénéfices au-delà de l'aspect esthétique.",
+        content: [
+          "Protection efficace contre la corrosion pour les gouttières métalliques",
+          "Prévention de la détérioration due aux UV pour les gouttières en PVC",
+          "Prolongation significative de la durée de vie de votre système d'évacuation des eaux",
+          "Intégration harmonieuse avec l'esthétique générale de votre façade",
+          "Valorisation de votre patrimoine immobilier avec un détail souvent négligé mais important"
+        ]
+      }
+    ]
+  }
+};
