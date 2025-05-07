@@ -4,7 +4,6 @@ import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import NotFound from './NotFound';
 import { Card, CardContent } from '@/components/ui/card';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 // Import service data
 import { services } from '@/data/services';
@@ -18,6 +17,7 @@ import ServiceAreas from '@/components/services/ServiceAreas';
 import ServiceFaq from '@/components/services/ServiceFaq';
 import ServiceCallToAction from '@/components/services/ServiceCallToAction';
 import PortfolioGallery from '@/components/services/PortfolioGallery';
+import { Button } from '@/components/ui/button';
 
 const ServicePage: React.FC = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -34,6 +34,10 @@ const ServicePage: React.FC = () => {
   if (!service) {
     return <NotFound />;
   }
+  
+  // Debug output
+  console.log("Current service:", serviceId);
+  console.log("Service portfolio images:", service.portfolioImages);
 
   return (
     <Layout>
@@ -146,8 +150,5 @@ const ServicePage: React.FC = () => {
     </Layout>
   );
 };
-
-// Adding Button import
-import { Button } from '@/components/ui/button';
 
 export default ServicePage;

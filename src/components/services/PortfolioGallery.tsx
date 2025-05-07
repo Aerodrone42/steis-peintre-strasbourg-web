@@ -25,6 +25,8 @@ interface PortfolioGalleryProps {
 const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ title, images }) => {
   if (!images || images.length === 0) return null;
   
+  console.log("Portfolio Gallery received images:", images);
+  
   return (
     <Card className="shadow-lg border-0 overflow-hidden bg-white rounded-xl">
       <div className="bg-steis-600 py-4 px-6">
