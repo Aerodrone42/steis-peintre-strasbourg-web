@@ -21,8 +21,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'docs',
+    outDir: 'docs', // Dossier de sortie pour GitHub Pages
     emptyOutDir: true,
   },
-  base: './', // Modifié pour utiliser des chemins relatifs
+  base: '/', // Utiliser la racine du domaine pour les chemins
 }));
