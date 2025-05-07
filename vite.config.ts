@@ -21,8 +21,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'docs', // Change output directory from 'dist' to 'docs'
+    outDir: 'docs', // Générer les fichiers de build dans le dossier 'docs'
     emptyOutDir: true,
   },
-  base: './', // Utiliser des chemins relatifs au lieu de chemins absolus
+  base: './', // Utiliser des chemins relatifs pour GitHub Pages
 }));
