@@ -82,7 +82,7 @@ const ServicePage: React.FC = () => {
                 longDescription={service.longDescription}
               />
               
-              {/* Portfolio section - only displayed if portfolioImages exists */}
+              {/* Portfolio section - display at top of main column if exists */}
               {service.portfolioImages && service.portfolioImages.length > 0 && (
                 <PortfolioGallery 
                   title={service.title}
