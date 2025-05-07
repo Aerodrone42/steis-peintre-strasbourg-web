@@ -411,6 +411,55 @@ export const services: ServiceData = {
       "Application de crépi traditionnel ou décoratif",
       "Large choix de couleurs et de finitions",
       "Conseils de professionnels pour un rendu esthétique"
+    ],
+    longDescription: "Le crépi est une solution esthétique et durable pour protéger et embellir vos façades et murets. Chez STEIS Ismaël, nous proposons un service complet d'application de crépi, de la préparation minutieuse des surfaces jusqu'à la finition parfaite. Notre équipe d'artisans qualifiés maîtrise différentes techniques pour vous offrir un rendu esthétique qui valorise votre bien tout en assurant sa protection contre les intempéries.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/78c31d70-9361-44b6-b896-c9520a11a796.png",
+        alt: "Application de crépi à la truelle",
+        description: "Application manuelle précise de crépi sur une façade"
+      },
+      {
+        src: "/lovable-uploads/a36835ed-d870-4b62-9962-a115f01b4770.png",
+        alt: "Rénovation de façade avec échafaudage",
+        description: "Chantier de rénovation complète avec application de crépi"
+      },
+      {
+        src: "/lovable-uploads/2686cb70-c8ff-4f60-81d8-aa5cf1c12182.png",
+        alt: "Maison en cours de rénovation",
+        description: "Préparation pour l'application de crépi sur une maison individuelle"
+      },
+      {
+        src: "/lovable-uploads/4cd2b1d4-9c16-4d3d-8669-b5e204d7b446.png",
+        alt: "Finition de crépi avec truelle",
+        description: "Travail de finition minutieux pour un rendu texturé parfait"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre expertise en crépi de façade",
+        description: "STEIS Ismaël vous propose différentes techniques d'application de crépi pour répondre à vos besoins spécifiques et au style architectural de votre bâtiment.",
+        content: [
+          "Préparation minutieuse des surfaces avec nettoyage, réparations et application de primaire d'accrochage",
+          "Application de crépi traditionnel à la chaux pour les bâtiments anciens et patrimoniaux",
+          "Crépi moderne monocouche ou multicouche pour les constructions contemporaines",
+          "Techniques de finition variées : taloché, gratté, écrasé, ribbé ou projeté selon vos préférences",
+          "Large palette de couleurs et possibilité de créer des teintes sur mesure",
+          "Traitement hydrofuge et anti-salissures pour une durabilité accrue"
+        ]
+      },
+      {
+        title: "Avantages du crépi pour vos façades",
+        description: "Le crépi offre de nombreux bénéfices au-delà de l'aspect esthétique pour votre habitation.",
+        content: [
+          "Protection efficace contre les intempéries, l'humidité et les variations climatiques",
+          "Correction des imperfections et irrégularités des murs existants",
+          "Amélioration de l'isolation thermique et acoustique de votre bâtiment",
+          "Résistance exceptionnelle aux UV et à la pollution atmosphérique",
+          "Entretien minimal et durabilité supérieure (jusqu'à 15-20 ans selon le type)",
+          "Valorisation immédiate de votre patrimoine immobilier avec un extérieur rénové et moderne"
+        ]
+      }
     ]
   },
   "nettoyage-gouttiere": {
