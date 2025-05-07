@@ -1,4 +1,3 @@
-
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -285,6 +284,61 @@ export const services: ServiceData = {
       "Démoussage et application de produits anti-mousse",
       "Nettoyage à basse pression pour éviter les dommages",
       "Traitement hydrofuge pour protéger contre l'humidité"
+    ]
+  },
+  "nettoyage-dallage": {
+    title: "Nettoyage dallage",
+    description: "Redonnez vie à vos dallages extérieurs grâce à notre service de nettoyage spécialisé. Nous éliminons les taches, les mousses et les saletés pour un résultat impeccable.",
+    image: "/lovable-uploads/01afa244-8bb1-42c3-9ef5-aee37b740513.png",
+    details: [
+      "Diagnostic de l'état du dallage",
+      "Nettoyage à haute pression",
+      "Application de produits anti-mousse",
+      "Protection des surfaces environnantes"
+    ],
+    longDescription: "Le nettoyage de dallage est essentiel pour maintenir l'esthétique et la sécurité de vos espaces extérieurs. Chez STEIS Ismaël, nous utilisons des équipements professionnels et des techniques adaptées pour éliminer efficacement les mousses, lichens, taches et saletés incrustées sur tous types de dallages. Notre intervention redonne éclat et propreté à vos terrasses, allées et cours tout en préservant l'intégrité des matériaux.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/9966a9f5-bc9b-4a51-a5d0-d78ca24be0b7.png",
+        alt: "Nettoyage dallage à haute pression",
+        description: "Nettoyage précis à haute pression sur dallage extérieur"
+      },
+      {
+        src: "/lovable-uploads/37a4b5a8-507b-4703-9e64-3fe53cc712b4.png",
+        alt: "Nettoyage de pavés en pierre",
+        description: "Élimination des mousses et salissures sur pavage décoratif"
+      },
+      {
+        src: "/lovable-uploads/d4e79bad-d15e-4f49-8cd6-a1a04f856381.png",
+        alt: "Terrasse bois avant-après nettoyage",
+        description: "Comparaison avant-après d'une terrasse en bois nettoyée et traitée"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre approche du nettoyage de dallage",
+        description: "STEIS Ismaël propose une méthode complète et efficace pour redonner à vos dallages leur aspect d'origine tout en les protégeant durablement.",
+        content: [
+          "Diagnostic complet de l'état de vos dallages et identification des problèmes (mousses, lichens, taches tenaces)",
+          "Protection méticuleuse des surfaces environnantes sensibles (plantations, mobilier)",
+          "Nettoyage haute pression calibré selon le type de matériau pour éviter tout dommage",
+          "Traitement spécifique des taches résistantes avec des produits adaptés",
+          "Application d'un traitement anti-mousse et hydrofuge pour une protection durable",
+          "Conseils d'entretien pour prolonger la durée de vie de vos dallages"
+        ]
+      },
+      {
+        title: "Avantages du nettoyage professionnel de dallage",
+        description: "Un nettoyage professionnel de vos dallages présente de nombreux bénéfices au-delà de l'aspect esthétique.",
+        content: [
+          "Élimination complète des mousses, lichens et salissures incrustées",
+          "Amélioration significative de la sécurité en éliminant les surfaces glissantes",
+          "Prévention de la dégradation prématurée des matériaux",
+          "Valorisation immédiate de votre espace extérieur et de votre bien immobilier",
+          "Préservation des couleurs et textures d'origine de vos dallages",
+          "Résultat durable grâce à des traitements préventifs de qualité professionnelle"
+        ]
+      }
     ]
   },
   "nettoyage-facade": {
