@@ -21,8 +21,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'dist', // Dossier standard de Vite
+    outDir: 'dist',
     emptyOutDir: true,
   },
-  base: '/', // Configuration correcte pour un domaine personnalisé
+  base: '/', // Configuration pour un domaine personnalisé
 }));
