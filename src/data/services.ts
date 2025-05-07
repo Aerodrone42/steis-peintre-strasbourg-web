@@ -1,3 +1,4 @@
+
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -361,17 +362,6 @@ export const services: ServiceData = {
       "Application de crépi traditionnel ou décoratif",
       "Large choix de couleurs et de finitions",
       "Conseils de professionnels pour un rendu esthétique"
-    ]
-  },
-  "nettoyage-dallage": {
-    title: "Nettoyage dallage",
-    description: "Redonnez vie à vos dallages extérieurs grâce à notre service de nettoyage spécialisé. Nous éliminons les taches, les mousses et les saletés pour un résultat impeccable.",
-    image: "/lovable-uploads/01afa244-8bb1-42c3-9ef5-aee37b740513.png",
-    details: [
-      "Diagnostic de l'état du dallage",
-      "Nettoyage à haute pression",
-      "Application de produits anti-mousse",
-      "Protection des surfaces environnantes"
     ]
   },
   "nettoyage-gouttiere": {
