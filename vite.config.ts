@@ -21,8 +21,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'docs', // Dossier de sortie pour GitHub Pages
+    outDir: 'dist', // Changé de 'docs' à 'dist' (dossier standard de Vite)
     emptyOutDir: true,
   },
-  base: '/', // Utiliser la racine du domaine pour les chemins
+  base: '/', // Configuration correcte pour un domaine personnalisé
 }));
