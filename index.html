@@ -7,8 +7,22 @@
     <title>IS Peinture - Peintre Strasbourg</title>
     <meta name="description" content="IS Peinture - Services de peinture professionnels à Strasbourg" />
     <meta name="author" content="IS Peinture" />
-    <meta name="fragment" content="!" />
-
+    
+    <!-- Important pour SPA sur GitHub Pages -->
+    <script type="text/javascript">
+      // Redirect from GitHub Pages 404 
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    
     <meta property="og:title" content="IS Peinture - Peintre Strasbourg" />
     <meta property="og:description" content="Services de peinture professionnels à Strasbourg" />
     <meta property="og:type" content="website" />
@@ -20,22 +34,6 @@
     <meta name="twitter:image" content="https://www.is-peinture.fr/favicon.ico" />
 
     <link rel="icon" href="/favicon.ico" />
-    <base href="/" />
-    
-    <!-- Script de gestion 404 pour GitHub Pages SPA -->
-    <script type="text/javascript">
-      // Vérifie si nous sommes redirigés avec un paramètre dans l'URL
-      (function(l) {
-        if (l.search[1] === '/') {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
   </head>
 
   <body>

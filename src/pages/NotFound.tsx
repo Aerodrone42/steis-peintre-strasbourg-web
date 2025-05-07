@@ -1,28 +1,25 @@
 
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
+    console.error("404 Error: Page non trouvée:", location.pathname);
     
-    // Detailed debugging information
-    console.log("Current URL:", window.location.href);
-    console.log("Base URL:", document.baseURI);
-    console.log("Current pathname:", window.location.pathname);
-    console.log("Location object:", location);
+    // Informations de débogage
+    console.log("URL complète:", window.location.href);
+    console.log("Pathname:", window.location.pathname);
+    console.log("Search:", window.location.search);
+    console.log("Hash:", window.location.hash);
     console.log("Origin:", window.location.origin);
     console.log("Host:", window.location.host);
     console.log("Hostname:", window.location.hostname);
-    console.log("Base tag href:", document.querySelector("base")?.getAttribute("href"));
-  }, [location.pathname]);
+    console.log("Protocol:", window.location.protocol);
+    console.log("Port:", window.location.port);
+  }, [location]);
 
   return (
     <Layout>
@@ -41,16 +38,10 @@ const NotFound = () => {
               <span className="font-medium">Pathname:</span> <code className="bg-gray-100 px-1">{window.location.pathname}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Base URL:</span> <code className="bg-gray-100 px-1">{document.baseURI}</code>
-            </p>
-            <p className="mb-2 text-gray-700">
               <span className="font-medium">Origin:</span> <code className="bg-gray-100 px-1">{window.location.origin}</code>
             </p>
             <p className="mb-2 text-gray-700">
               <span className="font-medium">Host:</span> <code className="bg-gray-100 px-1">{window.location.host}</code>
-            </p>
-            <p className="mb-2 text-gray-700">
-              <span className="font-medium">Base tag:</span> <code className="bg-gray-100 px-1">{document.querySelector("base")?.getAttribute("href") || "non défini"}</code>
             </p>
           </div>
           <div className="space-y-4">
@@ -61,7 +52,7 @@ const NotFound = () => {
               Retourner à l'accueil
             </Link>
             <p className="text-sm text-gray-500 mt-4">
-              Si ce problème persiste, veuillez vérifier la configuration DNS et GitHub Pages.
+              Si ce problème persiste, veuillez contacter le support technique.
             </p>
           </div>
         </div>
