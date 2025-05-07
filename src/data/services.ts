@@ -156,6 +156,55 @@ export const services: ServiceData = {
       "Application de sous-couches",
       "Peinture décorative",
       "Conseils personnalisés en couleurs et matériaux"
+    ],
+    longDescription: "Notre service de peinture intérieure vous offre une transformation complète de vos espaces de vie. Nos artisans professionnels prêtent une attention particulière à chaque détail, de la préparation minutieuse des surfaces jusqu'à l'application finale des couches de peinture de qualité. Nous vous accompagnons dans le choix des couleurs et finitions qui correspondent parfaitement à votre style et à vos besoins.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/16867e53-4012-40ef-a695-766e802efb89.png",
+        alt: "Application de peinture bleue au rouleau",
+        description: "Application professionnelle de peinture bleue sur mur intérieur"
+      },
+      {
+        src: "/lovable-uploads/28413664-b1be-4b0d-aec2-c3d77d44ebb4.png",
+        alt: "Application de peinture orange au rouleau",
+        description: "Technique précise d'application de couleur chaude sur mur"
+      },
+      {
+        src: "/lovable-uploads/3efd3567-98a7-4e70-b68a-033da733bbba.png",
+        alt: "Peinture blanche au rouleau avec gants jaunes",
+        description: "Application de peinture blanche avec équipement professionnel"
+      },
+      {
+        src: "/lovable-uploads/c58bab38-0a54-401f-b433-a5bf7ca63e82.png",
+        alt: "Matériel de peinture et mur orange en cours de réalisation",
+        description: "Projet de peinture intérieure en cours avec matériel professionnel"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre approche de la peinture intérieure",
+        description: "STEIS Ismaël propose une méthodologie rigoureuse pour assurer un résultat impeccable pour tous vos projets de peinture intérieure.",
+        content: [
+          "Diagnostic complet des surfaces et identification des problèmes (fissures, irrégularités)",
+          "Préparation minutieuse des surfaces par ponçage et application d'enduits adaptés",
+          "Protection soignée des éléments à préserver (meubles, sols, menuiseries)",
+          "Application de sous-couches spécifiques selon le type de support",
+          "Utilisation de peintures de qualité professionnelle adaptées à chaque pièce",
+          "Finitions soignées pour un résultat parfait et durable"
+        ]
+      },
+      {
+        title: "Avantages de notre service de peinture intérieure",
+        description: "Une peinture intérieure réalisée par des professionnels offre de nombreux bénéfices pour votre habitat.",
+        content: [
+          "Transformation complète de vos espaces de vie avec un résultat professionnel",
+          "Large choix de teintes et de finitions (mat, satiné, brillant, texturé)",
+          "Utilisation de peintures respectueuses de l'environnement et de votre santé",
+          "Durabilité exceptionnelle grâce à des techniques d'application professionnelles",
+          "Gain de temps considérable par rapport à une réalisation en auto-construction",
+          "Conseils personnalisés pour créer une ambiance adaptée à chaque pièce"
+        ]
+      }
     ]
   },
   "peinture-exterieure": {
