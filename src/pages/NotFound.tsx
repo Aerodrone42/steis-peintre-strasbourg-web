@@ -17,6 +17,9 @@ const NotFound = () => {
     console.log("Base URL:", document.baseURI);
     console.log("Current pathname:", window.location.pathname);
     console.log("Location object:", location);
+    console.log("Origin:", window.location.origin);
+    console.log("Host:", window.location.host);
+    console.log("Hostname:", window.location.hostname);
   }, [location.pathname]);
 
   return (
@@ -31,6 +34,9 @@ const NotFound = () => {
         </p>
         <p className="mb-4 text-gray-500">
           Pathname : <code>{window.location.pathname}</code>
+        </p>
+        <p className="mb-4 text-gray-500">
+          Base URL : <code>{document.baseURI}</code>
         </p>
         <Link
           to="/"
