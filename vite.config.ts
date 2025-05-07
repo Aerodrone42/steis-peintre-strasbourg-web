@@ -24,5 +24,5 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     emptyOutDir: true,
   },
-  base: '/', // Utiliser la racine pour les domaines personnalisés
+  base: mode === 'production' ? '/' : '/',
 }));
