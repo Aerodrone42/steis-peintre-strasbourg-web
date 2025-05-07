@@ -1,3 +1,4 @@
+
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -224,6 +225,55 @@ export const services: ServiceData = {
       "Nettoyage haute pression et traitement des mousses",
       "Réparation des fissures et imperfections",
       "Application d'enduits et de peintures de finition"
+    ],
+    longDescription: "Le ravalement de façade est une opération essentielle pour maintenir l'intégrité et l'esthétique de votre bâtiment. Chez STEIS Ismaël, nous disposons de l'expertise nécessaire pour traiter tous types de façades, qu'elles soient en crépi, en pierre, en brique ou en béton. Notre approche méthodique et notre souci du détail garantissent un résultat durable et esthétique qui valorise votre patrimoine immobilier.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/4b561f2a-5af0-4843-bb60-a17aa0f03fe4.png",
+        alt: "Application d'enduit sur une façade",
+        description: "Application précise d'enduit sur façade avec rouleau professionnel"
+      },
+      {
+        src: "/lovable-uploads/286a4079-ac2b-4c46-81b4-9c901fb88ba1.png",
+        alt: "Échafaudage pour travaux de ravalement de façade",
+        description: "Installation d'échafaudage pour un ravalement de façade complet"
+      },
+      {
+        src: "/lovable-uploads/0484f602-9b1b-4e90-9709-c2ad9fc29962.png",
+        alt: "Maison en cours de ravalement de façade",
+        description: "Travaux de ravalement sur une maison résidentielle"
+      },
+      {
+        src: "/lovable-uploads/3bb3f93a-63e8-4508-97bd-f076f581e71d.png",
+        alt: "Application d'enduit de finition",
+        description: "Travail manuel de finition pour une texture parfaite"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre approche du ravalement de façade",
+        description: "STEIS Ismaël propose une méthode complète et efficace pour redonner à votre façade son éclat d'origine tout en la protégeant durablement contre les agressions extérieures.",
+        content: [
+          "Diagnostic complet de l'état de votre façade avec identification des problèmes (fissures, écaillage, humidité)",
+          "Nettoyage en profondeur avec des techniques adaptées au matériau de votre façade",
+          "Traitement des fissures et réparation des zones endommagées",
+          "Application d'un traitement anti-mousse et hydrofuge",
+          "Mise en œuvre d'enduits de qualité professionnelle",
+          "Application de peintures ou revêtements de finition adaptés à votre environnement"
+        ]
+      },
+      {
+        title: "Les avantages du ravalement de façade",
+        description: "Au-delà de l'aspect esthétique, le ravalement de façade présente de nombreux bénéfices pour votre habitation et votre patrimoine immobilier.",
+        content: [
+          "Protection efficace contre les intempéries, l'humidité et la pollution",
+          "Prévention des dégradations structurelles et renforcement de l'étanchéité",
+          "Amélioration significative de l'isolation thermique de votre habitation",
+          "Valorisation immédiate de votre bien immobilier",
+          "Contribution à l'embellissement de votre quartier",
+          "Conformité avec les réglementations locales d'urbanisme"
+        ]
+      }
     ]
   },
   "nettoyage-toiture": {
