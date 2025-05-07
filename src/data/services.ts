@@ -1,4 +1,3 @@
-
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -373,6 +372,49 @@ export const services: ServiceData = {
       "Nettoyage manuel ou à l'aide d'outils spécifiques",
       "Vérification de l'étanchéité",
       "Réparation des gouttières endommagées"
+    ],
+    longDescription: "Le nettoyage régulier des gouttières est essentiel pour garantir leur bon fonctionnement et prévenir les dommages causés par l'eau à votre maison. Chez STEIS Ismaël, nous proposons un service complet de nettoyage de gouttières qui comprend l'enlèvement des débris, la vérification de l'étanchéité et des réparations mineures si nécessaire. Notre équipe expérimentée utilise des méthodes sûres et efficaces pour prolonger la durée de vie de votre système d'évacuation des eaux pluviales.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/0de72792-1ee7-4ec7-b383-33c749a72405.png",
+        alt: "Nettoyage de gouttière avec enlèvement manuel des débris",
+        description: "Enlèvement méticuleux des débris accumulés dans une gouttière"
+      },
+      {
+        src: "/lovable-uploads/92b26911-ea4b-426d-b8d6-86143b2ef2c5.png",
+        alt: "Gouttière remplie de feuilles d'automne",
+        description: "Gouttière obstruée par des feuilles d'automne nécessitant un nettoyage professionnel"
+      },
+      {
+        src: "/lovable-uploads/fa65ec75-4306-4346-ad7b-4e61a0b09499.png",
+        alt: "Gouttière propre et fonctionnelle après nettoyage",
+        description: "Système de gouttière nettoyé et parfaitement fonctionnel après intervention"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Pourquoi nettoyer régulièrement vos gouttières",
+        description: "Le nettoyage des gouttières est souvent négligé mais reste crucial pour la protection de votre habitation. Des gouttières obstruées peuvent causer de nombreux problèmes coûteux.",
+        content: [
+          "Prévention des infiltrations d'eau et des dommages structurels à votre toiture et façade",
+          "Élimination des nids d'insectes et des risques sanitaires associés",
+          "Prolongation de la durée de vie de votre système de gouttières",
+          "Protection des fondations contre l'humidité excessive",
+          "Maintien d'une bonne évacuation des eaux pluviales même lors de fortes précipitations"
+        ]
+      },
+      {
+        title: "Notre approche de nettoyage professionnel",
+        description: "STEIS Ismaël utilise une méthode éprouvée pour assurer un nettoyage efficace et sécurisé de vos gouttières.",
+        content: [
+          "Inspection complète du système de gouttières pour identifier les blocages et problèmes potentiels",
+          "Utilisation d'équipements spécialisés pour accéder en toute sécurité à vos gouttières",
+          "Nettoyage manuel méticuleux pour éliminer tous les débris sans endommager les gouttières",
+          "Rinçage à l'eau pour vérifier le bon écoulement et identifier d'éventuelles fuites",
+          "Petites réparations immédiates si nécessaire (resserrage des fixations, colmatage de petites fuites)",
+          "Conseils personnalisés pour l'entretien futur et recommandations sur la fréquence de nettoyage idéale"
+        ]
+      }
     ]
   },
   "nettoyage-muret": {
