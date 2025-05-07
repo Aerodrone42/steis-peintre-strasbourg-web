@@ -31,7 +31,6 @@ jobs:
       - name: Create CNAME file
         run: |
           echo "www.is-peinture.fr" > docs/CNAME
-          cp -v CNAME docs/CNAME
           echo "Content of docs folder:"
           ls -la docs
 
@@ -45,4 +44,3 @@ jobs:
           publish_dir: ./docs
           cname: www.is-peinture.fr
           force_orphan: true
-
