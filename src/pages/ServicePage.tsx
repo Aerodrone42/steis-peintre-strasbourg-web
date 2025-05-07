@@ -81,11 +81,6 @@ const ServicePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Main content - 7 columns */}
             <div className="lg:col-span-7 space-y-8">              
-              <ServiceDetail 
-                details={service.details} 
-                longDescription={service.longDescription}
-              />
-              
               {/* Portfolio section - display at top of main column if exists */}
               {service.portfolioImages && service.portfolioImages.length > 0 && (
                 <PortfolioGallery 
@@ -93,6 +88,11 @@ const ServicePage: React.FC = () => {
                   images={service.portfolioImages}
                 />
               )}
+              
+              <ServiceDetail 
+                details={service.details} 
+                longDescription={service.longDescription}
+              />
               
               <ServiceBenefits additionalContent={service.additionalContent} />
             </div>
