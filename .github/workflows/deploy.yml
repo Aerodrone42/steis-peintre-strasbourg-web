@@ -25,6 +25,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Copy CNAME to dist
+        run: cp CNAME dist/ || echo "CNAME file not found, creating..." && echo "www.is-peinture.fr" > dist/CNAME
+
       - name: Debug build output
         run: ls -la dist
 
@@ -34,4 +37,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           cname: www.is-peinture.fr
-

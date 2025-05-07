@@ -5,6 +5,9 @@ import './index.css'
 
 // S'assurer que le site fonctionne avec le domaine personnalisé
 console.log("Initialisation de l'application...");
+console.log("URL de base actuelle:", document.baseURI);
+console.log("Chemin de l'application:", window.location.pathname);
+
 const rootElement = document.getElementById("root");
 if (!rootElement) {
   console.error("Élément root non trouvé!");
