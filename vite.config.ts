@@ -24,4 +24,5 @@ export default defineConfig(({ mode }) => ({
     outDir: 'docs', // Change output directory from 'dist' to 'docs'
     emptyOutDir: true,
   },
+  base: './', // Utiliser des chemins relatifs au lieu de chemins absolus
 }));
