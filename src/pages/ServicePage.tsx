@@ -17,6 +17,7 @@ import BeforeAfterGallery from '@/components/services/BeforeAfterGallery';
 import ServiceAreas from '@/components/services/ServiceAreas';
 import ServiceFaq from '@/components/services/ServiceFaq';
 import ServiceCallToAction from '@/components/services/ServiceCallToAction';
+import PortfolioGallery from '@/components/services/PortfolioGallery';
 
 const ServicePage: React.FC = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -80,6 +81,15 @@ const ServicePage: React.FC = () => {
                 details={service.details} 
                 longDescription={service.longDescription}
               />
+              
+              {/* Portfolio section - only displayed if portfolioImages exists */}
+              {service.portfolioImages && service.portfolioImages.length > 0 && (
+                <PortfolioGallery 
+                  title={service.title}
+                  images={service.portfolioImages}
+                />
+              )}
+              
               <ServiceBenefits additionalContent={service.additionalContent} />
             </div>
             
@@ -124,7 +134,7 @@ const ServicePage: React.FC = () => {
                   </div>
                 </CardContent>
               </Card>
-              <BeforeAfterGallery beforeAfterImages={[]} title={service.title} />
+              <BeforeAfterGallery beforeAfterImages={service.beforeAfterImages || []} title={service.title} />
               <ServiceAreas areas={[]} />
               <ServiceFaq faqItems={[]} />
             </div>

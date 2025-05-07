@@ -1,4 +1,3 @@
-
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -167,6 +166,53 @@ export const services: ServiceData = {
       "Application de revêtements protecteurs",
       "Peinture résistante aux UV et aux intempéries",
       "Choix de couleurs adaptées à l'architecture locale"
+    ],
+    longDescription: "La peinture extérieure est bien plus qu'une simple question d'esthétique, c'est une protection essentielle pour votre bâtiment. Chez STEIS Ismaël, nous utilisons des produits de haute qualité, spécialement conçus pour résister aux conditions climatiques alsaciennes. Notre équipe d'artisans expérimentés prépare méticuleusement les surfaces avant d'appliquer les revêtements pour garantir un résultat durable et impeccable.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/f34b5524-93e6-42d3-800e-c6aec972e67b.png",
+        alt: "Application de peinture extérieure sur façade",
+        description: "Application soignée de peinture sur façade extérieure"
+      },
+      {
+        src: "/lovable-uploads/20cfe08e-64ff-4fcc-addf-ec0d90cbb3bc.png",
+        alt: "Pinceaux avec peinture colorée",
+        description: "Sélection de couleurs et préparation de peinture de qualité"
+      },
+      {
+        src: "/lovable-uploads/e5f5e954-9c2c-49e7-929b-ed383a62ed27.png",
+        alt: "Installation de gouttière noire",
+        description: "Finition et détails soignés sur les éléments extérieurs"
+      },
+      {
+        src: "/lovable-uploads/077bb559-4425-4b3a-b115-113bf3dc106c.png",
+        alt: "Application de vernis sur bois extérieur",
+        description: "Traitement protecteur des surfaces en bois extérieures"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre approche de la peinture extérieure",
+        description: "STEIS Ismaël applique une méthodologie rigoureuse pour garantir des résultats durables et esthétiques pour tous vos projets de peinture extérieure.",
+        content: [
+          "Diagnostic complet des surfaces et identification des problèmes (fissures, écaillage, moisissures)",
+          "Préparation minutieuse des surfaces par nettoyage haute pression, ponçage et traitement anti-mousse",
+          "Application de sous-couches adaptées pour une adhérence optimale",
+          "Utilisation de peintures professionnelles résistantes aux UV et aux intempéries",
+          "Finitions soignées pour un résultat esthétique et durable"
+        ]
+      },
+      {
+        title: "Avantages de la peinture extérieure",
+        description: "Un ravalement de façade avec une peinture de qualité offre de nombreux bénéfices pour votre habitation.",
+        content: [
+          "Protection efficace contre l'humidité, les intempéries et la pollution",
+          "Prévention des fissures et dégradations de la façade",
+          "Amélioration significative de l'esthétique et de la valeur de votre bien",
+          "Économies d'énergie grâce aux propriétés isolantes de certaines peintures",
+          "Durabilité exceptionnelle avec nos produits de qualité professionnelle"
+        ]
+      }
     ]
   },
   "ravalement-de-facade": {
