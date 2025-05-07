@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, ChevronDown, ChevronUp } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
   // Services de couverture
@@ -29,6 +31,8 @@ const services = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-md">
@@ -144,20 +148,35 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <div className="px-4 py-2 text-steis font-medium">Nos Services</div>
-                <ul className="ml-4 border-l border-steis-100">
-                  {services.map((service) => (
-                    <li key={service.path}>
-                      <Link
-                        to={service.path}
-                        className="block px-4 py-2 text-steis hover:bg-steis-50 rounded-md"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {service.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <Collapsible
+                  open={isServicesOpen}
+                  onOpenChange={setIsServicesOpen}
+                  className="w-full"
+                >
+                  <CollapsibleTrigger className="flex w-full items-center justify-between px-4 py-2 text-steis font-medium hover:bg-steis-50 rounded-md">
+                    <span>Nos Services</span>
+                    {isServicesOpen ? (
+                      <ChevronUp className="h-4 w-4" />
+                    ) : (
+                      <ChevronDown className="h-4 w-4" />
+                    )}
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <ul className="ml-4 border-l border-steis-100">
+                      {services.map((service) => (
+                        <li key={service.path}>
+                          <Link
+                            to={service.path}
+                            className="block px-4 py-2 text-steis hover:bg-steis-50 rounded-md"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {service.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </CollapsibleContent>
+                </Collapsible>
               </li>
               <li>
                 <Link 
