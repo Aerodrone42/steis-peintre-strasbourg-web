@@ -28,9 +28,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Copy CNAME to dist
+      - name: Create CNAME file
         run: |
           echo "www.is-peinture.fr" > dist/CNAME
+          cp -v CNAME dist/CNAME
           echo "Content of dist folder:"
           ls -la dist
 

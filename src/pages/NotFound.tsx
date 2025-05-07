@@ -11,6 +11,12 @@ const NotFound = () => {
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+    
+    // Add more debugging info
+    console.log("Current URL:", window.location.href);
+    console.log("Base URL:", document.baseURI);
+    console.log("Current pathname:", window.location.pathname);
+    console.log("Location object:", location);
   }, [location.pathname]);
 
   return (
@@ -22,6 +28,9 @@ const NotFound = () => {
         </p>
         <p className="mb-4 text-gray-500">
           URL actuelle : <code>{window.location.href}</code>
+        </p>
+        <p className="mb-4 text-gray-500">
+          Pathname : <code>{window.location.pathname}</code>
         </p>
         <Link
           to="/"

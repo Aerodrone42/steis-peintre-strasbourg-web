@@ -9,6 +9,8 @@ console.log("URL de base actuelle:", document.baseURI);
 console.log("Chemin de l'application:", window.location.pathname);
 console.log("Emplacement complet:", window.location.href);
 console.log("Hostname:", window.location.hostname);
+console.log("Protocol:", window.location.protocol);
+console.log("Origin:", window.location.origin);
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
@@ -25,3 +27,4 @@ console.log("Le site est configuré pour fonctionner avec le domaine personnalis
 console.log("Chemin de base:", import.meta.env.BASE_URL);
 console.log("Mode:", import.meta.env.MODE);
 console.log("Production:", import.meta.env.PROD);
+console.log("Environment variables:", import.meta.env);
