@@ -1,3 +1,4 @@
+
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -455,4 +456,53 @@ export const services: ServiceData = {
       "Large choix de couleurs et de finitions",
       "Conseils de professionnels pour un rendu esthétique"
     ],
-    longDescription: "Le crépi est une solution esthétique et durable pour protéger et embellir vos façades et murets. Chez STEIS Ismaël, nous proposons un service complet d'application de crépi, de la préparation minutieuse des surfaces jusqu'à la finition parfaite. Notre équipe d'artisans qualifiés maîtrise différentes techniques pour vous offrir un rendu esthétique qui valorise votre bien tout en assurant sa protection contre les intemp
+    longDescription: "Le crépi est une solution esthétique et durable pour protéger et embellir vos façades et murets. Chez STEIS Ismaël, nous proposons un service complet d'application de crépi, de la préparation minutieuse des surfaces jusqu'à la finition parfaite. Notre équipe d'artisans qualifiés maîtrise différentes techniques pour vous offrir un rendu esthétique qui valorise votre bien tout en assurant sa protection contre les intempéries et le temps.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/4fd6f847-3844-432e-83c6-8ae4630b34da.png",
+        alt: "Application de crépi sur façade",
+        description: "Application professionnelle de crépi sur une façade résidentielle"
+      },
+      {
+        src: "/lovable-uploads/4fd63f45-4671-41df-b9d0-d4af63d597b6.png",
+        alt: "Muret avec crépi décoratif",
+        description: "Finition décorative sur un muret extérieur avec texture spéciale"
+      },
+      {
+        src: "/lovable-uploads/4cd2b1d4-9c16-4d3d-8669-b5e204d7b446.png",
+        alt: "Préparation de surface pour crépi",
+        description: "Préparation minutieuse des surfaces avant application du crépi"
+      },
+      {
+        src: "/lovable-uploads/5b5784ac-182c-4513-9fff-3a5bb5b051ec.png",
+        alt: "Façade avec crépi coloré",
+        description: "Résultat final d'une façade avec crépi coloré harmonieux"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre expertise en crépi de façade",
+        description: "STEIS Ismaël possède une solide expérience dans l'application de crépi sur tous types de surfaces. Notre maîtrise des différentes techniques et finitions nous permet d'offrir des solutions adaptées à chaque projet.",
+        content: [
+          "Maîtrise des différentes techniques d'application pour tous types de crépi (projeté, taloché, gratté, écrasé)",
+          "Connaissance approfondie des matériaux et de leurs comportements selon les expositions et conditions climatiques",
+          "Conseil personnalisé pour le choix des finitions et des couleurs en harmonie avec votre environnement architectural",
+          "Application précise et soignée pour un rendu uniforme et durable",
+          "Respect strict des temps de séchage et des protocoles d'application pour une adhérence optimale"
+        ]
+      },
+      {
+        title: "Les avantages du crépi",
+        description: "Le crépi offre de nombreux bénéfices pour vos façades et murets, combinant protection technique et qualités esthétiques.",
+        content: [
+          "Protection efficace contre les intempéries et l'humidité grâce à ses propriétés imperméabilisantes",
+          "Grande résistance aux variations climatiques et aux UV pour une durabilité optimale",
+          "Large choix de textures et de couleurs pour personnaliser l'aspect de votre bâtiment",
+          "Masquage efficace des imperfections des murs et murets",
+          "Entretien minimal pour un résultat durable dans le temps",
+          "Amélioration de l'isolation thermique de votre habitation avec certains types de crépis"
+        ]
+      }
+    ]
+  }
+};
