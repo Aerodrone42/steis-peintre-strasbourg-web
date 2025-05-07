@@ -28,9 +28,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Create CNAME file
+      - name: Create CNAME and 404 configuration
         run: |
           echo "www.is-peinture.fr" > docs/CNAME
+          cp public/404.html docs/404.html
           echo "Content of docs folder:"
           ls -la docs
 
