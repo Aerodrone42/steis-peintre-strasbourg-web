@@ -24,5 +24,5 @@ export default defineConfig(({ mode }) => ({
     outDir: 'docs',
     emptyOutDir: true,
   },
-  base: '/',
+  base: '/steis-peintre-strasbourg-web/', // Modifié pour fonctionner avec GitHub Pages
 }));
