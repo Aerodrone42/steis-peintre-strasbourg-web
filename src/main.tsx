@@ -7,6 +7,8 @@ import './index.css'
 console.log("Initialisation de l'application...");
 console.log("URL de base actuelle:", document.baseURI);
 console.log("Chemin de l'application:", window.location.pathname);
+console.log("Emplacement complet:", window.location.href);
+console.log("Hostname:", window.location.hostname);
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
