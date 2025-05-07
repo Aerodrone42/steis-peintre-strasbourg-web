@@ -30,18 +30,18 @@ jobs:
 
       - name: Create CNAME file
         run: |
-          echo "www.is-peinture.fr" > dist/CNAME
-          cp -v CNAME dist/CNAME
-          echo "Content of dist folder:"
-          ls -la dist
+          echo "www.is-peinture.fr" > docs/CNAME
+          cp -v CNAME docs/CNAME
+          echo "Content of docs folder:"
+          ls -la docs
 
       - name: Debug build output
-        run: ls -la dist
+        run: ls -la docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./docs
           cname: www.is-peinture.fr
           force_orphan: true
