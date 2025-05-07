@@ -1,4 +1,3 @@
-
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -455,51 +454,3 @@ export const services: ServiceData = {
       {
         src: "/lovable-uploads/1d7fdd23-5c0e-42ab-9bfa-9fbaea81ac80.png",
         alt: "Détail de nettoyage de façade à haute pression",
-        description: "Technique professionnelle de nettoyage pour façade durable"
-      },
-      {
-        src: "/lovable-uploads/f34b5524-93e6-42d3-800e-c6aec972e67b.png",
-        alt: "Résultat de nettoyage de façade",
-        description: "Résultat visible d'un nettoyage professionnel de façade"
-      }
-    ],
-    additionalContent: [
-      {
-        title: "Notre approche du nettoyage de façade",
-        description: "STEIS Ismaël utilise des techniques professionnelles adaptées à chaque type de façade pour garantir un résultat optimal sans endommager les matériaux.",
-        content: [
-          "Diagnostic complet de l'état de votre façade et identification des types de salissures",
-          "Choix de la méthode de nettoyage adaptée au matériau (pierre, brique, crépi, etc.)",
-          "Protection minutieuse des éléments fragiles (menuiseries, plantations, etc.)",
-          "Nettoyage à pression adaptée selon le type de revêtement",
-          "Application de produits de traitement anti-mousse et hydrofuges si nécessaire",
-          "Finitions soignées pour un résultat impeccable"
-        ]
-      },
-      {
-        title: "Avantages du nettoyage professionnel de façade",
-        description: "Un nettoyage de façade régulier présente de nombreux bénéfices pour votre habitation.",
-        content: [
-          "Restauration de l'aspect esthétique initial de votre bâtiment",
-          "Élimination des micro-organismes néfastes qui dégradent progressivement les matériaux",
-          "Prévention des infiltrations d'eau dans les murs liées à l'humidité retenue par les mousses",
-          "Amélioration de la qualité de l'air autour de votre habitation",
-          "Valorisation immédiate de votre patrimoine immobilier",
-          "Prolongation de la durée de vie des revêtements de façade"
-        ]
-      }
-    ]
-  },
-  "crepi-facade-et-muret": {
-    title: "Crépi façade et muret",
-    description: "Embellissez vos murs et murets avec nos solutions de crépi décoratif. Nous vous proposons différents styles et textures pour personnaliser votre extérieur.",
-    image: "/lovable-uploads/01afa244-8bb1-42c3-9ef5-aee37b740513.png",
-    details: [
-      "Préparation des surfaces",
-      "Application de crépi traditionnel ou décoratif",
-      "Large choix de couleurs et de finitions",
-      "Conseils de professionnels pour un rendu esthétique"
-    ],
-    longDescription: "Le crépi est une solution esthétique et durable pour protéger et embellir vos façades et murets. Chez STEIS Ismaël, nous proposons un service complet d'application de crépi, de la préparation minutieuse des surfaces jusqu'à la finition parfaite. Notre équipe d'artisans qualifiés maîtrise différentes techniques pour vous offrir un rendu esthétique qui valorise votre bien tout en assurant sa protection contre les intempéries."
-  }
-};
