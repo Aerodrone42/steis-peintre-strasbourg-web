@@ -437,28 +437,26 @@ export const services: ServiceData = {
       "Application de sous-couches",
       "Peinture décorative",
       "Conseils personnalisés en couleurs et matériaux"
-    ]
-  },
-  "peinture-ferronneries": {
-    title: "Peinture ferronneries",
-    description: "Protégez et embellissez vos ferronneries intérieures et extérieures avec nos services de peinture spécialisés. Nous vous proposons une large gamme de couleurs et de finitions pour personnaliser chaque élément selon vos goûts.",
-    image: "/lovable-uploads/01afa244-8bb1-42c3-9ef5-aee37b740513.png",
-    details: [
-      "Préparation des surfaces (ponçage, enduit)",
-      "Application de sous-couches",
-      "Peinture décorative",
-      "Conseils personnalisés en couleurs et matériaux"
-    ]
-  },
-  "peinture-gouttieres": {
-    title: "Peinture gouttières",
-    description: "Protégez et embellissez vos gouttières avec nos services de peinture spécialisés. Nous vous proposons une large gamme de couleurs et de finitions pour personnaliser chaque élément selon vos goûts.",
-    image: "/lovable-uploads/01afa244-8bb1-42c3-9ef5-aee37b740513.png",
-    details: [
-      "Préparation des surfaces (ponçage, enduit)",
-      "Application de sous-couches",
-      "Peinture décorative",
-      "Conseils personnalisés en couleurs et matériaux"
-    ]
-  },
-};
+    ],
+    longDescription: "La peinture de boiseries est un aspect essentiel de l'entretien et de l'embellissement de votre habitation. Chez STEIS Ismaël, notre équipe d'artisans qualifiés maîtrise parfaitement les techniques spécifiques à la peinture sur bois. Nous traitons avec soin vos menuiseries, volets, bardages, pergolas et autres éléments en bois pour leur offrir protection et esthétisme durable.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/b5d228a4-a2cc-47b8-9d19-5cb7c8b66a90.png",
+        alt: "Bardage en bois peint",
+        description: "Rénovation de bardage en bois avec traitement protecteur et teinte naturelle"
+      },
+      {
+        src: "/lovable-uploads/4fd6f847-3844-432e-83c6-8ae4630b34da.png",
+        alt: "Application de vernis sur terrasse en bois",
+        description: "Application soignée de protection sur terrasse en bois exotique"
+      },
+      {
+        src: "/lovable-uploads/2e3f1dd9-3f05-48aa-a6f3-171a35494756.png",
+        alt: "Peinture décorative sur boiseries",
+        description: "Travail de peinture décorative et colorée sur éléments en bois"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre expertise en peinture de boiseries",
+        description: "La peinture sur bois nécessite une expertise particulière pour assurer un résultat durable et esthétique. Chez STEIS Ismaël, nous possédons ce savoir-faire spécifique.",
