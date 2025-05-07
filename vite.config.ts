@@ -24,5 +24,5 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     emptyOutDir: true,
   },
-  base: './', // Modifié pour assurer la compatibilité avec GitHub Pages
+  base: '/', // Utiliser la racine pour les domaines personnalisés
 }));
