@@ -25,4 +25,7 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true,
   },
   base: '/',
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+  },
 }));

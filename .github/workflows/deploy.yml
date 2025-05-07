@@ -32,8 +32,6 @@ jobs:
         run: |
           echo "www.is-peinture.fr" > docs/CNAME
           cp public/404.html docs/
-          cp index.html docs/ || echo "index.html already exists in docs/"
-          # Create .nojekyll file to disable Jekyll processing
           touch docs/.nojekyll
           # Debug output
           echo "Content of docs folder:"

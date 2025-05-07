@@ -19,6 +19,7 @@ const NotFound = () => {
     console.log("Hostname:", window.location.hostname);
     console.log("Protocol:", window.location.protocol);
     console.log("Port:", window.location.port);
+    console.log("Base URL:", import.meta.env.BASE_URL);
   }, [location]);
 
   return (
@@ -42,6 +43,9 @@ const NotFound = () => {
             </p>
             <p className="mb-2 text-gray-700">
               <span className="font-medium">Host:</span> <code className="bg-gray-100 px-1">{window.location.host}</code>
+            </p>
+            <p className="mb-2 text-gray-700">
+              <span className="font-medium">Base URL:</span> <code className="bg-gray-100 px-1">{import.meta.env.BASE_URL}</code>
             </p>
           </div>
           <div className="space-y-4">
