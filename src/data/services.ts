@@ -1,3 +1,4 @@
+
 import { ServiceData } from "../types/service";
 
 export const services: ServiceData = {
@@ -454,3 +455,197 @@ export const services: ServiceData = {
       {
         src: "/lovable-uploads/1d7fdd23-5c0e-42ab-9bfa-9fbaea81ac80.png",
         alt: "Détail de nettoyage de façade à haute pression",
+        description: "Technique professionnelle de nettoyage pour façade durable"
+      },
+      {
+        src: "/lovable-uploads/f34b5524-93e6-42d3-800e-c6aec972e67b.png",
+        alt: "Résultat de nettoyage de façade",
+        description: "Résultat visible d'un nettoyage professionnel de façade"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre approche du nettoyage de façade",
+        description: "STEIS Ismaël utilise des techniques professionnelles adaptées à chaque type de façade pour garantir un résultat optimal sans endommager les matériaux.",
+        content: [
+          "Diagnostic complet de l'état de votre façade et identification des types de salissures",
+          "Choix de la méthode de nettoyage adaptée au matériau (pierre, brique, crépi, etc.)",
+          "Protection minutieuse des éléments fragiles (menuiseries, plantations, etc.)",
+          "Nettoyage à pression adaptée selon le type de revêtement",
+          "Application de produits de traitement anti-mousse et hydrofuges si nécessaire",
+          "Finitions soignées pour un résultat impeccable"
+        ]
+      },
+      {
+        title: "Avantages du nettoyage professionnel de façade",
+        description: "Un nettoyage de façade régulier présente de nombreux bénéfices pour votre habitation.",
+        content: [
+          "Restauration de l'aspect esthétique initial de votre bâtiment",
+          "Élimination des micro-organismes néfastes qui dégradent progressivement les matériaux",
+          "Prévention des infiltrations d'eau dans les murs liées à l'humidité retenue par les mousses",
+          "Amélioration de la qualité de l'air autour de votre habitation",
+          "Valorisation immédiate de votre patrimoine immobilier",
+          "Prolongation de la durée de vie des revêtements de façade"
+        ]
+      }
+    ]
+  },
+  "nettoyage-gouttiere": {
+    title: "Nettoyage gouttière",
+    description: "Prévenez les dégâts d'eau avec un entretien régulier de vos gouttières. Notre service professionnel élimine les débris, feuilles et mousses qui obstruent l'écoulement.",
+    image: "/lovable-uploads/0fdbff75-2089-458e-bc84-4ba5e49f6e74.png",
+    details: [
+      "Inspection complète du système d'évacuation des eaux pluviales",
+      "Élimination des débris et des bouchons",
+      "Vérification des fixations et des joints",
+      "Nettoyage des descentes et des regards"
+    ],
+    longDescription: "Le nettoyage régulier des gouttières est essentiel pour éviter les infiltrations d'eau et protéger la structure de votre bâtiment. Chez STEIS Ismaël, nous assurons un nettoyage complet de votre système d'évacuation des eaux pluviales, des gouttières aux descentes en passant par les regards. Notre intervention permet d'éviter les débordements lors de fortes pluies et prolonge la durée de vie de vos installations.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/381868a4-120a-4f94-b9e3-bac0398de61a.png",
+        alt: "Nettoyage gouttière avec sécurité",
+        description: "Intervention en hauteur sécurisée pour le nettoyage des gouttières"
+      },
+      {
+        src: "/lovable-uploads/e5f5e954-9c2c-49e7-929b-ed383a62ed27.png",
+        alt: "Gouttière nettoyée prête à l'emploi",
+        description: "Gouttière entièrement nettoyée pour une évacuation optimale des eaux pluviales"
+      },
+      {
+        src: "/lovable-uploads/0fdbff75-2089-458e-bc84-4ba5e49f6e74.png",
+        alt: "Débris retirés des gouttières",
+        description: "Élimination des feuilles et débris qui obstruent l'écoulement"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre approche du nettoyage de gouttières",
+        description: "STEIS Ismaël utilise une méthodologie rigoureuse pour assurer un nettoyage efficace et sécurisé de votre système d'évacuation des eaux pluviales.",
+        content: [
+          "Inspection visuelle complète pour identifier les zones problématiques",
+          "Élimination manuelle des gros débris (feuilles, branches, mousses)",
+          "Nettoyage à l'eau sous pression adaptée pour éliminer les résidus incrustés",
+          "Vérification et débouchage des descentes d'eau",
+          "Contrôle de l'étanchéité des joints et des raccords",
+          "Test d'écoulement pour garantir le bon fonctionnement du système"
+        ]
+      },
+      {
+        title: "Pourquoi nettoyer régulièrement vos gouttières",
+        description: "L'entretien régulier de vos gouttières offre de nombreux avantages pour préserver l'intégrité de votre bâtiment.",
+        content: [
+          "Prévention des infiltrations d'eau dans les murs et les fondations",
+          "Élimination des risques de débordement lors de fortes précipitations",
+          "Protection de la façade contre les coulures et les taches",
+          "Prolongation de la durée de vie de vos gouttières et de votre toiture",
+          "Prévention des nids d'insectes et nuisibles qui s'installent dans les débris accumulés",
+          "Économies substantielles en évitant les réparations coûteuses liées aux dégâts des eaux"
+        ]
+      }
+    ]
+  },
+  "nettoyage-muret": {
+    title: "Nettoyage muret",
+    description: "Redonnez de l'éclat à vos murets et clôtures grâce à notre service de nettoyage spécialisé. Nous éliminons mousses, lichens et salissures pour une propreté durable.",
+    image: "/lovable-uploads/52e63c25-14dc-490f-b703-f24f6de0536f.png",
+    details: [
+      "Inspection et diagnostic de l'état des murets",
+      "Nettoyage adapté au matériau (pierre, béton, briques)",
+      "Traitement anti-mousse et hydrofuge",
+      "Conseils d'entretien personnalisés"
+    ],
+    longDescription: "Le nettoyage des murets est une opération qui contribue significativement à l'esthétique de votre propriété. Chez STEIS Ismaël, nous proposons un service professionnel de nettoyage de murets qui s'adapte à tous types de matériaux et de salissures. Notre expertise nous permet d'éliminer efficacement les mousses, lichens et pollutions qui ternissent l'aspect de vos clôtures et murets, tout en préservant leur intégrité.",
+    portfolioImages: [
+      {
+        src: "/lovable-uploads/52e63c25-14dc-490f-b703-f24f6de0536f.png",
+        alt: "Nettoyage de muret en pierre",
+        description: "Procédé de nettoyage adapté aux murets en pierre naturelle"
+      },
+      {
+        src: "/lovable-uploads/37a4b5a8-507b-4703-9e64-3fe53cc712b4.png",
+        alt: "Comparaison avant-après nettoyage de muret",
+        description: "Résultat visible immédiatement après le traitement professionnel"
+      },
+      {
+        src: "/lovable-uploads/9966a9f5-bc9b-4a51-a5d0-d78ca24be0b7.png",
+        alt: "Nettoyage haute pression de muret",
+        description: "Utilisation de matériel professionnel pour un nettoyage en profondeur"
+      }
+    ],
+    additionalContent: [
+      {
+        title: "Notre approche du nettoyage de murets",
+        description: "STEIS Ismaël utilise des techniques adaptées à chaque type de matériau et de salissure pour assurer un résultat optimal sans endommager vos murets.",
+        content: [
+          "Diagnostic précis du type de matériau et de l'état du muret",
+          "Choix de la méthode de nettoyage la plus adaptée (haute pression réglable, nettoyage chimique, traitement spécifique)",
+          "Protection des plantations et surfaces environnantes",
+          "Application minutieuse du traitement anti-mousse et anti-lichens",
+          "Rinçage soigné pour éliminer tous résidus",
+          "Application d'un traitement hydrofuge pour une protection durable (en option)"
+        ]
+      },
+      {
+        title: "Avantages du nettoyage professionnel de murets",
+        description: "Un entretien régulier de vos murets présente de nombreux bénéfices pour votre propriété.",
+        content: [
+          "Amélioration immédiate de l'aspect esthétique de votre propriété",
+          "Élimination des organismes qui dégradent progressivement les matériaux",
+          "Prévention de la détérioration prématurée due aux racines des mousses",
+          "Valorisation de votre patrimoine immobilier",
+          "Prolongation de la durée de vie de vos murets et clôtures",
+          "Meilleure visibilité des détails architecturaux et de la texture des matériaux"
+        ]
+      }
+    ]
+  },
+  "crepi-facade-et-muret": {
+    title: "Crépi façade et muret",
+    description: "Embellissez vos murs et murets avec nos solutions de crépi décoratif. Nous vous proposons différents styles et textures pour personnaliser votre extérieur.",
+    image: "/lovable-uploads/b4ff52f7-d545-4080-8339-c423e68448a4.png",
+    details: [
+      "Préparation des surfaces",
+      "Application de crépi traditionnel ou décoratif",
+      "Large choix de couleurs et de finitions",
+      "Conseils de professionnels pour un rendu esthétique"
+    ],
+    longDescription: "Le crépi est une solution esthétique et durable pour protéger et embellir vos façades et murets. Chez STEIS Ismaël, nous proposons un service complet d'application de crépi, de la préparation minutieuse des surfaces jusqu'à la finition parfaite. Notre équipe d'artisans qualifiés maîtrise différentes techniques pour vous offrir un rendu esthétique qui valorise votre bien tout en assurant sa protection contre les intempéries."
+  },
+  "peinture-boiseries": {
+    title: "Peinture boiseries",
+    description: "Protégez et embellissez vos boiseries extérieures avec nos traitements spécifiques. Nos experts vous conseillent sur les meilleures solutions adaptées à votre environnement.",
+    image: "/lovable-uploads/1a785ffe-2c5c-4a97-94b6-1d020990e2fa.png",
+    details: [
+      "Préparation soignée des boiseries",
+      "Application de traitements préventifs",
+      "Peinture ou lasure de finition",
+      "Protection longue durée contre les UV et l'humidité"
+    ],
+    longDescription: "La peinture des boiseries extérieures est essentielle pour protéger le bois contre les agressions climatiques tout en préservant son aspect esthétique. Chez STEIS Ismaël, nous assurons un traitement complet de vos boiseries, du ponçage à l'application des finitions. Notre expertise nous permet de choisir les produits les mieux adaptés à chaque essence de bois et à votre environnement spécifique."
+  },
+  "peinture-ferronneries": {
+    title: "Peinture ferronneries",
+    description: "Préservez et sublimez vos éléments métalliques avec nos traitements anti-corrosion et nos peintures décoratives. Une protection efficace contre la rouille et les intempéries.",
+    image: "/lovable-uploads/f69e56ea-83d1-48ce-ba83-bb0353834d74.png",
+    details: [
+      "Traitement anti-rouille",
+      "Préparation des surfaces métalliques",
+      "Application de primaires d'accrochage",
+      "Finition décorative adaptée à vos goûts"
+    ],
+    longDescription: "La peinture des ferronneries nécessite un savoir-faire particulier pour garantir une protection efficace contre la corrosion tout en offrant un résultat esthétique. Chez STEIS Ismaël, nous maîtrisons les techniques spécifiques au traitement des métaux. Notre intervention comprend le décapage des anciennes peintures, le traitement anti-rouille et l'application de revêtements adaptés pour une durabilité optimale."
+  },
+  "peinture-gouttieres": {
+    title: "Peinture gouttières",
+    description: "Harmonisez vos gouttières avec votre façade tout en les protégeant durablement. Nos peintures spéciales garantissent une adhérence parfaite sur tous types de matériaux.",
+    image: "/lovable-uploads/13552a73-39cc-49c2-ae6a-eaac0d810170.png",
+    details: [
+      "Nettoyage et dégraissage des gouttières",
+      "Application de primaires spécifiques",
+      "Peinture adaptée au matériau (zinc, PVC, aluminium)",
+      "Finition résistante aux UV et aux intempéries"
+    ],
+    longDescription: "La peinture des gouttières permet non seulement d'harmoniser leur aspect avec le style de votre maison mais aussi de prolonger leur durée de vie. Chez STEIS Ismaël, nous utilisons des produits spécifiquement formulés pour adhérer aux différents matériaux des gouttières (zinc, PVC, aluminium) et résister aux conditions extérieures. Notre intervention comprend une préparation minutieuse des surfaces pour garantir une adhérence optimale et une finition durable."
+  }
+};
