@@ -12,3 +12,4 @@ root.render(<App />);
 
 // Vérifier que le CNAME est présent pour le domaine personnalisé
 console.log("Le site est configuré pour fonctionner avec le domaine personnalisé: www.is-peinture.fr");
+console.log("Chemin de base:", import.meta.env.BASE_URL);
