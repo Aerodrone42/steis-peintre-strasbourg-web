@@ -13,6 +13,8 @@ import ServicesPage from "./pages/ServicesPage";
 import ZonesPage from "./pages/ZonesPage";
 import ZoneDetailPage from "./pages/ZoneDetailPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import MentionsLegalesPage from "./pages/MentionsLegalesPage";
+import PolitiqueConfidentialitePage from "./pages/PolitiqueConfidentialitePage";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/zones" element={<ZonesPage />} />
           <Route path="/zones/:zoneId" element={<ZoneDetailPage />} />
           <Route path="/realisations" element={<ProjectsPage />} />
+          <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
+          <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialitePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
