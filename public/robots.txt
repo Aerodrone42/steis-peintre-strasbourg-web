@@ -1,4 +1,3 @@
-
 User-agent: *
 Allow: /
 Sitemap: https://www.is-peinture.fr/sitemap.xml
