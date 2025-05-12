@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <img 
                 src="/lovable-uploads/e133f954-535b-4a56-8bc8-56b2a83338ad.png" 
-                alt="STEIS Ismaël" 
+                alt="STEIS ISMAËL" 
                 className="h-12 invert"
               />
               <div>
@@ -134,7 +134,18 @@ const Footer = () => {
         
         <div className="mt-8 pt-8 border-t border-steis-400 text-center text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>&copy; {currentYear} STEIS ISMAËL. Tous droits réservés.</p>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+              <p>&copy; {currentYear} STEIS ISMAËL. Tous droits réservés.</p>
+              <span className="hidden md:inline">|</span>
+              <a 
+                href="https://www.site-internet-sans-abonnement.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-steis-200"
+              >
+                créé par Aerodrone multiservices
+              </a>
+            </div>
             <div className="flex gap-4">
               <Link to="/mentions-legales" className="hover:text-steis-200">Mentions légales</Link>
               <Link to="/politique-de-confidentialite" className="hover:text-steis-200">Politique de confidentialité</Link>
