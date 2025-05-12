@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CallbackButton from '../common/CallbackButton';
+import CookieBanner from '../common/CookieBanner';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,6 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
       <CallbackButton />
+      <CookieBanner />
       <Footer />
     </div>
   );

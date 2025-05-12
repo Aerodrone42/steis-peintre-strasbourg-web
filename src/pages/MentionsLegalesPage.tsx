@@ -58,6 +58,16 @@ const MentionsLegalesPage = () => {
           </section>
 
           <section>
+            <h2 className="text-xl font-semibold mb-4">Cookies</h2>
+            <p className="mb-4">
+              Ce site utilise des cookies pour améliorer l'expérience utilisateur. En naviguant sur ce site, vous acceptez l'utilisation de cookies conformément à notre politique de confidentialité.
+            </p>
+            <p>
+              Pour plus d'informations sur l'utilisation des cookies, veuillez consulter notre <a href="/politique-de-confidentialite" className="text-steis hover:underline">Politique de Confidentialité</a>.
+            </p>
+          </section>
+
+          <section>
             <h2 className="text-xl font-semibold mb-4">Crédits</h2>
             <p>
               Site réalisé par <a href="https://www.site-internet-sans-abonnement.fr/" target="_blank" rel="noopener noreferrer" className="text-steis hover:underline">Aerodrone multiservices</a>

@@ -53,8 +53,14 @@ const PolitiqueConfidentialitePage = () => {
 
           <section>
             <h2 className="text-xl font-semibold mb-4">Cookies</h2>
+            <p className="mb-4">
+              Notre site utilise des "cookies" pour améliorer l'expérience de l'utilisateur et analyser le trafic. Les cookies sont de petits fichiers qu'un site ou son prestataire de services transfère sur le disque dur de votre ordinateur par l'intermédiaire de votre navigateur Web (si vous l'autorisez).
+            </p>
+            <p className="mb-4">
+              Ces cookies permettent au site de reconnaître votre navigateur et, si vous disposez d'un compte, de l'associer à celui-ci. Nous utilisons également des cookies pour comprendre et enregistrer vos préférences pour de futures visites et compiler des données agrégées sur le trafic du site.
+            </p>
             <p>
-              Notre site peut utiliser des "cookies" pour améliorer l'expérience de l'utilisateur. Le navigateur web de l'utilisateur place des cookies sur son disque dur pour des besoins d'enregistrement et parfois pour suivre des informations le concernant. L'utilisateur peut choisir de configurer son navigateur pour refuser les cookies, ou pour être alerté lorsque des cookies sont envoyés. Si tel est le cas, notez que certaines parties du site peuvent ne pas fonctionner correctement.
+              Vous pouvez configurer votre navigateur pour qu'il vous avertisse lorsque des cookies sont envoyés, ou pour qu'il refuse tous les cookies. Si vous refusez les cookies, sachez que certaines parties du site peuvent ne pas fonctionner correctement.
             </p>
           </section>
 
@@ -62,6 +68,13 @@ const PolitiqueConfidentialitePage = () => {
             <h2 className="text-xl font-semibold mb-4">Consentement</h2>
             <p>
               En utilisant notre site, vous consentez à notre politique de confidentialité.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-4">Modifications de notre politique de confidentialité</h2>
+            <p>
+              Si nous décidons de changer notre politique de confidentialité, nous publierons ces changements sur cette page. Cette politique a été mise à jour le 12 mai 2025.
             </p>
           </section>
         </div>
