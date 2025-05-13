@@ -3,3 +3,4 @@ User-agent: *
 Allow: /
 Sitemap: https://www.is-peinture.fr/sitemap.xml
 Disallow: /404.html
+

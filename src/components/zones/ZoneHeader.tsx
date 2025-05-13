@@ -12,7 +12,7 @@ interface ZoneHeaderProps {
 const ZoneHeader: React.FC<ZoneHeaderProps> = ({ city, surroundingCities, metaDescription, metaKeywords }) => {
   // Créer un titre plus descriptif et accrocheur pour le SEO
   const pageTitle = `Artisan Peintre & Couvreur STEIS Ismaël à ${city} | Services professionnels`;
-  const canonicalUrl = `https://www.is-peinture.fr/zones/${city.toLowerCase().replace(/\s+/g, '-')}`;
+  const canonicalUrl = `https://www.is-peinture.fr/#/zones/${city.toLowerCase().replace(/\s+/g, '-')}`;
   
   return (
     <>

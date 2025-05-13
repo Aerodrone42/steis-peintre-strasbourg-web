@@ -46,3 +46,4 @@ jobs:
           publish_dir: ./docs
           cname: www.is-peinture.fr
           force_orphan: true
+
