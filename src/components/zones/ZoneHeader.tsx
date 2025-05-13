@@ -12,6 +12,7 @@ interface ZoneHeaderProps {
 const ZoneHeader: React.FC<ZoneHeaderProps> = ({ city, surroundingCities, metaDescription, metaKeywords }) => {
   // Créer un titre plus descriptif et accrocheur pour le SEO
   const pageTitle = `Artisan Peintre & Couvreur STEIS Ismaël à ${city} | Services professionnels`;
+  const canonicalUrl = `https://www.is-peinture.fr/zones/${city.toLowerCase().replace(/\s+/g, '-')}`;
   
   return (
     <>
@@ -23,7 +24,8 @@ const ZoneHeader: React.FC<ZoneHeaderProps> = ({ city, surroundingCities, metaDe
         <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="fr_FR" />
-        <link rel="canonical" href={`https://www.steis-artisan.fr/zones/${city.toLowerCase().replace(/\s+/g, '-')}`} />
+        <meta property="og:url" content={canonicalUrl} />
+        <link rel="canonical" href={canonicalUrl} />
         
         {/* Schema.org JSON-LD structured data */}
         <script type="application/ld+json">
@@ -41,7 +43,7 @@ const ZoneHeader: React.FC<ZoneHeaderProps> = ({ city, surroundingCities, metaDe
             "geo": {
               "@type": "GeoCoordinates"
             },
-            "url": `https://www.steis-artisan.fr/zones/${city.toLowerCase().replace(/\s+/g, '-')}`,
+            "url": canonicalUrl,
             "telephone": "+33XXXXXXXXXX",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
