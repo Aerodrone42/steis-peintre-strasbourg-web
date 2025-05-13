@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import NotFound from './NotFound';
 import { Card, CardContent } from '@/components/ui/card';
+import { Helmet } from 'react-helmet';
 
 // Import service data
 import { services } from '@/data/services';
@@ -25,7 +26,6 @@ const ServicePage: React.FC = () => {
 
   useEffect(() => {
     if (service) {
-      document.title = `STEIS Ismaël - ${service.title}`;
       // Scroll to top when service page changes
       window.scrollTo(0, 0);
     }
@@ -39,8 +39,58 @@ const ServicePage: React.FC = () => {
   console.log("Current service:", serviceId);
   console.log("Service portfolio images:", service.portfolioImages);
 
+  // SEO optimizations
+  const pageTitle = `${service.title} à Strasbourg et environs | STEIS Ismaël`;
+  const pageDescription = `Services professionnels de ${service.title.toLowerCase()} à Strasbourg et dans toute l'Alsace. Devis gratuit, travail soigné, garantie décennale. STEIS Ismaël artisan qualifié.`;
+  const canonicalUrl = `https://www.is-peinture.fr/#/services/${serviceId}`;
+
   return (
     <Layout>
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        
+        {/* OpenGraph tags for social sharing */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={service.image} />
+        
+        {/* Twitter card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={service.image} />
+
+        {/* Schema.org structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": service.title,
+            "description": service.description,
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "STEIS Ismaël",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Strasbourg",
+                "addressRegion": "Alsace",
+                "addressCountry": "FR"
+              },
+              "telephone": "0780233098",
+              "priceRange": "€€"
+            },
+            "areaServed": "Alsace",
+            "serviceType": service.title,
+            "image": service.image
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero section with service image as background */}
       <div className="relative bg-steis-800">
         <div className="absolute inset-0 opacity-30">

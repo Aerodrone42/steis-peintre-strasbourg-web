@@ -1,6 +1,25 @@
 
 User-agent: *
 Allow: /
-Sitemap: https://www.is-peinture.fr/sitemap.xml
 Disallow: /404.html
 
+# Sitemap
+Sitemap: https://www.is-peinture.fr/sitemap.xml
+
+# Ajout des règles spécifiques pour améliorer l'indexation
+User-agent: Googlebot
+Allow: /
+Allow: /#/
+
+# Autres robots majeurs
+User-agent: bingbot
+Allow: /
+Allow: /#/
+
+User-agent: Slurp
+Allow: /
+Allow: /#/
+
+User-agent: DuckDuckBot
+Allow: /
+Allow: /#/
