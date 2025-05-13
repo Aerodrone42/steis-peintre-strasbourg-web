@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-// S'assurer que le site fonctionne avec le domaine personnalisé
+// Debugging information
 console.log("Initialisation de l'application...");
 console.log("URL de base actuelle:", document.baseURI);
 console.log("Chemin de l'application:", window.location.pathname);
