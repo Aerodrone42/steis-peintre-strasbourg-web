@@ -5,17 +5,50 @@
     <meta charset="utf-8">
     <title>IS Peinture - Redirection</title>
     <script type="text/javascript">
-      // Redirection pour SPA sur GitHub Pages - Version améliorée
+      // Redirection améliorée pour SPA sur GitHub Pages - Compatible avec les robots d'indexation
       var l = window.location;
-      var redirectPath = l.pathname;
+      var isGooglebot = navigator.userAgent.indexOf('Googlebot') > -1 || 
+                         navigator.userAgent.indexOf('bingbot') > -1 || 
+                         navigator.userAgent.indexOf('Slurp') > -1 || 
+                         navigator.userAgent.indexOf('DuckDuckBot') > -1;
       
-      // Rediriger vers la racine en préservant le chemin
-      window.location.href = l.origin + '/#' + redirectPath;
+      var path = l.pathname.replace(/^\//, '');
+      var redirectUrl = l.origin + '/#/' + path + l.search + l.hash;
+      
+      // Si c'est un robot d'indexation, nous servons du contenu statique
+      if (isGooglebot) {
+        document.write('<!DOCTYPE html><html><head>');
+        document.write('<meta http-equiv="refresh" content="0;URL=\'' + redirectUrl + '\'">');
+        document.write('<link rel="canonical" href="' + redirectUrl + '">');
+        document.write('</head><body>');
+        document.write('<h1>IS Peinture - Artisanat professionnel à Strasbourg</h1>');
+        document.write('<p>Vous êtes redirigé vers la page appropriée. Si la redirection ne fonctionne pas, <a href="/">cliquez ici</a>.</p>');
+        document.write('<p>Visitez notre site: <a href="https://www.is-peinture.fr">www.is-peinture.fr</a></p>');
+        document.write('</body></html>');
+      } else {
+        // Pour les utilisateurs normaux, rediriger vers la racine avec un hash
+        window.location.href = redirectUrl;
+      }
     </script>
     <meta http-equiv="refresh" content="0;URL='/'">
+    <link rel="canonical" href="https://www.is-peinture.fr/">
   </head>
   <body>
     <h1>Redirection en cours...</h1>
     <p>Si vous n'êtes pas redirigé automatiquement, <a href="/">cliquez ici pour retourner à la page d'accueil</a>.</p>
+    
+    <!-- Contenu statique pour les robots d'indexation -->
+    <div id="seo-content">
+      <h1>IS Peinture - Services professionnels à Strasbourg</h1>
+      <h2>Peinture, rénovation de toiture et services d'artisanat de qualité en Alsace</h2>
+      <p>
+        STEIS Ismaël propose des services complets d'artisanat à Strasbourg et dans toute l'Alsace:
+        peinture intérieure et extérieure, rénovation de toiture, ravalement de façade, et plus encore.
+      </p>
+      <p>
+        <a href="https://www.is-peinture.fr">Visitez notre site web</a> ou 
+        <a href="https://www.is-peinture.fr/#/contact">contactez-nous</a> pour un devis gratuit.
+      </p>
+    </div>
   </body>
 </html>
