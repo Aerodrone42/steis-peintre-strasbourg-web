@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
-import emailjs from 'emailjs-com';
+import { Mail } from 'lucide-react';
 
 const services = [
   "Peinture intérieure",
@@ -24,10 +24,8 @@ const services = [
   "Autre"
 ];
 
-// Configuration EmailJS
-const EMAILJS_SERVICE_ID = "service_contactform"; // À remplacer par votre ID de service EmailJS
-const EMAILJS_TEMPLATE_ID = "template_contact"; // À remplacer par votre ID de template EmailJS
-const EMAILJS_USER_ID = "YOUR_USER_ID"; // À remplacer par votre ID utilisateur EmailJS
+// Adresse email de réception
+const COMPANY_EMAIL = "contact@is-peinture.fr"; // Remplacez par votre email réel
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,44 +49,82 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
-    // Préparation des paramètres pour EmailJS
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      phone: formData.phone,
-      address: formData.address,
-      service: formData.service,
-      message: formData.message,
-      to_name: "IS Peinture", // Nom du destinataire (votre entreprise)
-    };
-
-    // Envoi du mail via EmailJS
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_USER_ID)
-      .then((response) => {
-        console.log('Email envoyé avec succès:', response);
-        toast.success('Votre demande de devis a été envoyée avec succès. Nous vous contacterons rapidement.', {
+    // Validation basique
+    if (!formData.name || !formData.email || !formData.phone || !formData.address || !formData.service) {
+      toast.error('Veuillez remplir tous les champs obligatoires', {
+        duration: 5000,
+      });
+      return;
+    }
+    
+    try {
+      // Créer le corps du message
+      const messageBody = `
+Nom: ${formData.name}
+Email: ${formData.email}
+Téléphone: ${formData.phone}
+Adresse des travaux: ${formData.address}
+Service demandé: ${formData.service}
+Message: ${formData.message}
+      `;
+      
+      // Créer l'objet du mail
+      const subject = `Demande de devis - ${formData.service} - ${formData.name}`;
+      
+      // Créer le lien mailto
+      const mailtoLink = `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
+      
+      // Ouvrir le client de messagerie de l'utilisateur
+      window.open(mailtoLink, '_blank');
+      
+      toast.success('Le formulaire a été préparé pour envoi via votre client de messagerie', {
+        duration: 5000,
+      });
+      
+      // Réinitialisation du formulaire
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        service: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Erreur lors de la préparation du message:', error);
+      toast.error('Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.', {
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
+  // Alternative: fonction pour copier les informations dans le presse-papier
+  const copyToClipboard = () => {
+    // Format du message à copier
+    const messageContent = `
+Nom: ${formData.name}
+Email: ${formData.email}
+Téléphone: ${formData.phone}
+Adresse des travaux: ${formData.address}
+Service demandé: ${formData.service}
+Message: ${formData.message}
+    `;
+    
+    // Copier dans le presse-papier
+    navigator.clipboard.writeText(messageContent)
+      .then(() => {
+        toast.success('Informations copiées dans le presse-papier. Vous pouvez les coller dans votre email.', {
           duration: 5000,
         });
-        // Réinitialisation du formulaire
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          address: '',
-          service: '',
-          message: ''
-        });
       })
-      .catch((error) => {
-        console.error('Erreur lors de l\'envoi de l\'email:', error);
-        toast.error('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer ou nous contacter par téléphone.', {
+      .catch(err => {
+        toast.error('Impossible de copier les informations. Veuillez nous contacter par téléphone.', {
           duration: 5000,
         });
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+        console.error('Erreur lors de la copie dans le presse-papier:', err);
       });
   };
 
@@ -180,13 +216,25 @@ const ContactForm = () => {
         />
       </div>
       
-      <Button 
-        type="submit" 
-        className="w-full bg-steis hover:bg-steis-600"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? 'Envoi en cours...' : 'Demander un devis gratuit'}
-      </Button>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Button 
+          type="submit" 
+          className="flex-1 bg-steis hover:bg-steis-600"
+          disabled={isSubmitting}
+        >
+          <Mail className="mr-2 h-4 w-4" />
+          Envoyer via votre messagerie
+        </Button>
+        
+        <Button 
+          type="button" 
+          variant="outline"
+          className="flex-1"
+          onClick={copyToClipboard}
+        >
+          Copier les informations
+        </Button>
+      </div>
       
       <p className="text-xs text-gray-500 mt-4">
         * Champs obligatoires. En soumettant ce formulaire, vous acceptez que vos informations 
