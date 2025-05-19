@@ -4,10 +4,16 @@ import Layout from '@/components/layout/Layout';
 import ContactForm from '@/components/contact/ContactForm';
 import ContactInfo from '@/components/contact/ContactInfo';
 import Map from '@/components/contact/Map';
+import { Helmet } from 'react-helmet';
 
 const ContactPage = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>Contactez IS Peinture | Devis gratuit à Strasbourg et environs</title>
+        <meta name="description" content="Contactez IS Peinture pour un devis gratuit de travaux de peinture, ravalement ou nettoyage à Strasbourg et ses environs. Réponse rapide garantie." />
+        <link rel="canonical" href="https://www.is-peinture.fr/#/contact" />
+      </Helmet>
       <div className="bg-gray-50 py-12">
         <div className="container">
           <h1 className="text-3xl md:text-4xl font-bold text-steis mb-8 text-center">Contactez-nous</h1>

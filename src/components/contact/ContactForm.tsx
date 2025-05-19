@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
+import emailjs from 'emailjs-com';
 
 const services = [
   "Peinture intérieure",
@@ -22,6 +23,11 @@ const services = [
   "Peinture gouttières",
   "Autre"
 ];
+
+// Configuration EmailJS
+const EMAILJS_SERVICE_ID = "service_contactform"; // À remplacer par votre ID de service EmailJS
+const EMAILJS_TEMPLATE_ID = "template_contact"; // À remplacer par votre ID de template EmailJS
+const EMAILJS_USER_ID = "YOUR_USER_ID"; // À remplacer par votre ID utilisateur EmailJS
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,22 +52,44 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Préparation des paramètres pour EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      address: formData.address,
+      service: formData.service,
+      message: formData.message,
+      to_name: "IS Peinture", // Nom du destinataire (votre entreprise)
+    };
 
-    // Simulation d'envoi du formulaire
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast.success('Votre demande de devis a été envoyée avec succès. Nous vous contacterons rapidement.', {
-        duration: 5000,
+    // Envoi du mail via EmailJS
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_USER_ID)
+      .then((response) => {
+        console.log('Email envoyé avec succès:', response);
+        toast.success('Votre demande de devis a été envoyée avec succès. Nous vous contacterons rapidement.', {
+          duration: 5000,
+        });
+        // Réinitialisation du formulaire
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          service: '',
+          message: ''
+        });
+      })
+      .catch((error) => {
+        console.error('Erreur lors de l\'envoi de l\'email:', error);
+        toast.error('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer ou nous contacter par téléphone.', {
+          duration: 5000,
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        service: '',
-        message: ''
-      });
-    }, 1500);
   };
 
   return (
