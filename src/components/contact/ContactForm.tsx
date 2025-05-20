@@ -46,44 +46,29 @@ const ContactForm = () => {
   const handleServiceChange = (value: string) => {
     setFormData(prev => ({ ...prev, service: value }));
   };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  
+  // Valider le formulaire avant soumission via FormSubmit
+  const validateForm = (e: React.FormEvent) => {
     // Validation basique
     if (!formData.name || !formData.email || !formData.phone || !formData.address || !formData.service) {
+      e.preventDefault(); // Empêcher la soumission
       toast.error('Veuillez remplir tous les champs obligatoires', {
         duration: 5000,
       });
-      return;
+      return false;
     }
     
     setIsSubmitting(true);
-    
-    try {
-      // Le formulaire est envoyé via formsubmit
+    // La soumission continuera naturellement via FormSubmit
+    // Afficher un toast de succès
+    setTimeout(() => {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
       });
-      
-      // Réinitialisation du formulaire
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        service: '',
-        message: ''
-      });
-      
-    } catch (error) {
-      console.error('Erreur lors de l\'envoi du formulaire:', error);
-      toast.error('Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.', {
-        duration: 5000,
-      });
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 1000);
+    
+    return true;
   };
   
   // Alternative: fonction pour copier les informations dans le presse-papier
@@ -113,11 +98,20 @@ Message: ${formData.message}
       });
   };
 
+  // Obtenir l'URL de redirection dynamiquement
+  const getRedirectUrl = () => {
+    if (typeof window !== 'undefined') {
+      return window.location.origin + window.location.pathname + "#/contact?success=true";
+    }
+    return "/"; // Valeur par défaut pour le build
+  };
+
   return (
     <form 
       className="space-y-6 bg-white p-6 rounded-lg shadow-md"
       action={`https://formsubmit.co/${COMPANY_EMAIL}`}
       method="POST"
+      onSubmit={validateForm}
     >
       <h2 className="text-2xl font-bold text-steis mb-6">Demande de devis gratuit</h2>
       
@@ -125,7 +119,7 @@ Message: ${formData.message}
       <input type="hidden" name="_subject" value={`Demande de devis - ${formData.service || 'Nouveau client'}`} />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + "#/contact?success=true"} />
+      <input type="hidden" name="_next" value={getRedirectUrl()} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
@@ -134,7 +128,6 @@ Message: ${formData.message}
             id="name"
             name="name"
             placeholder="Votre nom complet"
-            required
             value={formData.name}
             onChange={handleChange}
           />
@@ -147,7 +140,6 @@ Message: ${formData.message}
             name="email"
             type="email"
             placeholder="Votre adresse email"
-            required
             value={formData.email}
             onChange={handleChange}
           />
@@ -160,7 +152,6 @@ Message: ${formData.message}
             name="phone"
             type="tel"
             placeholder="Votre numéro de téléphone"
-            required
             value={formData.phone}
             onChange={handleChange}
           />
@@ -172,7 +163,6 @@ Message: ${formData.message}
             id="address"
             name="address"
             placeholder="Adresse complète"
-            required
             value={formData.address}
             onChange={handleChange}
           />
@@ -184,7 +174,6 @@ Message: ${formData.message}
         <Select
           value={formData.service}
           onValueChange={handleServiceChange}
-          required
         >
           <SelectTrigger>
             <SelectValue placeholder="Sélectionnez un service" />
