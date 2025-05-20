@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
-import { Mail } from 'lucide-react';
+import { Mail, Copy, Loader2 } from 'lucide-react';
 
 const services = [
   "Peinture intérieure",
@@ -47,7 +47,7 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, service: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validation basique
@@ -58,27 +58,11 @@ const ContactForm = () => {
       return;
     }
     
+    setIsSubmitting(true);
+    
     try {
-      // Créer le corps du message
-      const messageBody = `
-Nom: ${formData.name}
-Email: ${formData.email}
-Téléphone: ${formData.phone}
-Adresse des travaux: ${formData.address}
-Service demandé: ${formData.service}
-Message: ${formData.message}
-      `;
-      
-      // Créer l'objet du mail
-      const subject = `Demande de devis - ${formData.service} - ${formData.name}`;
-      
-      // Créer le lien mailto
-      const mailtoLink = `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
-      
-      // Ouvrir le client de messagerie de l'utilisateur
-      window.open(mailtoLink, '_blank');
-      
-      toast.success('Le formulaire a été préparé pour envoi via votre client de messagerie', {
+      // Le formulaire lui-même se charge de l'envoi via formsubmit
+      toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
       });
       
@@ -91,8 +75,9 @@ Message: ${formData.message}
         service: '',
         message: ''
       });
+      
     } catch (error) {
-      console.error('Erreur lors de la préparation du message:', error);
+      console.error('Erreur lors de l\'envoi du formulaire:', error);
       toast.error('Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.', {
         duration: 5000,
       });
@@ -129,8 +114,19 @@ Message: ${formData.message}
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-lg shadow-md">
+    <form 
+      onSubmit={handleSubmit} 
+      className="space-y-6 bg-white p-6 rounded-lg shadow-md"
+      action={`https://formsubmit.co/${COMPANY_EMAIL}`}
+      method="POST"
+    >
       <h2 className="text-2xl font-bold text-steis mb-6">Demande de devis gratuit</h2>
+      
+      {/* Champs obligatoires pour FormSubmit */}
+      <input type="hidden" name="_subject" value={`Demande de devis - ${formData.service || 'Nouveau client'}`} />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + "#/contact?success=true"} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
@@ -202,6 +198,8 @@ Message: ${formData.message}
             ))}
           </SelectContent>
         </Select>
+        {/* Champ caché pour FormSubmit */}
+        <input type="hidden" name="service" value={formData.service} />
       </div>
       
       <div className="space-y-2">
@@ -222,8 +220,17 @@ Message: ${formData.message}
           className="flex-1 bg-steis hover:bg-steis-600"
           disabled={isSubmitting}
         >
-          <Mail className="mr-2 h-4 w-4" />
-          Envoyer via votre messagerie
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Envoi en cours...
+            </>
+          ) : (
+            <>
+              <Mail className="mr-2 h-4 w-4" />
+              Envoyer ma demande
+            </>
+          )}
         </Button>
         
         <Button 
@@ -232,6 +239,7 @@ Message: ${formData.message}
           className="flex-1"
           onClick={copyToClipboard}
         >
+          <Copy className="mr-2 h-4 w-4" />
           Copier les informations
         </Button>
       </div>
