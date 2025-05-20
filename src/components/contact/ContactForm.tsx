@@ -61,7 +61,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Le formulaire lui-même se charge de l'envoi via formsubmit
+      // Le formulaire est envoyé via formsubmit
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
       });
@@ -115,7 +115,6 @@ Message: ${formData.message}
 
   return (
     <form 
-      onSubmit={handleSubmit} 
       className="space-y-6 bg-white p-6 rounded-lg shadow-md"
       action={`https://formsubmit.co/${COMPANY_EMAIL}`}
       method="POST"
