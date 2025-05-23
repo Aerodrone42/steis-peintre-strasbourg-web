@@ -30,12 +30,32 @@ jobs:
 
       - name: Prepare for deployment
         run: |
-          cp public/CNAME docs/
-          cp public/404.html docs/
-          cp public/sitemap.xml docs/
-          cp public/robots.txt docs/
-          cp public/services.html docs/
+          # Création du fichier .nojekyll pour désactiver Jekyll
           touch docs/.nojekyll
+          
+          # Vérifier si les fichiers existent dans le dossier public avant de les copier
+          if [ -f "public/CNAME" ]; then
+            cp public/CNAME docs/
+          else
+            echo "www.is-peinture.fr" > docs/CNAME
+          fi
+          
+          if [ -f "public/404.html" ]; then
+            cp public/404.html docs/
+          fi
+          
+          if [ -f "public/sitemap.xml" ]; then
+            cp public/sitemap.xml docs/
+          fi
+          
+          if [ -f "public/robots.txt" ]; then
+            cp public/robots.txt docs/
+          fi
+          
+          if [ -f "public/services.html" ]; then
+            cp public/services.html docs/
+          fi
+          
           # Debug output
           echo "Content of docs folder:"
           ls -la docs

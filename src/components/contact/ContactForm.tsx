@@ -25,7 +25,7 @@ const services = [
 ];
 
 // Adresse email de réception
-const COMPANY_EMAIL = "ismael.steis95@gmail.com"; // Adresse email mise à jour
+const COMPANY_EMAIL = "ismael.steis95@gmail.com";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
