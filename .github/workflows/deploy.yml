@@ -30,7 +30,7 @@ jobs:
 
       - name: Prepare for deployment
         run: |
-          echo "www.is-peinture.fr" > docs/CNAME
+          cp public/CNAME docs/
           cp public/404.html docs/
           cp public/sitemap.xml docs/
           cp public/robots.txt docs/
@@ -47,5 +47,3 @@ jobs:
           publish_dir: ./docs
           cname: www.is-peinture.fr
           force_orphan: true
-
-

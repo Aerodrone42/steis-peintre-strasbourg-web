@@ -48,10 +48,9 @@ const ContactForm = () => {
   };
   
   // Valider le formulaire avant soumission via FormSubmit
-  const validateForm = (e: React.FormEvent) => {
+  const validateForm = () => {
     // Validation basique
     if (!formData.name || !formData.email || !formData.phone || !formData.address || !formData.service) {
-      e.preventDefault(); // Empêcher la soumission
       toast.error('Veuillez remplir tous les champs obligatoires', {
         duration: 5000,
       });
@@ -98,12 +97,16 @@ Message: ${formData.message}
       });
   };
 
-  // Obtenir l'URL de redirection dynamiquement
+  // Obtenir l'URL de redirection sans accéder à window directement
   const getRedirectUrl = () => {
-    if (typeof window !== 'undefined') {
-      return window.location.origin + window.location.pathname + "#/contact?success=true";
+    return "/#/contact?success=true";
+  };
+
+  // Handler pour la soumission du formulaire
+  const handleSubmit = (e: React.FormEvent) => {
+    if (!validateForm()) {
+      e.preventDefault();
     }
-    return "/"; // Valeur par défaut pour le build
   };
 
   return (
@@ -111,7 +114,7 @@ Message: ${formData.message}
       className="space-y-6 bg-white p-6 rounded-lg shadow-md"
       action={`https://formsubmit.co/${COMPANY_EMAIL}`}
       method="POST"
-      onSubmit={validateForm}
+      onSubmit={handleSubmit}
     >
       <h2 className="text-2xl font-bold text-steis mb-6">Demande de devis gratuit</h2>
       
