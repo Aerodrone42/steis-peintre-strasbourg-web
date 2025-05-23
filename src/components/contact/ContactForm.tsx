@@ -58,8 +58,9 @@ const ContactForm = () => {
     }
     
     setIsSubmitting(true);
-    // La soumission continuera naturellement via FormSubmit
-    // Afficher un toast de succès
+    
+    // Afficher un toast de succès après un court délai
+    // Cela permet à FormSubmit de traiter la soumission
     setTimeout(() => {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
