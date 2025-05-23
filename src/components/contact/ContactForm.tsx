@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
 import { Mail, Copy, Loader2 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const services = [
   "Peinture intérieure",
@@ -133,6 +134,7 @@ Message: ${formData.message}
             placeholder="Votre nom complet"
             value={formData.name}
             onChange={handleChange}
+            required
           />
         </div>
         
@@ -145,6 +147,7 @@ Message: ${formData.message}
             placeholder="Votre adresse email"
             value={formData.email}
             onChange={handleChange}
+            required
           />
         </div>
         
@@ -157,6 +160,7 @@ Message: ${formData.message}
             placeholder="Votre numéro de téléphone"
             value={formData.phone}
             onChange={handleChange}
+            required
           />
         </div>
         
@@ -168,6 +172,7 @@ Message: ${formData.message}
             placeholder="Adresse complète"
             value={formData.address}
             onChange={handleChange}
+            required
           />
         </div>
       </div>
@@ -177,6 +182,7 @@ Message: ${formData.message}
         <Select
           value={formData.service}
           onValueChange={handleServiceChange}
+          required
         >
           <SelectTrigger>
             <SelectValue placeholder="Sélectionnez un service" />
