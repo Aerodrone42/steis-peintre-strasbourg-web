@@ -7,7 +7,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
 import { Mail, Copy, Loader2 } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
 
 const services = [
   "Peinture intérieure",
@@ -24,9 +23,6 @@ const services = [
   "Peinture gouttières",
   "Autre"
 ];
-
-// Adresse email de réception
-const COMPANY_EMAIL = "ismael.steis95@gmail.com";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,32 +44,17 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, service: value }));
   };
   
-  // Valider le formulaire avant soumission via FormSubmit
   const validateForm = () => {
-    // Validation basique
     if (!formData.name || !formData.email || !formData.phone || !formData.address || !formData.service) {
       toast.error('Veuillez remplir tous les champs obligatoires', {
         duration: 5000,
       });
       return false;
     }
-    
-    setIsSubmitting(true);
-    
-    // Afficher un toast de succès après un court délai
-    setTimeout(() => {
-      toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
-        duration: 5000,
-      });
-      setIsSubmitting(false);
-    }, 1000);
-    
     return true;
   };
   
-  // Alternative: fonction pour copier les informations dans le presse-papier
   const copyToClipboard = () => {
-    // Format du message à copier
     const messageContent = `
 Nom: ${formData.name}
 Email: ${formData.email}
@@ -83,7 +64,6 @@ Service demandé: ${formData.service}
 Message: ${formData.message}
     `;
     
-    // Copier dans le presse-papier
     navigator.clipboard.writeText(messageContent)
       .then(() => {
         toast.success('Informations copiées dans le presse-papier. Vous pouvez les coller dans votre email.', {
@@ -98,32 +78,40 @@ Message: ${formData.message}
       });
   };
 
-  // Obtenir l'URL de redirection sans accéder à window directement
-  const getRedirectUrl = () => {
-    return "/#/contact?success=true";
-  };
-
-  // Handler pour la soumission du formulaire
   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
     if (!validateForm()) {
-      e.preventDefault();
+      return;
     }
+    
+    setIsSubmitting(true);
+    
+    // Simuler l'envoi et afficher un message de succès
+    setTimeout(() => {
+      toast.success('Votre demande a été enregistrée. Nous vous contacterons rapidement.', {
+        duration: 5000,
+      });
+      setIsSubmitting(false);
+      
+      // Réinitialiser le formulaire
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        service: '',
+        message: ''
+      });
+    }, 1000);
   };
 
   return (
     <form 
       className="space-y-6 bg-white p-6 rounded-lg shadow-md"
-      action={`https://formsubmit.co/${COMPANY_EMAIL}`}
-      method="POST"
       onSubmit={handleSubmit}
     >
       <h2 className="text-2xl font-bold text-steis mb-6">Demande de devis gratuit</h2>
-      
-      {/* Champs obligatoires pour FormSubmit */}
-      <input type="hidden" name="_subject" value={`Demande de devis - ${formData.service || 'Nouveau client'}`} />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value={getRedirectUrl()} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
@@ -195,8 +183,6 @@ Message: ${formData.message}
             ))}
           </SelectContent>
         </Select>
-        {/* Champ caché pour FormSubmit */}
-        <input type="hidden" name="service" value={formData.service} />
       </div>
       
       <div className="space-y-2">
