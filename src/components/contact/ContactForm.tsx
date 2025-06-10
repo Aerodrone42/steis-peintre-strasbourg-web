@@ -48,8 +48,9 @@ const ContactForm = () => {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
       });
-      // Nettoyer l'URL
-      window.history.replaceState({}, '', location.pathname + location.hash);
+      // Nettoyer l'URL sans casser la navigation hash
+      const newUrl = window.location.origin + window.location.pathname + '#/contact';
+      window.history.replaceState({}, '', newUrl);
     }
   }, [location]);
 
@@ -96,9 +97,11 @@ Message: ${formData.message}
       });
   };
 
-  // Obtenir l'URL de redirection complète
+  // Obtenir l'URL de redirection complète - fix pour hash routing
   const getRedirectUrl = () => {
-    return `${window.location.origin}${window.location.pathname}#/contact?success=true`;
+    const origin = window.location.origin;
+    const pathname = window.location.pathname;
+    return `${origin}${pathname}#/contact?success=true`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
