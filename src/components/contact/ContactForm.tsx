@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
 import { Mail, Copy, Loader2 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const services = [
   "Peinture intérieure",
@@ -24,6 +25,9 @@ const services = [
   "Autre"
 ];
 
+// Adresse email de réception
+const COMPANY_EMAIL = "ismael.steis95@gmail.com";
+
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -34,6 +38,20 @@ const ContactForm = () => {
     service: '',
     message: ''
   });
+  
+  const location = useLocation();
+
+  // Vérifier si on revient de FormSubmit avec succès
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    if (urlParams.get('success') === 'true') {
+      toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
+        duration: 5000,
+      });
+      // Nettoyer l'URL
+      window.history.replaceState({}, '', location.pathname + location.hash);
+    }
+  }, [location]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -78,40 +96,35 @@ Message: ${formData.message}
       });
   };
 
+  // Obtenir l'URL de redirection complète
+  const getRedirectUrl = () => {
+    return `${window.location.origin}${window.location.pathname}#/contact?success=true`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
     if (!validateForm()) {
+      e.preventDefault();
       return;
     }
     
     setIsSubmitting(true);
-    
-    // Simuler l'envoi et afficher un message de succès
-    setTimeout(() => {
-      toast.success('Votre demande a été enregistrée. Nous vous contacterons rapidement.', {
-        duration: 5000,
-      });
-      setIsSubmitting(false);
-      
-      // Réinitialiser le formulaire
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        service: '',
-        message: ''
-      });
-    }, 1000);
+    // FormSubmit va gérer la soumission
   };
 
   return (
     <form 
       className="space-y-6 bg-white p-6 rounded-lg shadow-md"
+      action={`https://formsubmit.co/${COMPANY_EMAIL}`}
+      method="POST"
       onSubmit={handleSubmit}
     >
       <h2 className="text-2xl font-bold text-steis mb-6">Demande de devis gratuit</h2>
+      
+      {/* Champs obligatoires pour FormSubmit */}
+      <input type="hidden" name="_subject" value={`Demande de devis - ${formData.service || 'Nouveau client'}`} />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value={getRedirectUrl()} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
@@ -183,6 +196,8 @@ Message: ${formData.message}
             ))}
           </SelectContent>
         </Select>
+        {/* Champ caché pour FormSubmit */}
+        <input type="hidden" name="service" value={formData.service} />
       </div>
       
       <div className="space-y-2">
