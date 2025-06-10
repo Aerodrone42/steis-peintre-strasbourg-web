@@ -24,7 +24,6 @@ const services = [
   "Autre"
 ];
 
-// Adresse email de réception
 const COMPANY_EMAIL = "ismael.steis95@gmail.com";
 
 const ContactForm = () => {
@@ -38,14 +37,12 @@ const ContactForm = () => {
     message: ''
   });
 
-  // Vérifier si on revient de FormSubmit avec succès
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success') === 'true') {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
       });
-      // Nettoyer l'URL
       const cleanUrl = window.location.origin + window.location.pathname + '#/contact';
       window.history.replaceState({}, '', cleanUrl);
     }
@@ -86,16 +83,11 @@ Message: ${formData.message}
           duration: 5000,
         });
       })
-      .catch(err => {
+      .catch(() => {
         toast.error('Impossible de copier les informations. Veuillez nous contacter par téléphone.', {
           duration: 5000,
         });
-        console.error('Erreur lors de la copie dans le presse-papier:', err);
       });
-  };
-
-  const getRedirectUrl = () => {
-    return `${window.location.origin}${window.location.pathname}#/contact?success=true`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -103,9 +95,7 @@ Message: ${formData.message}
       e.preventDefault();
       return;
     }
-    
     setIsSubmitting(true);
-    // FormSubmit va gérer la soumission
   };
 
   return (
@@ -117,11 +107,10 @@ Message: ${formData.message}
     >
       <h2 className="text-2xl font-bold text-steis mb-6">Demande de devis gratuit</h2>
       
-      {/* Champs obligatoires pour FormSubmit */}
       <input type="hidden" name="_subject" value={`Demande de devis - ${formData.service || 'Nouveau client'}`} />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value={getRedirectUrl()} />
+      <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}#/contact?success=true`} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
@@ -193,7 +182,6 @@ Message: ${formData.message}
             ))}
           </SelectContent>
         </Select>
-        {/* Champ caché pour FormSubmit */}
         <input type="hidden" name="service" value={formData.service} />
       </div>
       
