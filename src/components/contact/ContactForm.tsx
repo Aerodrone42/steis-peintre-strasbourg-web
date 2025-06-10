@@ -98,6 +98,8 @@ Message: ${formData.message}
     setIsSubmitting(true);
   };
 
+  const redirectUrl = `${window.location.origin}${window.location.pathname}#/contact?success=true`;
+
   return (
     <form 
       className="space-y-6 bg-white p-6 rounded-lg shadow-md"
@@ -110,7 +112,7 @@ Message: ${formData.message}
       <input type="hidden" name="_subject" value={`Demande de devis - ${formData.service || 'Nouveau client'}`} />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}#/contact?success=true`} />
+      <input type="hidden" name="_next" value={redirectUrl} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
