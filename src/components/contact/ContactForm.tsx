@@ -7,7 +7,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
 import { Mail, Copy, Loader2 } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
 
 const services = [
   "Peinture intérieure",
@@ -38,21 +37,19 @@ const ContactForm = () => {
     service: '',
     message: ''
   });
-  
-  const location = useLocation();
 
   // Vérifier si on revient de FormSubmit avec succès
   useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
+    const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success') === 'true') {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
       });
-      // Nettoyer l'URL sans casser la navigation hash
-      const newUrl = window.location.origin + window.location.pathname + '#/contact';
-      window.history.replaceState({}, '', newUrl);
+      // Nettoyer l'URL
+      const cleanUrl = window.location.origin + window.location.pathname + '#/contact';
+      window.history.replaceState({}, '', cleanUrl);
     }
-  }, [location]);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -97,11 +94,8 @@ Message: ${formData.message}
       });
   };
 
-  // Obtenir l'URL de redirection complète - fix pour hash routing
   const getRedirectUrl = () => {
-    const origin = window.location.origin;
-    const pathname = window.location.pathname;
-    return `${origin}${pathname}#/contact?success=true`;
+    return `${window.location.origin}${window.location.pathname}#/contact?success=true`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
