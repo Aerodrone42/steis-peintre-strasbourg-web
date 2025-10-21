@@ -43,7 +43,7 @@ const ContactForm = () => {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
       });
-      const cleanUrl = window.location.origin + window.location.pathname + '#/contact';
+      const cleanUrl = window.location.origin + '/contact';
       window.history.replaceState({}, '', cleanUrl);
     }
   }, []);
@@ -98,7 +98,7 @@ Message: ${formData.message}
     setIsSubmitting(true);
   };
 
-  const redirectUrl = `${window.location.origin}${window.location.pathname}#/contact?success=true`;
+  const redirectUrl = `${window.location.origin}/contact?success=true`;
 
   return (
     <form 

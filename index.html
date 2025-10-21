@@ -11,21 +11,6 @@
     
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     
-    <!-- Important pour SPA sur GitHub Pages -->
-    <script type="text/javascript">
-      // Redirect from GitHub Pages 404
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
-    
     <meta property="og:title" content="IS Peinture - Peintre Strasbourg - Services professionnels d'artisanat" />
     <meta property="og:description" content="Services de peinture professionnels à Strasbourg et ses environs. Peinture, rénovation de toiture, ravalement de façade et plus." />
     <meta property="og:type" content="website" />
@@ -44,7 +29,7 @@
 
     <link rel="icon" href="/favicon.ico" />
     
-    <!-- Nouveaux tags pour référencement des routes avec hash -->
+    <!-- Nouveaux tags pour référencement -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -54,7 +39,7 @@
         "description": "Services professionnels d'artisanat à Strasbourg et environs. Peinture, rénovation de toiture, ravalement de façade et plus.",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://www.is-peinture.fr/#/search?q={search_term_string}",
+          "target": "https://www.is-peinture.fr/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       }
