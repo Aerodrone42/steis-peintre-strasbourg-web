@@ -5,30 +5,34 @@
     <meta charset="utf-8">
     <title>IS Peinture - Redirection</title>
     <script type="text/javascript">
-      // Redirection améliorée pour SPA sur GitHub Pages - Compatible avec les robots d'indexation
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with only a query string and hash fragment,
+      // e.g., https://www.foo.tld/one/two?a=b&c=d#qwe, becomes
+      // https://www.foo.tld/?/one/two&a=b~and~c=d#qwe
+      // Note: this 404.html file must be at least 512 bytes for it to work
+      // with Internet Explorer (it is currently > 512 bytes)
+
+      // If you're creating a Project Pages site and NOT using a custom domain,
+      // then set pathSegmentsToKeep to 1 (enterprise users may need to set it to > 1).
+      // This way the code will only replace the route part of the path, and not
+      // the real directory in which the app resides, for example:
+      // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
+      // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
+      // Otherwise, leave pathSegmentsToKeep as 0.
+      var pathSegmentsToKeep = 0;
+
       var l = window.location;
-      var isGooglebot = navigator.userAgent.indexOf('Googlebot') > -1 || 
-                         navigator.userAgent.indexOf('bingbot') > -1 || 
-                         navigator.userAgent.indexOf('Slurp') > -1 || 
-                         navigator.userAgent.indexOf('DuckDuckBot') > -1;
-      
-      var path = l.pathname.replace(/^\//, '');
-      var redirectUrl = l.origin + '/#/' + path + l.search + l.hash;
-      
-      // Si c'est un robot d'indexation, nous servons du contenu statique
-      if (isGooglebot) {
-        document.write('<!DOCTYPE html><html><head>');
-        document.write('<meta http-equiv="refresh" content="0;URL=\'' + redirectUrl + '\'">');
-        document.write('<link rel="canonical" href="' + redirectUrl + '">');
-        document.write('</head><body>');
-        document.write('<h1>IS Peinture - Artisanat professionnel à Strasbourg</h1>');
-        document.write('<p>Vous êtes redirigé vers la page appropriée. Si la redirection ne fonctionne pas, <a href="/">cliquez ici</a>.</p>');
-        document.write('<p>Visitez notre site: <a href="https://www.is-peinture.fr">www.is-peinture.fr</a></p>');
-        document.write('</body></html>');
-      } else {
-        // Pour les utilisateurs normaux, rediriger vers la racine avec un hash
-        window.location.href = redirectUrl;
-      }
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
     <meta http-equiv="refresh" content="0;URL='/'">
     <link rel="canonical" href="https://www.is-peinture.fr/">
@@ -47,7 +51,7 @@
       </p>
       <p>
         <a href="https://www.is-peinture.fr">Visitez notre site web</a> ou 
-        <a href="https://www.is-peinture.fr/#/contact">contactez-nous</a> pour un devis gratuit.
+        <a href="https://www.is-peinture.fr/contact">contactez-nous</a> pour un devis gratuit.
       </p>
     </div>
   </body>
