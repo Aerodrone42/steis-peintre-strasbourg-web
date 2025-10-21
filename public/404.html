@@ -4,32 +4,32 @@
     <meta charset="utf-8">
     <title>IS Peinture - Redirection</title>
     <script type="text/javascript">
-      // Redirection pour SPA sur GitHub Pages
+      // Redirection pour SPA sur GitHub Pages (technique "spa-github-pages")
       var l = window.location;
       var isBot = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator/i.test(navigator.userAgent);
       
-      // Construire l'URL de redirection
+      // Construire l'URL de redirection vers index.html en conservant le chemin
       var path = l.pathname.replace(/^\//, '');
-      var redirectUrl = l.origin + '/' + path + l.search + l.hash;
+      var cleanUrl = l.origin + '/' + path + l.search + l.hash;
+      var redirectUrl = l.origin + '/?/' + path + l.search + l.hash;
       
-      // Si c'est un robot d'indexation, servir du contenu statique
       if (isBot) {
         document.write('<!DOCTYPE html><html><head>');
         document.write('<meta http-equiv="refresh" content="0;URL=\'' + redirectUrl + '\'">');
-        document.write('<link rel="canonical" href="' + redirectUrl + '">');
+        document.write('<link rel="canonical" href="' + cleanUrl + '">');
         document.write('<title>IS Peinture - Artisan professionnel à Strasbourg</title>');
         document.write('<meta name="description" content="IS Peinture - Services professionnels de peinture, rénovation de toiture et ravalement de façade à Strasbourg et en Alsace.">');
         document.write('</head><body>');
         document.write('<h1>IS Peinture - Artisan professionnel à Strasbourg</h1>');
-        document.write('<p>Services de peinture intérieure et extérieure, rénovation de toiture, ravalement de façade à Strasbourg et dans toute l\'Alsace.</p>');
-        document.write('<p><a href="' + redirectUrl + '">Accéder à la page</a></p>');
+        document.write('<p>Redirection vers la page demandée...</p>');
+        document.write('<p><a href="' + cleanUrl + '">Accéder à la page</a></p>');
         document.write('</body></html>');
       } else {
-        // Pour les utilisateurs normaux, redirection immédiate
+        // Pour les utilisateurs, redirection immédiate vers /?/<path>
         window.location.replace(redirectUrl);
       }
     </script>
-    <meta http-equiv="refresh" content="0;URL='/'">
+    <meta http-equiv="refresh" content="0;URL='/?/''">
     <link rel="canonical" href="https://www.is-peinture.fr/">
   </head>
   <body>
