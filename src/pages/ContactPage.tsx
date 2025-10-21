@@ -12,7 +12,7 @@ const ContactPage = () => {
       <Helmet>
         <title>Contactez IS Peinture | Devis gratuit à Strasbourg et environs</title>
         <meta name="description" content="Contactez IS Peinture pour un devis gratuit de travaux de peinture, ravalement ou nettoyage à Strasbourg et ses environs. Réponse rapide garantie." />
-        <link rel="canonical" href="https://www.is-peinture.fr/contact" />
+        <link rel="canonical" href="https://www.is-peinture.fr/#/contact" />
       </Helmet>
       <div className="bg-gray-50 py-12">
         <div className="container">

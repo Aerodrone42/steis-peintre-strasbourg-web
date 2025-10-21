@@ -1,28 +1,12 @@
 
 import { useLocation, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 
 const NotFound = () => {
   const location = useLocation();
-  const [env, setEnv] = useState({ 
-    href: "", 
-    pathname: "", 
-    origin: "", 
-    host: "", 
-    base: import.meta.env.BASE_URL 
-  });
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setEnv({
-        href: window.location.href,
-        pathname: window.location.pathname,
-        origin: window.location.origin,
-        host: window.location.host,
-        base: import.meta.env.BASE_URL,
-      });
-    }
     console.error("404 Error: Page non trouvée:", location.pathname);
     
     // Informations de débogage
@@ -49,19 +33,19 @@ const NotFound = () => {
           <div className="mb-8 text-left bg-gray-50 p-4 rounded-lg overflow-auto max-h-[300px]">
             <h2 className="text-lg font-semibold mb-2">Informations techniques:</h2>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">URL complète:</span> <code className="bg-gray-100 px-1">{env.href}</code>
+              <span className="font-medium">URL complète:</span> <code className="bg-gray-100 px-1">{window.location.href}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Pathname:</span> <code className="bg-gray-100 px-1">{env.pathname}</code>
+              <span className="font-medium">Pathname:</span> <code className="bg-gray-100 px-1">{window.location.pathname}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Origin:</span> <code className="bg-gray-100 px-1">{env.origin}</code>
+              <span className="font-medium">Origin:</span> <code className="bg-gray-100 px-1">{window.location.origin}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Host:</span> <code className="bg-gray-100 px-1">{env.host}</code>
+              <span className="font-medium">Host:</span> <code className="bg-gray-100 px-1">{window.location.host}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Base URL:</span> <code className="bg-gray-100 px-1">{env.base}</code>
+              <span className="font-medium">Base URL:</span> <code className="bg-gray-100 px-1">{import.meta.env.BASE_URL}</code>
             </p>
           </div>
           <div className="space-y-4">

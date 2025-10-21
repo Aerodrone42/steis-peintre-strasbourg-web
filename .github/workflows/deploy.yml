@@ -56,10 +56,6 @@ jobs:
             cp public/services.html docs/
           fi
           
-          if [ -f "public/_redirects" ]; then
-            cp public/_redirects docs/
-          fi
-          
           # Debug output
           echo "Content of docs folder:"
           ls -la docs

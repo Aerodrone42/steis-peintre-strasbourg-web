@@ -42,7 +42,7 @@ const ServicePage: React.FC = () => {
   // SEO optimizations
   const pageTitle = `${service.title} à Strasbourg et environs | STEIS Ismaël`;
   const pageDescription = `Services professionnels de ${service.title.toLowerCase()} à Strasbourg et dans toute l'Alsace. Devis gratuit, travail soigné, garantie décennale. STEIS Ismaël artisan qualifié.`;
-  const canonicalUrl = `https://www.is-peinture.fr/services/${serviceId}`;
+  const canonicalUrl = `https://www.is-peinture.fr/#/services/${serviceId}`;
 
   return (
     <Layout>

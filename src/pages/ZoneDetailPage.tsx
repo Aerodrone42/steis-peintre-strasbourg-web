@@ -22,7 +22,7 @@ const ZoneDetailPage: React.FC = () => {
 
   // Pour une meilleure indexation, créer un titre et une description plus précis
   const pageTitle = `STEIS Ismaël | Artisan Peintre & Couvreur à ${zone.city} (${zone.surroundingCities[0]}, ${zone.surroundingCities[1]}...)`;
-  const canonicalUrl = `https://www.is-peinture.fr/zones/${zoneId}`;
+  const canonicalUrl = `https://www.steis-artisan.fr/zones/${zoneId}`;
 
   return (
     <Layout>

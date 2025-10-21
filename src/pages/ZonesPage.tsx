@@ -12,7 +12,7 @@ const ZonesPage: React.FC = () => {
         <title>STEIS Ismaël | Zones d'intervention en Alsace - Artisan Peintre & Couvreur</title>
         <meta name="description" content="Découvrez les zones d'intervention de STEIS Ismaël, artisan peintre et couvreur qualifié dans toute l'Alsace. Services de qualité pour peinture, toiture et façade à Strasbourg et sa région." />
         <meta name="keywords" content="zones intervention, artisan peintre alsace, couvreur strasbourg, peintre bas-rhin, ravalement façade alsace, toiture alsace, rénovation façade" />
-        <link rel="canonical" href="https://www.is-peinture.fr/zones" />
+        <link rel="canonical" href="https://www.steis-artisan.fr/zones" />
         
         {/* Schema.org JSON-LD structured data */}
         <script type="application/ld+json">

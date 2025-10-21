@@ -38,14 +38,12 @@ const ContactForm = () => {
   });
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success') === 'true') {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
         duration: 5000,
       });
-      const cleanUrl = window.location.origin + '/contact';
+      const cleanUrl = window.location.origin + window.location.pathname + '#/contact';
       window.history.replaceState({}, '', cleanUrl);
     }
   }, []);
@@ -100,7 +98,7 @@ Message: ${formData.message}
     setIsSubmitting(true);
   };
 
-  const redirectUrl = (typeof window !== 'undefined' ? `${window.location.origin}` : '') + `/contact?success=true`;
+  const redirectUrl = `${window.location.origin}${window.location.pathname}#/contact?success=true`;
 
   return (
     <form 

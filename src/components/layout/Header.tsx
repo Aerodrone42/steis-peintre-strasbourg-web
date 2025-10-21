@@ -69,14 +69,18 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link to="/">Accueil</Link>
-                  </NavigationMenuLink>
+                  <Link to="/">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Accueil
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link to="/a-propos">À propos</Link>
-                  </NavigationMenuLink>
+                  <Link to="/a-propos">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      À propos
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Nos Services</NavigationMenuTrigger>
@@ -96,14 +100,18 @@ const Header = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link to="/zones">Zones d'intervention</Link>
-                  </NavigationMenuLink>
+                  <Link to="/zones">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Zones d'intervention
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link to="/contact">Contact</Link>
-                  </NavigationMenuLink>
+                  <Link to="/contact">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Contact
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
