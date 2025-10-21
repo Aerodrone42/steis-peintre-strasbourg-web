@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,8 +33,7 @@ const App = () => (
           <Route path="/zones/:zoneId" element={<ZoneDetailPage />} />
           <Route path="/realisations" element={<ProjectsPage />} />
           <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
-          <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialitePage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/politique-confidentialite" element={<PolitiqueConfidentialitePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
