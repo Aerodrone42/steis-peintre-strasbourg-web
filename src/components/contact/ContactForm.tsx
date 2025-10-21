@@ -38,6 +38,8 @@ const ContactForm = () => {
   });
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success') === 'true') {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
