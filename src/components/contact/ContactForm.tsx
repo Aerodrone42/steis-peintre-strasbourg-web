@@ -98,7 +98,7 @@ Message: ${formData.message}
     setIsSubmitting(true);
   };
 
-  const redirectUrl = `${window.location.origin}/contact?success=true`;
+  const redirectUrl = (typeof window !== 'undefined' ? `${window.location.origin}` : '') + `/contact?success=true`;
 
   return (
     <form 
