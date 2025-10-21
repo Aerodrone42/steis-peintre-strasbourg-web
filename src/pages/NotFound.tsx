@@ -1,25 +1,41 @@
 
 import { useLocation, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
 
 const NotFound = () => {
   const location = useLocation();
+  const [env, setEnv] = useState({
+    href: "",
+    pathname: "",
+    origin: "",
+    host: "",
+    base: import.meta.env.BASE_URL,
+  });
 
   useEffect(() => {
     console.error("404 Error: Page non trouvée:", location.pathname);
-    
-    // Informations de débogage
-    console.log("URL complète:", window.location.href);
-    console.log("Pathname:", window.location.pathname);
-    console.log("Search:", window.location.search);
-    console.log("Hash:", window.location.hash);
-    console.log("Origin:", window.location.origin);
-    console.log("Host:", window.location.host);
-    console.log("Hostname:", window.location.hostname);
-    console.log("Protocol:", window.location.protocol);
-    console.log("Port:", window.location.port);
-    console.log("Base URL:", import.meta.env.BASE_URL);
+    if (typeof window !== "undefined") {
+      setEnv({
+        href: window.location.href,
+        pathname: window.location.pathname,
+        origin: window.location.origin,
+        host: window.location.host,
+        base: import.meta.env.BASE_URL,
+      });
+
+      // Informations de débogage
+      console.log("URL complète:", window.location.href);
+      console.log("Pathname:", window.location.pathname);
+      console.log("Search:", window.location.search);
+      console.log("Hash:", window.location.hash);
+      console.log("Origin:", window.location.origin);
+      console.log("Host:", window.location.host);
+      console.log("Hostname:", window.location.hostname);
+      console.log("Protocol:", window.location.protocol);
+      console.log("Port:", window.location.port);
+      console.log("Base URL:", import.meta.env.BASE_URL);
+    }
   }, [location]);
 
   return (
@@ -33,19 +49,19 @@ const NotFound = () => {
           <div className="mb-8 text-left bg-gray-50 p-4 rounded-lg overflow-auto max-h-[300px]">
             <h2 className="text-lg font-semibold mb-2">Informations techniques:</h2>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">URL complète:</span> <code className="bg-gray-100 px-1">{window.location.href}</code>
+              <span className="font-medium">URL complète:</span> <code className="bg-gray-100 px-1">{env.href}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Pathname:</span> <code className="bg-gray-100 px-1">{window.location.pathname}</code>
+              <span className="font-medium">Pathname:</span> <code className="bg-gray-100 px-1">{env.pathname}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Origin:</span> <code className="bg-gray-100 px-1">{window.location.origin}</code>
+              <span className="font-medium">Origin:</span> <code className="bg-gray-100 px-1">{env.origin}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Host:</span> <code className="bg-gray-100 px-1">{window.location.host}</code>
+              <span className="font-medium">Host:</span> <code className="bg-gray-100 px-1">{env.host}</code>
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-medium">Base URL:</span> <code className="bg-gray-100 px-1">{import.meta.env.BASE_URL}</code>
+              <span className="font-medium">Base URL:</span> <code className="bg-gray-100 px-1">{env.base}</code>
             </p>
           </div>
           <div className="space-y-4">

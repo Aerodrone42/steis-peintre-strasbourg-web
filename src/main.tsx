@@ -4,13 +4,15 @@ import App from './App.tsx'
 import './index.css'
 
 // Debugging information
-console.log("Initialisation de l'application...");
-console.log("URL de base actuelle:", document.baseURI);
-console.log("Chemin de l'application:", window.location.pathname);
-console.log("Emplacement complet:", window.location.href);
-console.log("Hostname:", window.location.hostname);
-console.log("Protocol:", window.location.protocol);
-console.log("Origin:", window.location.origin);
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  console.log("Initialisation de l'application...");
+  console.log("URL de base actuelle:", document.baseURI);
+  console.log("Chemin de l'application:", window.location.pathname);
+  console.log("Emplacement complet:", window.location.href);
+  console.log("Hostname:", window.location.hostname);
+  console.log("Protocol:", window.location.protocol);
+  console.log("Origin:", window.location.origin);
+}
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {

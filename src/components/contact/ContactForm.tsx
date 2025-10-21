@@ -38,6 +38,7 @@ const ContactForm = () => {
   });
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success') === 'true') {
       toast.success('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.', {
@@ -98,7 +99,9 @@ Message: ${formData.message}
     setIsSubmitting(true);
   };
 
-  const redirectUrl = `${window.location.origin}${window.location.pathname}#/contact?success=true`;
+  const redirectUrl = (typeof window !== 'undefined')
+    ? `${window.location.origin}${window.location.pathname}#/contact?success=true`
+    : `/#/contact?success=true`;
 
   return (
     <form 
