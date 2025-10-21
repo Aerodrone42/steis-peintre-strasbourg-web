@@ -1,0 +1,30 @@
+
+User-agent: *
+Allow: /
+Allow: /#/
+Disallow: /404.html
+
+# Sitemap
+Sitemap: https://www.is-peinture.fr/sitemap.xml
+
+# Instructions spécifiques pour résoudre les problèmes d'indexation des URL avec hash
+User-agent: Googlebot
+Allow: /
+Allow: /#/
+Allow: /services.html
+
+# Autres robots majeurs
+User-agent: bingbot
+Allow: /
+Allow: /#/
+Allow: /services.html
+
+User-agent: Slurp
+Allow: /
+Allow: /#/
+Allow: /services.html
+
+User-agent: DuckDuckBot
+Allow: /
+Allow: /#/
+Allow: /services.html
